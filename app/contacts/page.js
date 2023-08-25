@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 export default function Contacts() {
   const [nameString, setNameString] = useState();
