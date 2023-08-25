@@ -7,7 +7,7 @@ export default function Contacts() {
     <div>
     <h1>Contact Details</h1>
     <p>KX</p>
-    <p>2371 Vanquisher St.</p>
+    <p>2371 Vanquisher St., NA</p>
     <p>kx@outlook.com</p>
     <hr />
     <form class="" action="mailto:kemesurient@gmail.com" method="post" enctype="text/plain">
