@@ -6,3 +6,4 @@ Project made alongside of fullstack web development mentorship
 - Design my own theme
 - Converting page files to TypeScript components
 - Implement GraphQL database
+- Manually call APIs like in the Hugo ver
