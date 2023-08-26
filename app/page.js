@@ -12,14 +12,14 @@ export default function Home() {
           </td>
         </tr>
       </table>
-      <div className="border-dotted border-b-8 w-20 mx-auto"></div>
+      <div className="my-hrule"></div>
       <h3>Books and Courses</h3>
       <ul>
         <li>1</li>
         <li>2</li>
         <li>3</li>
       </ul>
-      <div className="border-dotted border-b-8 w-20 mx-auto"></div>
+      <div className="my-hrule"></div>
       <h3>Work Experience</h3>
       <table>
         <thead>
@@ -43,7 +43,7 @@ export default function Home() {
           <td>2017 Researcher at The Bruh</td>
         </tr>
       </table>
-      <div className="border-dotted border-b-8 w-20 mx-auto"></div>
+      <div className="my-hrule"></div>
       <h3>Skills</h3>
       <table cellspacing="7">
         <tr>
@@ -63,7 +63,7 @@ export default function Home() {
           <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
         </tr>
       </table>
-      <div className="border-dotted border-b-8 w-20 mx-auto"></div>
+      <div className="my-hrule"></div>
       <a href="hobbies.html">Hobbies</a>
       <a href="contacts.html">Contacts</a>
     </div>
