@@ -29,3 +29,12 @@ body {
 .my-hrule {
   @apply border-dotted border-b-8 w-20 mx-auto
 }
+
+@layer base {
+  h1 {
+    @apply text-green-300 font-mono;
+  }
+  h3 {
+    @apply text-lime-200 font-sans;
+  }
+}
