@@ -18,9 +18,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      /* Wrong format for Tailwind
-      * <body className={urbanist.className}>{children}</body> 
-      */
       <body className={`${urbanist.variable} font-sans`}>{children}</body>
     </html>
   )
