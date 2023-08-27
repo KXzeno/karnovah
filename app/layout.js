@@ -1,7 +1,14 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Urbanist } from '@next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const urbanist = Urbanist({ 
+  subsets: ['latin'],
+  weight: ['100', '300'],
+  variable: '--font-urbanist',
+});
 
 export const metadata = {
   title: 'Karnovah',
@@ -11,7 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      /* Wrong format for Tailwind
+      * <body className={urbanist.className}>{children}</body> 
+      */
+      <body className={`${urbanist.variable} font-sans`}>{children}</body>
     </html>
   )
 }
