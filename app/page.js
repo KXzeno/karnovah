@@ -66,15 +66,23 @@ export default function Home() {
             <td>Tailwind CSS</td>
             <td>&#9733;&#9734;&#9734;&#9734;&#9734;</td>
           </tr>
-          { /*
           <tr>
             <td>Vim</td>
             <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+            <td>Next.js</td>
+            <td>&#9733;&#9734;&#9734;&#9734;&#9734;</td>
           </tr>
-          */ }
+          <tr>
+            <td>HTML5</td>
+            <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+            <td>JavaScript</td>
+            <td>&#9733;&#9733;&#9734;&#9734;&#9734;</td>
+          </tr>
         </table>
       </div>
+      { /*
       <p className="-translate-y-[32px] p-[1px]">Vim &#9733;&#9733;&#9733;&#9734;&#9734;</p>
+      */ }
       <div className="my-hrule"></div>
       <div className="space-x-4 text-cyan-800 underline">
         <a href="/hobbies/">Hobbies</a>
