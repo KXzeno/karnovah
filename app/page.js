@@ -1,4 +1,5 @@
 import Image from 'next/image'
+/* eslint react/no-unescaped-entities */
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
       <div className="flex items-center justify-center pr-48">
         <table className="table-auto" cellSpacing="20">
           <tr>
-            <td><img className="object-scale-down h-48 w-48 pr-4" src="/img/img-modified.png" alt="author" width="400" height="400" /></td> 
+            <td><Image className="object-scale-down h-48 w-48 pr-4" src="/img/img-modified.png" alt="author" width="400" height="400" /></td> 
             <td className="italic text-center"> <h1>Kathekon</h1>
               <p><em>Founder of <a href="https://karnovah.com/" rel="noreferrer" target="_blank" className="text-cyan-400">Karnovah</a></em></p>
               <p className="text-[11px]/[17px] text-center italic">Aspiring Web Dev</p>
@@ -80,5 +81,5 @@ export default function Home() {
         <a href="/contacts/">Contacts</a>
       </div>
     </div>
-  )
+  );
 }
