@@ -15,14 +15,16 @@ export default function Home() {
         </table>
       </div>
       <div className="my-hrule"></div>
-      <h3>Books and Courses</h3>
+      <h3>Currently reading</h3>
       <ul className="text-center">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>Shadow & Claw</li>
+        <li>Raven's Mark</li>
+        <li>Mistborn</li>
+        <li>The Stormlight Archive</li>
+        <li>The First Law Trilogy</li>
       </ul>
       <div className="my-hrule"></div>
-      <h3>Work Experience</h3>
+      <h3>Experience</h3>
       <div className="flex items-center justify-center">
         <table>
           <thead>
@@ -38,12 +40,12 @@ export default function Home() {
 
           </tfoot>
           <tr>
-            <td>2003-2023</td>
-            <td>Lead Programmer of My Self</td>
+            <td>2023</td>
+            <td className="flex justify-left">Angela Yu's Fullstack Web Development Bootcamp</td>
           </tr>
           <tr>
-            <td>2017</td>
-            <td>2017 Researcher at The Bruh</td>
+            <td>2022-Current</td>
+            <td>Karnovah, SSR Personal Website</td>
           </tr>
         </table>
       </div>
@@ -63,12 +65,15 @@ export default function Home() {
             <td>Tailwind CSS</td>
             <td>&#9733;&#9734;&#9734;&#9734;&#9734;</td>
           </tr>
+          { /*
           <tr>
             <td>Vim</td>
             <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
           </tr>
+          */ }
         </table>
       </div>
+      <p className="-translate-y-[32px] p-[1px]">Vim &#9733;&#9733;&#9733;&#9734;&#9734;</p>
       <div className="my-hrule"></div>
       <div className="space-x-4 text-cyan-800 underline">
         <a href="/hobbies/">Hobbies</a>
