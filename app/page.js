@@ -8,7 +8,7 @@ export default function Home() {
         <table className="table-auto" cellSpacing="20">
           <tr>
             <td><Image className="object-scale-down h-48 w-48 pr-4" src="/img/img-modified.png" alt="author" width="400" height="400" /></td> 
-            <td className="italic text-center"> <h1>Kathekon</h1>
+            <td className="italic text-center hover-x"> <h1>Kathekon</h1>
               <p><em>Founder of <a href="https://karnovah.com/" rel="noreferrer" target="_blank" className="text-cyan-400">Karnovah</a></em></p>
               <p className="text-[11px]/[17px] text-center italic">Aspiring Web Dev</p>
             </td>
@@ -16,7 +16,7 @@ export default function Home() {
         </table>
       </div>
       <div className="my-hrule"></div>
-      <h3>Currently reading</h3>
+      <h3 id="str-head">Currently reading</h3>
       <ul className="text-center">
         <li>Shadow & Claw</li>
         <li>Raven's Mark</li>
