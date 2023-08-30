@@ -26,13 +26,10 @@ body {
   rgb(var(--background-start-rgb));
 }
 
-/****************************CLASS SELECTORS***************************/
 
-.my-hrule {
-  @apply border-dotted border-b-8 w-20 mx-auto
-}
+/****************************FUNCTIONS AND DIRECTIVES***************************/
 
-/****************************FUNCTIONS AND DIRECTIVES FOR TAG SELECTORS***************************/
+/*******************TAG SELECTORS******************/
 
 @layer base {
   h1 {
@@ -43,3 +40,19 @@ body {
   }
 }
 
+/*******************CLASS SELECTORS******************/
+
+.my-hrule {
+  @apply border-dotted border-b-8 w-20 mx-auto
+}
+
+.hover-x {
+  @apply hover:bg-violet-600;
+}
+
+
+/******************ID SELECTORS******************/
+
+#str-head {
+  @apply text-purple-700;
+}
