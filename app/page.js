@@ -12,7 +12,7 @@ export default function Home() {
       />
       <h1 className="italic text-center hover-x">Kathekon</h1>
       <p><em>Founder of <a href="https://karnovah.com/" rel="noreferrer" target="_blank" className="text-cyan-400">Karnovah</a></em></p>
-      <p className="text-[13px]/[17px] text-center italic mb-4">Aspiring Full-Stack Dev</p>
+      <p className="text-[13px]/[17px] text-center italic mb-4">Aspiring Full-Stack <span className="text-yellow-300">Dev</span></p>
       <Image
         src="/img/cloud.png"
         alt="cloud-png"
