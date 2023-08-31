@@ -50,6 +50,13 @@ body {
   @apply hover:bg-violet-600;
 }
 
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 70/45;
+    margin: 2rem auto;
+  }
 
 /******************ID SELECTORS******************/
 
