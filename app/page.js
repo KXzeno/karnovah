@@ -19,13 +19,17 @@ export default function Home() {
         width="150"
         height="48"
       />
-      <Image 
-        src="/img/mountain.png"
-        alt="mountain-png" 
-        width="598" 
-        height="357"
-        priority
-      />
+      <div className="imageWrapper">
+        <Image 
+          src="/img/mountain.png"
+          alt="mountain-png" 
+          // width="598" 
+          // height="357"
+          sizes="(max-width: 768px) 100vw, 700px"
+          fill
+          priority
+        />
+      </div>
       <div className="h-[200px] w-[200px] bg-green-200 mx-auto">
       </div>
       <div className="h-[200px] w-[200px] bg-red-200 mx-auto">
