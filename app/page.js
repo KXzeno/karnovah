@@ -30,10 +30,9 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="h-[200px] w-[200px] bg-green-200 mx-auto">
+      <div className="h-[200px] w-[200px] mx-auto">
       </div>
-      <div className="h-[200px] w-[200px] bg-red-200 mx-auto">
-        w 
+      <div className="h-[200px] w-[200px] mx-auto">
       </div>
     </div>
   );
