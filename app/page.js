@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <div className="bg-slate-900 divide-slate-500 text-center mx-auto min-h-screen">
+    <div className="div-main">
       <Image
         src="/img/cloud.png"
         alt="cloud-png"
