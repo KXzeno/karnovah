@@ -46,6 +46,14 @@ body {
   @apply bg-slate-900 divide-slate-500 text-center mx-auto min-h-screen
 }
 
+.top-cloud {
+@apply absolute left-[300px] 
+}
+
+.bot-cloud {
+@apply absolute right-[300px] 
+}
+
 .my-hrule {
   @apply border-dotted border-b-8 w-20 mx-auto
 }
