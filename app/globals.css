@@ -33,7 +33,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-green-300 text-3xl font-mono;
+    @apply text-green-300 text-3xl font-mono mx-auto;
   }
   h3 {
     @apply text-lime-200 font-sans;
@@ -42,12 +42,16 @@ body {
 
 /*******************CLASS SELECTORS******************/
 
+.div-main {
+  @apply bg-slate-900 divide-slate-500 text-center mx-auto min-h-screen
+}
+
 .my-hrule {
   @apply border-dotted border-b-8 w-20 mx-auto
 }
 
 .hover-x {
-  @apply hover:bg-violet-600;
+  @apply hover:bg-violet-600 mx-auto;
 }
 
 .imageWrapper {
