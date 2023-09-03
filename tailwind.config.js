@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-urbanist)'],
         inter: ['var(--font-inter)'],
+        cinzel: ['var(--font-cinzel)'],
       },
     },
   },
