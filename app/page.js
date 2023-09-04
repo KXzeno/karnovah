@@ -68,7 +68,7 @@ export default function Home() {
           </div>
           <div className="skill-row">
             <Image
-              className="mx-auto max-w-none aspect-square rounded-full"
+              className="mx-auto aspect-square rounded-full"
               src="/img/desk.gif"
               alt="books-gif"
               width="300"
