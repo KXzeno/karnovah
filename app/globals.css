@@ -35,15 +35,27 @@ body {
   h1 {
     @apply text-green-300 text-3xl font-mono mx-auto;
   }
+  h2 {
+    @apply text-red-500;
+  }
   h3 {
     @apply text-lime-200 font-sans;
+  }
+  a {
+    @apply text-cyan-300 underline
   }
 }
 
 /*******************CLASS SELECTORS******************/
 
+@layer components {
+  .btn-primary {
+    @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+}
+
 .div-main {
-  @apply bg-slate-900 divide-slate-500 text-center mx-auto min-h-screen
+  @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen
 }
 
 .top-cloud {
@@ -55,7 +67,7 @@ body {
 }
 
 .my-hrule {
-  @apply border-dotted border-b-8 w-20 mx-auto
+  @apply border-dotted border-b-8 w-20 mx-auto py-4
 }
 
 .hover-x {
@@ -68,6 +80,10 @@ body {
   max-width: 700px;
   aspect-ratio: 70/45;
   margin: 2rem auto;
+}
+
+.skills {
+  @apply pt-6
 }
 
 /******************ID SELECTORS******************/
