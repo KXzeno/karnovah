@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div className="div-main">
-      <div className="bg-slate-950">
+      <div className="bg-slate-950 py-4">
         <div className="flex justify-center relative">
           <Image
             className="top-cloud"
@@ -64,7 +64,7 @@ export default function Home() {
               height="300"
             />
             <h3>Front-end Development</h3>
-            <p>At 17, I manifested a passion for having stronger control over document processing and learned markup language with LaTeX. Over time, the passion's scope extended to functional, object oriented, machine, and scripting languages. </p>
+            <p>At 17, I manifested a passion for having stronger control over document processing and learned markup language with LaTeX. Over time, the passion's scope extended to functional, object oriented, machine, and scripting languages.</p>
           </div>
           <div className="skill-row">
             <Image
