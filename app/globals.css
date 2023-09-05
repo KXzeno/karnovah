@@ -33,10 +33,10 @@ body {
 
 @layer base {
   h1 {
-    @apply text-green-300 text-3xl font-mono mx-auto;
+    @apply text-green-300 text-3xl font-mono mx-auto text-[3.125rem];
   }
   h2 {
-    @apply text-red-500;
+    @apply text-red-500 text-[2.5rem];
   }
   h3 {
     @apply text-lime-200 font-sans;
@@ -59,11 +59,9 @@ body {
 }
 
 .top-cloud {
-  @apply absolute left-[300px] 
 }
 
 .bot-cloud {
-  @apply absolute right-[300px] 
 }
 
 .my-hrule {
