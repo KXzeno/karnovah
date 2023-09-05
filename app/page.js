@@ -70,11 +70,9 @@ export default function Home() {
             <Image
               className="mx-auto aspect-square rounded-full"
               src="/img/desk.gif"
-              alt="books-gif"
+              alt="book-gif"
               width="300"
               height="300"
-              sizes="(max-width: 768px) 100vw, 700px"
-              priority
             />
             <h3>Writing <span className="italic">and Reading</span></h3>
             <span className="font-mono">"The most powerful person in the world is the story teller," </span>
