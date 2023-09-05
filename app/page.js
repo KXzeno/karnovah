@@ -5,30 +5,34 @@ export default function Home() {
   return (
     <div className="div-main">
       <div className="bg-slate-950 py-4">
-        <div className="flex justify-center relative">
-          <Image
-            className="top-cloud"
-            src="/img/cloud.png"
-            alt="cloud-png"
-            width="150"
-            height="48"
-          />
+        <div className="container absolute w-72 h-24 left-[3.75rem]">
+          <div className="flex justify-center relative w-[12.5rem] -right-[5rem] mx-auto">
+            <Image
+              className=""
+              src="/img/cloud.png"
+              alt="cloud-png"
+              width="150"
+              height="48"
+            />
+          </div>
         </div>
-        <div>
-          <h1 className="italic text-center hover-x mt-20">Kathekon</h1>
+        <div className="my-8">
+          <h1 className="italic text-center hover-x mt-20 mb-4">Kathekon</h1>
           <p><em>Founder of <a href="https://karnovah.com/" rel="noreferrer" target="_blank" className="text-cyan-400">Karnovah</a></em></p>
           <p className="text-[13px]/[17px] text-center italic mb-4">Aspiring Full-Stack <span className="text-yellow-300">Dev</span></p>
         </div>
-        <div className="flex justify-center relative">
-          <Image
-            className="bot-cloud"
-            src="/img/cloud.png"
-            alt="cloud-png"
-            width="150"
-            height="48"
-          />
+        <div className="container absolute w-72 h-24 right-[3.75rem]">
+          <div className="flex justify-center relative w-[12.5rem] -left-[5rem] mx-auto">
+            <Image
+              className=""
+              src="/img/cloud.png"
+              alt="cloud-png"
+              width="150"
+              height="48"
+            />
+          </div>
         </div>
-        <div className="imageWrapper">
+        <div className="imageWrapper absolute top-12">
           <Image 
             src="/img/mountain.png"
             alt="mountain-png" 
