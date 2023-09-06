@@ -81,6 +81,10 @@ body {
   margin: 2rem auto;
 }
 
+.footer-link {
+  @apply px-[0.17rem];
+}
+
 .skills {
   @apply pt-6
 }

@@ -67,7 +67,7 @@ export default function Home() {
               width="272"
               height="272"
             />
-            <div className="relative top-14">
+            <div className="md:relative top-14">
               <h3 className="my-4 md:relative right-[3.7rem]">Front-end Development</h3>
               <p className="md:relative right-[3.7rem]">At 17, I manifested a passion for having stronger control over document processing and learned markup language with LaTeX. Over time, the passion's scope extended to functional, object oriented, machine, and scripting languages.</p>
             </div>
@@ -81,7 +81,7 @@ export default function Home() {
               width="272"
               height="272"
             />
-            <div className="relative top-14 left-2 md:text-right">
+            <div className="md:relative top-14 left-2 md:text-right">
               <h3 className="my-4 md:relative right-[3.7rem]">Writing <span className="italic">and Reading</span></h3>
               <span className="font-mono md:relative right-[3.7rem]">"The most powerful person in the world is the story teller," </span>
               <span className="font-urbanist md:relative right-[3.7rem]">Steve Jobs once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bot-ctr space-x-2">
+      <div className="bot-ctr text-center mx-auto">
         <div className="my-hrule"></div>
         <div className="contact-me pt-8">
           <button className="btn-primary"
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
         <a className="footer-link" href="https://karnovah.netlify.app/">Old</a>
-        <p className="pr-4">© K X.</p>
+        <p className="">© K X</p>
       </div>
     </div>
   );
