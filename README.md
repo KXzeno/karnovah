@@ -10,8 +10,7 @@ alt="Deploy status">
 alt="GitHub issues">
 
 
-### Conversion of project Karnovah from a static Hugo site to a dynamically rendered, Next.Js
-Project made alongside of fullstack web development mentorship
+### Conversion of project Karnovah from a static Hugo site to a dynamically rendered, Next.Js project made alongside of fullstack web development mentorship
 
 ## Technologies, services, and other resources used
 * [<font size="5">Git</font>](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
