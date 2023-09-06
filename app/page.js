@@ -93,10 +93,12 @@ export default function Home() {
       <div className="bot-ctr text-center mx-auto">
         <div className="my-hrule"></div>
         <div className="contact-me pt-8">
-          <button className="btn-primary"
-            href="mailto:name@email.com">
+          { /* <button className="btn-primary"
+            href="mailto:kaszworkx@outlook.com">
             Contact Me
           </button>
+              */ }
+          <a className="btn-primary appearance-none no-underline" href="mailto:kaszworkx@outlook.com">Contact Me</a>
         </div>
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
         <a className="footer-link" href="https://karnovah.netlify.app/">Old</a>
