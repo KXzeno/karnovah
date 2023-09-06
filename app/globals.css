@@ -42,7 +42,7 @@ body {
     @apply text-lime-200 font-sans;
   }
   a {
-    @apply text-cyan-300 underline
+    @apply text-cyan-300 underline;
   }
 }
 
