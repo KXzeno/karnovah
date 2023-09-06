@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-          <div className="skill-row absolute">
+          <div className="skill-row">
             <Image
               className="md:relative md:float-right mx-auto aspect-square rounded-full mb-8"
               src="/img/desk.gif"
@@ -81,7 +81,7 @@ export default function Home() {
               width="272"
               height="272"
             />
-            <div className="relative top-14 left-2 text-right">
+            <div className="relative top-14 left-2 md:text-right">
               <h3 className="my-4 md:relative right-[3.7rem]">Writing <span className="italic">and Reading</span></h3>
               <span className="font-mono md:relative right-[3.7rem]">"The most powerful person in the world is the story teller," </span>
               <span className="font-urbanist md:relative right-[3.7rem]">Steve Jobs once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
