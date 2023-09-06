@@ -44,7 +44,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="mid-ctr">
+      <div className="mid-ctr mt-24 md:mb-48">
         <div className="profile text-center relative">
           <Image
             className="mx-auto"
@@ -56,33 +56,41 @@ export default function Home() {
           <h2 className="text-yellow-300">Sup,</h2>
           <p>Aspiring Full-Stack Developer and Dark Fantasist with the objective to revolutionize structures through code and to instill necessary values through storytelling.</p>
         </div>
-        <div className="my-hrule"></div>
+        <div className="my-hrule my-12"></div>
         <div className="skills">
-          <h2>My Skills.</h2>
-          <div className="skill-row">
+          <h2 className="relative top-16 pb-7">My Skills.</h2>
+          <div className="skill-row md:pb-[10rem]">
             <Image
-              className="mx-auto rounded-full"
+              className="md:relative md:float-left right-[7rem] mx-auto rounded-full mb-8"
               src="/img/coding.gif"
               alt="programming-gif"
-              width="300"
-              height="300"
+              width="272"
+              height="272"
             />
-            <h3>Front-end Development</h3>
-            <p>At 17, I manifested a passion for having stronger control over document processing and learned markup language with LaTeX. Over time, the passion's scope extended to functional, object oriented, machine, and scripting languages.</p>
+            <div className="relative top-14">
+              <h3 className="my-4 md:relative right-[3.7rem]">Front-end Development</h3>
+              <p className="md:relative right-[3.7rem]">At 17, I manifested a passion for having stronger control over document processing and learned markup language with LaTeX. Over time, the passion's scope extended to functional, object oriented, machine, and scripting languages.</p>
+            </div>
           </div>
-          <div className="skill-row">
+          <div className="relative">
+          <div className="skill-row absolute">
             <Image
-              className="mx-auto aspect-square rounded-full"
+              className="md:relative md:float-right mx-auto aspect-square rounded-full mb-8"
               src="/img/desk.gif"
               alt="book-gif"
-              width="300"
-              height="300"
+              width="272"
+              height="272"
             />
-            <h3>Writing <span className="italic">and Reading</span></h3>
-            <span className="font-mono">"The most powerful person in the world is the story teller," </span>
-            <span className="font-urbanist">Steve Jobs once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
+            <div className="relative top-14 left-2 text-right">
+              <h3 className="my-4 md:relative right-[3.7rem]">Writing <span className="italic">and Reading</span></h3>
+              <span className="font-mono md:relative right-[3.7rem]">"The most powerful person in the world is the story teller," </span>
+              <span className="font-urbanist md:relative right-[3.7rem]">Steve Jobs once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
+          </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="bot-ctr space-x-2">
         <div className="my-hrule"></div>
         <div className="contact-me pt-8">
           <button className="btn-primary"
@@ -90,8 +98,6 @@ export default function Home() {
             Contact Me
           </button>
         </div>
-      </div>
-      <div className="bot-ctr space-x-4 relative">
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
         <a className="footer-link" href="https://karnovah.netlify.app/">Old</a>
         <p className="pr-4">© K X.</p>
