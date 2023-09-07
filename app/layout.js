@@ -3,7 +3,7 @@ import './globals.css';
 import { Urbanist, Inter, Cinzel } from 'next/font/google';
 import fs from 'fs';
 
-const imagePath = 'app/favicon.ico';
+const imagePath = 'public/img/author.png';
 const imageBuffer = fs.readFileSync(imagePath);
 const imageBase64 = imageBuffer.toString('base64');
 const imageDataUrl = `data:image/jpeg;base64,${imageBase64}`;
