@@ -19,7 +19,7 @@ const cinzel = Cinzel({
 
 export const metadata = {
   title: 'Karnovah',
-  description: 'Personal Business & Blog Site Under Development',
+  description: 'Personal Business and Blog Site Under Development',
   openGraph: {
     images: 'https://i.postimg.cc/FKm800ZK/test.png'
   }
