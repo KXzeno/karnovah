@@ -6,7 +6,7 @@ import fs from 'fs';
 const imagePath = 'public/img/author.png';
 const imageBuffer = fs.readFileSync(imagePath);
 const imageBase64 = imageBuffer.toString('base64');
-const imageDataUrl = `data:image/jpeg;base64,${imageBase64}`;
+const imageDataUrl = `data:image/png;base64,${imageBase64}`;
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
 
