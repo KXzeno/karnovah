@@ -82,7 +82,7 @@ body {
 }
 
 .footer-link {
-  @apply px-[0.17rem];
+  @apply px-[0.17rem] text-[#41ffd7];
 }
 
 .skills {
@@ -90,7 +90,7 @@ body {
 }
 
 .bot-ctr {
-  @apply text-center;
+  @apply text-center bg-[#7a89ff];
 }
 
 /******************ID SELECTORS******************/
