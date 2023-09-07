@@ -102,7 +102,7 @@ export default function Home() {
           */ }
         </div>
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
-        <a className="footer-link" href="https://karnovah.com/">Old</a>
+        <a className="footer-link" href="https://kaszworkx.netlify.app/">Old</a>
         <p className="">© K X</p>
       </div>
     </div>
