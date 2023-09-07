@@ -76,8 +76,8 @@ export default function Home() {
           <div className="skill-row">
             <Image
               className="md:relative md:float-right mx-auto aspect-square rounded-full mb-8"
-              src="/img/desk.gif"
-              alt="book-gif"
+              src="/img/reading-book.gif"
+              alt="reading-book-gif"
               width="272"
               height="272"
             />
@@ -101,7 +101,7 @@ export default function Home() {
           <a className="btn-primary appearance-none no-underline" href="mailto:kaszworkx@outlook.com">Contact Me</a>
         </div>
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
-        <a className="footer-link" href="https://karnovah.netlify.app/">Old</a>
+        <a className="footer-link" href="https://karnovah.com/">Old</a>
         <p className="">© K X</p>
       </div>
     </div>
