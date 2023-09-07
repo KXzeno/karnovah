@@ -82,7 +82,7 @@ body {
 }
 
 .footer-link {
-  @apply px-[0.17rem] text-[#41ffd7];
+  @apply px-[0.71rem] text-[#41ffd7];
 }
 
 .skills {
