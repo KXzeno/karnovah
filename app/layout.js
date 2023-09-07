@@ -21,7 +21,7 @@ export const metadata = {
   title: 'Karnovah',
   description: 'Personal Business & Blog Site Under Development',
   openGraph: {
-    images: 'https://i.postimg.cc/FKm800ZK/test.png'
+    images: 'https://i.postimg.cc/bwm0ZQJb/kx.png'
   },
 }
 
