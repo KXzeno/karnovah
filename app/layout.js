@@ -22,7 +22,7 @@ export const metadata = {
   description: 'Personal Business & Blog Site Under Development',
   openGraph: {
     images: 'https://i.postimg.cc/FKm800ZK/test.png'
-  }
+  },
 }
 
 export default function RootLayout({ children }) {
