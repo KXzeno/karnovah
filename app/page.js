@@ -73,32 +73,33 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-          <div className="skill-row">
-            <Image
-              className="md:relative md:float-right mx-auto aspect-square rounded-full mb-8"
-              src="/img/reading-book.gif"
-              alt="reading-book-gif"
-              width="272"
-              height="272"
-            />
-            <div className="md:relative top-14 left-2 md:text-right">
-              <h3 className="my-4 md:relative right-[3.7rem]">Writing <span className="italic">and Reading</span></h3>
-              <span className="font-mono md:relative right-[3.7rem]">"The most powerful person in the world is the story teller," </span>
-              <span className="font-urbanist md:relative right-[3.7rem]">a visionary once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
-          </div>
+            <div className="skill-row">
+              <Image
+                className="md:relative md:float-right mx-auto aspect-square rounded-full mb-8"
+                src="/img/reading-book.gif"
+                alt="reading-book-gif"
+                width="272"
+                height="272"
+              />
+              <div className="md:relative top-14 left-2 md:text-right">
+                <h3 className="my-4 md:relative right-[3.7rem]">Writing <span className="italic">and Reading</span></h3>
+                <span className="font-mono md:relative right-[3.7rem]">"The most powerful person in the world is the story teller," </span>
+                <span className="font-urbanist md:relative right-[3.7rem]">a visionary once said. I absorb literary worlds which offer models of realities that are conducive to a healthy outlook of the real; I write similar worlds with similar effects. </span>
+              </div>
             </div>
           </div>
         </div>
+        <div className="md:relative max-w-max top-24 mx-auto">
+          <a className="btn-primary appearance-none no-underline mb-8 bottom-12 relative md:top-0" href="mailto:kaszworkx@outlook.com">Contact Me</a>
+        </div>
       </div>
       <div className="bot-ctr text-center mx-auto">
-        <div className="my-hrule"></div>
-        <div className="contact-me pt-8">
+        <div className="contact-me pt-4">
           { /* <button className="btn-primary"
             href="mailto:kaszworkx@outlook.com">
             Contact Me
           </button>
-              */ }
-          <a className="btn-primary appearance-none no-underline" href="mailto:kaszworkx@outlook.com">Contact Me</a>
+          */ }
         </div>
         <a className="footer-link" href="https://github.com/kxzeno">GitHub</a>
         <a className="footer-link" href="https://karnovah.com/">Old</a>
