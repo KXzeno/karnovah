@@ -1,6 +1,14 @@
-import Image from 'next/image'
+"use client"
+import React, { useState } from 'react'
+
+import Image from 'next/image';
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <div className="rmain">
 
@@ -27,7 +35,13 @@ export default function Home() {
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               { /*  Mobile menu button */ }
-              <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <button 
+                type="button" 
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" 
+                aria-controls="mobile-menu"
+                aria-expanded="isMobileMenuOpen"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Toggle the mobile menu state
+              >
                 <span className="absolute -inset-0.5"></span>
                 <span className="sr-only">Open main menu</span>
                 { /* 
@@ -115,7 +129,7 @@ export default function Home() {
         </div>
 
         { /*  Mobile menu, show/hide based on menu state.  */ }
-        <div className="sm:hidden" id="mobile-menu">
+        <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
             { /*  Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white"  */ }
             <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">News</a>
