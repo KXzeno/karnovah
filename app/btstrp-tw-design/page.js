@@ -6,6 +6,25 @@ export default function Home() {
 
       { /* Nav Bar */ }
 
+      <nav className="relative flex flex-wrap items-center content-between py-3 px-4  text-white bg-gray-900">
+        <a className="inline-block pt-1 pb-1 mr-4 text-lg whitespace-no-wrap" href="">tindog</a>
+        <button className="py-1 px-2 text-md leading-normal bg-transparent border border-transparent rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="px-5 py-1 border border-gray-600 rounded"></span>
+        </button>
+        <div className="hidden flex-grow items-center" id="navbarTogglerDemo02">
+          <ul className="flex flex-wrap list-reset pl-0 mb-0 ms-auto">
+            <li className="">
+              <a className="inline-block py-2 px-4 no-underline" href="Contact"></a>
+            </li>
+            <li className="">
+              <a className="inline-block py-2 px-4 no-underline" href="Pricing"></a>
+            </li>
+            <li className="">
+              <a className="inline-block py-2 px-4 no-underline" href="">Download</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       { /* Title */ }
 
@@ -41,7 +60,7 @@ export default function Home() {
 
       </div>
 
-      { /* Testimonials */ }
+      { /* testimonials */ }
 
       <div className="" id="testimonials">
 
@@ -58,7 +77,7 @@ export default function Home() {
           <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
           <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
           <em>Beverly, Illinois</em> 
-        */ } 
+          */ } 
 
       </div>
 
@@ -94,7 +113,7 @@ export default function Home() {
       { /* Pricing */ }
 
       <div className="" id="pricing">
-        
+
         <h2>A Plan for Every Dog's Needs</h2>
         <p>Simple and affordable price plans for you and your dog</p>
 
@@ -126,7 +145,7 @@ export default function Home() {
       { /* Call to Action */ }
 
       <div className="" id="cta">
-        
+
         <h3>Find the True Love of Your Dog's Life Today.</h3>
         <button type="button">Download</button>
         <button type="button">Download</button>
@@ -139,7 +158,7 @@ export default function Home() {
 
         <p>© Copyright TinDog</p>
 
-        </footer>
+      </footer>
 
     </div>
   );
