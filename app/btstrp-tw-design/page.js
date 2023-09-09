@@ -6,25 +6,19 @@ export default function Home() {
 
       { /* Nav Bar */ }
 
-      <nav className="relative flex flex-wrap items-center content-between py-3 px-4  text-white bg-gray-900">
-        <a className="inline-block pt-1 pb-1 mr-4 text-lg whitespace-no-wrap" href="">tindog</a>
-        <button className="py-1 px-2 text-md leading-normal bg-transparent border border-transparent rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="px-5 py-1 border border-gray-600 rounded"></span>
-        </button>
-        <div className="hidden flex-grow items-center" id="navbarTogglerDemo02">
-          <ul className="flex flex-wrap list-reset pl-0 mb-0 ms-auto">
-            <li className="">
-              <a className="inline-block py-2 px-4 no-underline" href="Contact"></a>
-            </li>
-            <li className="">
-              <a className="inline-block py-2 px-4 no-underline" href="Pricing"></a>
-            </li>
-            <li className="">
-              <a className="inline-block py-2 px-4 no-underline" href="">Download</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div className="flex justify-center w-5/6 mx-auto">
+        <p className="inline-block absolute top-2 left-[1%]">Karnovah</p>
+        <nav className="flex sm:justify-center space-x-4">
+          {[
+            ['Home', '/dashboard'],
+            ['Team', '/team'],
+            ['Projects', '/projects'],
+            ['Reports', '/reports'],
+          ].map(([title, url]) => (
+            <a href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
+          ))}
+        </nav>
+      </div>
 
       { /* Title */ }
 
