@@ -7,8 +7,8 @@ export default function Home() {
       { /* Nav Bar */ }
 
       <div className="flex justify-center w-5/6 mx-auto">
-        <p className="inline-block absolute top-2 left-[1%]">Karnovah</p>
-        <nav className="flex sm:justify-center space-x-4">
+        <p className="inline-block absolute top-2 left-[1%] max-[1000px]:text-[0.8rem]">Karnovah</p>
+        <nav className="flex sm:justify-center space-x-4 max-[1000px]:text-[0.8rem]">
           {[
             ['Home', '/dashboard'],
             ['Team', '/team'],
