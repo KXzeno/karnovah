@@ -98,3 +98,7 @@ body {
 #str-head {
   @apply text-purple-700;
 }
+
+#title {
+  @apply bg-[#FF4C68];
+}
