@@ -1,0 +1,13 @@
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-[#EEEDED];
+}
+
+@layer components {
+  #title {
+    @apply bg-[#525FE1];
+  }
+}
+
