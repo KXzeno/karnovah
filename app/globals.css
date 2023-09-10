@@ -52,45 +52,38 @@ body {
   .btn-primary {
     @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
   }
+  .div-main {
+    @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen;
+  }
+  .my-hrule {
+    @apply border-dotted border-b-8 w-20 mx-auto py-4 border-cyan-100;
+  }
+  .hover-x {
+    @apply hover:bg-violet-600 mx-auto;
+  }
+  .footer-link {
+    @apply px-[0.71rem] text-[#41ffd7];
+  }
+  .skills {
+    @apply pt-6
+  }
+  .bot-ctr {
+    @apply text-center bg-[#7a89ff];
+  }
+  .skill-row {
+    @apply md:w-3/4 w-5/6 mx-auto my-[6.25rem] md:text-left md:leading-[1.7rem] leading-loose md:relative left-[3rem];
+  }
 }
 
-.div-main {
-  @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen;
-}
+@layer utilities {
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 70/45;
+    margin: 2rem auto;
+  }
 
-.skills {
-}
-
-.skill-row {
-  @apply md:w-3/4 w-5/6 mx-auto my-[6.25rem] md:text-left md:leading-[1.7rem] leading-loose md:relative left-[3rem];
-}
-
-.my-hrule {
-  @apply border-dotted border-b-8 w-20 mx-auto py-4 border-cyan-100;
-}
-
-.hover-x {
-  @apply hover:bg-violet-600 mx-auto;
-}
-
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  aspect-ratio: 70/45;
-  margin: 2rem auto;
-}
-
-.footer-link {
-  @apply px-[0.71rem] text-[#41ffd7];
-}
-
-.skills {
-  @apply pt-6
-}
-
-.bot-ctr {
-  @apply text-center bg-[#7a89ff];
 }
 
 /******************ID SELECTORS******************/
@@ -103,5 +96,3 @@ body {
   @apply bg-[#FF4C68];
 }
 
-@layer utilities {
-}
