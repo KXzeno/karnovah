@@ -102,3 +102,6 @@ body {
 #title {
   @apply bg-[#FF4C68];
 }
+
+@layer utilities {
+}
