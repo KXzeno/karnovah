@@ -171,14 +171,15 @@ export default function Home() {
 
       { /* Title */ }
 
-      <div className="" id="title">
+      <div className="lg:columns-2" id="title">
 
-        <div>
-          <h1>Meet new and interesting dogs nearby.</h1>
+        <div className="">
+          <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold">Need a professional web developer to rebuild your user experience?.</h1>
           <button type="button">Download</button>
           <button type="button">Download</button>
         </div>
-        <div>
+
+        <div className="">
           <Image
             className=""
             src="/img/iphone6.png"
