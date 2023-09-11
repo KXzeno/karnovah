@@ -7,7 +7,7 @@ h1 {
 
 @layer components {
   #title {
-    @apply bg-[#525FE1];
+    @apply bg-[#252B48];
   }
 }
 
