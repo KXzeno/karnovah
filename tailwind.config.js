@@ -17,6 +17,9 @@ module.exports = {
         inter: ['var(--font-inter)'],
         cinzel: ['var(--font-cinzel)'],
       },
+      container: {
+        padding: "0.3rem 0.15rem",
+      },
     },
   },
   plugins: [
