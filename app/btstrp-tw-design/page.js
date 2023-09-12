@@ -179,7 +179,7 @@ export default function Home() {
 
             <div className="">
               <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold">Need a professional web developer to rebuild your user experience?</h1>
-              <button className="rounded-full pr-2" type="button">Download</button>
+              <button className="rounded-full px-2 py-[0.15625rem] bg-slate-950 mr-2" type="button">Download</button>
               <button className="rounded-full border-[0.15625rem] border-neutral-300 px-2"type="button">Download</button>
             </div>
 
