@@ -179,8 +179,8 @@ export default function Home() {
 
             <div className="">
               <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold">Need a professional web developer to rebuild your user experience?</h1>
-              <button className="pr-2" type="button">Download</button>
-              <button type="button">Download</button>
+              <button className="rounded-full pr-2" type="button">Download</button>
+              <button className="rounded-full border-[0.15625rem] border-neutral-300 px-2"type="button">Download</button>
             </div>
 
             <div className="">
