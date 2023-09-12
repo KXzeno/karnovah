@@ -43,7 +43,7 @@ export default function Home() {
 
       <div id="title">
 
-        <nav className="bg-violet-200">
+        <nav className="bg-[#352F44]">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 md:max-w-max lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -177,7 +177,7 @@ export default function Home() {
 
           <div className="lg:columns-2" id="title">
 
-            <div className="">
+            <div className="relative">
               <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold">Need a professional web developer to rebuild your user experience?</h1>
               <button className="rounded-full px-2 py-[0.15625rem] bg-slate-950 mr-2" type="button">Download</button>
               <button className="rounded-full border-[0.15625rem] border-neutral-300 px-2"type="button">Download</button>
@@ -186,9 +186,9 @@ export default function Home() {
             <div className="">
               <Image
                 className=""
-                src="/img/iphone6.png"
-                width="400"
-                height="807"
+                src="/img/btstrp-tw.jpg"
+                width="1000"
+                height="1200"
                 alt="iphone-mockup"
               />
             </div>
