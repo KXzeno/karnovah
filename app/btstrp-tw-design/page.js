@@ -201,117 +201,141 @@ export default function Home() {
 
       <div className="bg-[#2B2730] min-h-screen">
 
-        { /* Features */ }
+        <div className="container">
 
-        <div className="" id="features">
+          { /* Features */ }
 
-          <h3>Easy to use.</h3>
-          <p>So easy to use, even your dog could do it.</p>
+          <div className="" id="features">
 
-          <h3>Guaranteed to work.</h3>
-          <p>Find the love of your dog's life or your money back.</p>
+            <h3>Easy to use.</h3>
+            <p>So easy to use, even your dog could do it.</p>
+
+            <h3>Guaranteed to work.</h3>
+            <p>Find the love of your dog's life or your money back.</p>
+
+          </div>
 
         </div>
 
         { /* Testimonials */ }
 
-        <div className="" id="testimonials">
+        <div className="container">
 
-          <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
-          <Image 
-            className=""
-            src="/img/dog-img.jpg" alt="dog-profile"
-            width="300"
-            height="300"
-          />
-          <em>Pebbles, New York</em>
+          <div className="" id="testimonials">
 
-          { /* 
+            <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+            <Image 
+              className=""
+              src="/img/dog-img.jpg" alt="dog-profile"
+              width="300"
+              height="300"
+            />
+            <em>Pebbles, New York</em>
+
+            { /* 
           <h2 className="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
           <img className="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
           <em>Beverly, Illinois</em> 
           */ } 
 
+          </div>
+
         </div>
 
         { /* Press */ }
 
-        <div className="" id="press">
-          <Image 
-            src="/img/techcrunch.png"
-            alt="tc-logo"
-            width="300"
-            height="53"
-          />
-          <Image 
-            src="/img/tnw.png"
-            alt="tnw-logo"
-            width="300"
-            height="127"
-          />
-          <Image 
-            src="/img/bizinsider.png"
-            alt="biz-insider-logo"
-            width="300"
-            height="52"
-          />
-          <Image 
-            src="/img/mashable.png"
-            alt="mashable-logo"
-            width="300"
-            height="51"
-          />
+        <div className="container">
+
+          <div className="" id="press">
+            <Image 
+              src="/img/techcrunch.png"
+              alt="tc-logo"
+              width="300"
+              height="53"
+            />
+            <Image 
+              src="/img/tnw.png"
+              alt="tnw-logo"
+              width="300"
+              height="127"
+            />
+            <Image 
+              src="/img/bizinsider.png"
+              alt="biz-insider-logo"
+              width="300"
+              height="52"
+            />
+            <Image 
+              src="/img/mashable.png"
+              alt="mashable-logo"
+              width="300"
+              height="51"
+            />
+          </div>
+
         </div>
 
         { /* Pricing */ }
 
-        <div className="" id="pricing">
+        <div className="container">
 
-          <h2>A Plan for Every Dog's Needs</h2>
-          <p>Simple and affordable price plans for you and your dog</p>
+          <div className="" id="pricing">
+
+            <h2>A Plan for Every Dog's Needs</h2>
+            <p>Simple and affordable price plans for you and your dog</p>
 
 
-          <h3>Chihuahua</h3>
-          <h2>Free</h2>
-          <p>5 Matches Per Day</p>
-          <p>10 Messages Per Day</p>
-          <p>Unlimited App Usage</p>
-          <button type="button">Sign Up</button>
+            <h3>Chihuahua</h3>
+            <h2>Free</h2>
+            <p>5 Matches Per Day</p>
+            <p>10 Messages Per Day</p>
+            <p>Unlimited App Usage</p>
+            <button type="button">Sign Up</button>
 
-          <h3>Labrador</h3>
-          <h2>$49 / mo</h2>
-          <p>Unlimited Matches</p>
-          <p>Unlimited Messages</p>
-          <p>Unlimited App Usage</p>
-          <button type="button">Sign Up</button>
+            <h3>Labrador</h3>
+            <h2>$49 / mo</h2>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <button type="button">Sign Up</button>
 
-          <h3>Mastiff</h3>
-          <h2>$99 / mo</h2>
-          <p>Priority Listing</p>
-          <p>Unlimited Matches</p>
-          <p>Unlimited Messages</p>
-          <p>Unlimited App Usage</p>
-          <button type="button">Sign Up</button>
+            <h3>Mastiff</h3>
+            <h2>$99 / mo</h2>
+            <p>Priority Listing</p>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <button type="button">Sign Up</button>
+
+          </div>
 
         </div>
 
         { /* Call to Action */ }
 
-        <div className="" id="cta">
+        <div className="container">
 
-          <h3>Find the True Love of Your Dog's Life Today.</h3>
-          <button type="button">Download</button>
-          <button type="button">Download</button>
+          <div className="" id="cta">
+
+            <h3>Find the True Love of Your Dog's Life Today.</h3>
+            <button type="button">Download</button>
+            <button type="button">Download</button>
+
+          </div>
 
         </div>
 
         { /* Footer */ }
 
-        <footer id="footer">
+        <div className="container">
 
-          <p>© Copyright TinDog</p>
+          <footer id="footer">
 
-        </footer>
+            <p>© Copyright TinDog</p>
+
+          </footer>
+
+        </div>
 
       </div>
 
