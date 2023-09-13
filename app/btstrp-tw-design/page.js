@@ -179,9 +179,9 @@ export default function Home() {
 
             <div className="relative">
               <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold max-md:text-[2rem] max-md:text-center">Need a professional web developer to rebuild your user experience?</h1>
-              <div className="max-md:flex max-md:justify-center">
-                <button className="rounded-full px-2 py-[0.15625rem] bg-slate-950 mr-2 text-[1.3rem] max-md:self-center" type="button">Download</button>
-                <button className="rounded-full border-[0.15625rem] border-neutral-300 px-2 text-[1.3rem] max-lg:my-2"type="button">Download</button>
+              <div className="max-md:flex max-md:justify-center mb-2">
+                <button className="rounded-full px-2 py-[0.15625rem] bg-slate-950 mr-2 text-[1.3rem] max-md:self-center w-24" type="button">Works</button>
+                <button className="rounded-full border-[0.15625rem] border-neutral-300 px-2 text-[1.3rem] max-lg:my-2 w-24" type="button">Pricing</button>
               </div>
             </div>
 
