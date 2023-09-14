@@ -16,6 +16,7 @@ module.exports = {
         sans: ['var(--font-urbanist)'],
         inter: ['var(--font-inter)'],
         cinzel: ['var(--font-cinzel)'],
+        diphylleia: ['var(--font-diphylleia)'],
       },
       container: {
         padding: "0.3rem 0.15rem",

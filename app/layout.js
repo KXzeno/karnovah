@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import { Urbanist, Inter, Cinzel } from 'next/font/google'
+import { Urbanist, Inter, Cinzel, Diphylleia } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
 
@@ -15,6 +15,12 @@ const cinzel = Cinzel({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-cinzel',
+});
+
+const diphylleia = Diphylleia({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-diphylleia',
 });
 
 export const metadata = {
@@ -35,7 +41,7 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
       </Head>
-      <body className={`${cinzel.variable} ${inter.variable} ${urbanist.variable} font-sans`}>{children}</body>
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} font-sans`}>{children}</body>
     </html>
   )
 }
