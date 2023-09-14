@@ -41,9 +41,9 @@ export default function Home() {
       </div>
       */ }
 
-      <div id="title">
+      <div className="pb-[4.5rem]" id="title">
 
-        <nav className="bg-[#352F44]">
+        <nav className="bg-[#352F44] md:mb-[4.5rem]">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 md:max-w-max lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
