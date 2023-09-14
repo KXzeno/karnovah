@@ -201,7 +201,7 @@ export default function Home() {
                 src="/img/btstrp-tw.jpg"
                 width="1000"
                 height="1200"
-                alt="iphone-mockup"
+                alt="pc-mockup"
               />
             </div>
 
