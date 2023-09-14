@@ -175,7 +175,7 @@ export default function Home() {
 
         <div className="container mx-auto">
 
-          <div className="lg:columns-2" id="title">
+          <div className="lg:grid lg:grid-cols-2 lg:columns-2" id="title">
 
             <div className="relative">
               <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold max-md:text-[2rem] max-md:text-center">Need a professional web developer to rebuild your user experience?</h1>
@@ -213,24 +213,24 @@ export default function Home() {
 
       <div className="bg-[#2B2730] min-h-screen">
 
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-max">
 
           { /* Features */ }
 
-          <div className="md:columns-3" id="features">
+          <div className="md:grid md:grid-cols-3 md:columns-3" id="features">
 
             <div className="features-box">
-              <h3>Easy to use.</h3>
+              <h3 className="mb-2">Easy to use.</h3>
               <p>So easy to use, even your dog could do it.</p>
             </div>
 
             <div className="features-box">
-              <h3>Elite Clientele</h3>
+              <h3 className="mb-2">Elite Clientele</h3>
               <p>We have all the dogs, the greatest dogs.</p>
             </div>
 
             <div className="features-box">
-              <h3>Guaranteed to work.</h3>
+              <h3 className="mb-2">Guaranteed to work.</h3>
               <p>Find the love of your dog's life or your money back.</p>
             </div>
 
