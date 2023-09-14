@@ -213,17 +213,26 @@ export default function Home() {
 
       <div className="bg-[#2B2730] min-h-screen">
 
-        <div className="container">
+        <div className="container mx-auto">
 
           { /* Features */ }
 
-          <div className="" id="features">
+          <div className="md:columns-3" id="features">
 
-            <h3>Easy to use.</h3>
-            <p>So easy to use, even your dog could do it.</p>
+            <div className="features-box">
+              <h3>Easy to use.</h3>
+              <p>So easy to use, even your dog could do it.</p>
+            </div>
 
-            <h3>Guaranteed to work.</h3>
-            <p>Find the love of your dog's life or your money back.</p>
+            <div className="features-box">
+              <h3>Elite Clientele</h3>
+              <p>We have all the dogs, the greatest dogs.</p>
+            </div>
+
+            <div className="features-box">
+              <h3>Guaranteed to work.</h3>
+              <p>Find the love of your dog's life or your money back.</p>
+            </div>
 
           </div>
 
