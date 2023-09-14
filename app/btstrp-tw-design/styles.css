@@ -4,6 +4,11 @@
 h1 {
   @apply text-[#EEEDED];
 }
+h2 {
+}
+h3 {
+  @apply font-diphylleia lg:text-[1.37rem] text-[1.19rem];
+}
 
 @layer components {
   .features-box {
