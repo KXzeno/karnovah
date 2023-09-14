@@ -6,6 +6,12 @@ h1 {
 }
 
 @layer components {
+  .features-box {
+    @apply mb-4;
+  }
+  #features {
+    @apply px-[15%] py-[7%] max-sm:text-center;
+  }
   #title {
     @apply bg-[#252B48];
   }
