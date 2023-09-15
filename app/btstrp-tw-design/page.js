@@ -252,18 +252,18 @@ export default function Home() {
 
         { /* Testimonials */ }
 
-        <div className="container mx-auto max-w-max">
+        <div className="container mx-auto max-w-full">
 
           <div className="" id="testimonials">
 
-            <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+            <h2 className="pb-2"><i>Insert a friend's testimonial here after developing his website.</i></h2>
             <Image 
-              className=""
+              className="testimonial-image rounded-full inline-block"
               src="/img/dog-img.jpg" alt="dog-profile"
               width="300"
               height="300"
             />
-            <em>Pebbles, New York</em>
+            <em className="pl-2">First, Last</em>
 
             { /* 
           <h2 className="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
@@ -277,28 +277,32 @@ export default function Home() {
 
         { /* Press */ }
 
-        <div className="container">
+        <div className="container mx-auto max-w-full">
 
-          <div className="" id="press">
+          <div className="space-x-[5%]" id="press">
             <Image 
+              className="press-logo inline-block"
               src="/img/techcrunch.png"
               alt="tc-logo"
               width="300"
               height="53"
             />
             <Image 
+              className="press-logo inline-block"
               src="/img/tnw.png"
               alt="tnw-logo"
               width="300"
               height="127"
             />
             <Image 
+              className="press-logo inline-block"
               src="/img/bizinsider.png"
               alt="biz-insider-logo"
               width="300"
               height="52"
             />
             <Image 
+              className="press-logo inline-block"
               src="/img/mashable.png"
               alt="mashable-logo"
               width="300"
