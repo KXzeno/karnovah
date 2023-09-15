@@ -78,8 +78,8 @@ export default function Home() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Image
-                    className="h-8 w-auto"
-                    src="/img/dog-img.jpg"
+                    className="h-10 w-auto rounded-lg"
+                    src="/manifest-destiny.svg"
                     width="16"
                     height="16"
                     alt="Your Company"
@@ -122,8 +122,8 @@ export default function Home() {
                       <span className="absolute -inset-1.5"></span>
                       <span className="sr-only">Open user menu</span>
                       <Image 
-                        className="h-8 w-8 rounded-full" 
-                        src="/img/author.png" 
+                        className="h-10 w-10 rounded-full bg-white" 
+                        src="/character-contour.svg" 
                         width="16"
                         height="16"
                         alt=""
