@@ -20,5 +20,8 @@ h3 {
   #title {
     @apply bg-[#252B48];
   }
+  #testimonials {
+    @apply px-[15%] py-[7%] text-center bg-slate-700;
+  }
 }
 
