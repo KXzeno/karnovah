@@ -41,7 +41,12 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
       </Head>
-      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} font-sans`}>{children}</body>
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} font-sans`}>{children}
+        <script
+          type="text/javascript"
+          src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
+        </script> 
+      </body>
     </html>
   )
 }
