@@ -3,34 +3,14 @@ import React from 'react';
 import Image from 'next/image';
 import './styles.css';
 
-/* Local Impoarts */
-import Navbar from '@/app/components/Navbar';
-import Testimonials from '@/app/components/Testimonials';
-import Features from '@/app/components/Features';
-import Title from '@/app/components/Title';
-import Press from '@/app/components/Press';
+/* Local Imports */
+import { Navbar, Testimonials, Features, Title, Press, Carousel } from 'components/page';
 
 export default function Home() {
   return (
     <div className="rmain">
 
       { /* Nav Bar */ }
-
-      { /* Old navbar, use as reference
-      <div className="flex justify-center w-5/6 mx-auto">
-        <p className="inline-block absolute top-2 left-[1%] max-[1000px]:text-[0.8rem]">Karnovah</p>
-        <nav className="flex sm:justify-center md:space-x-4 max-[1000px]:text-[0.8rem]">
-          {[
-            ['Home', '/dashboard'],
-            ['Team', '/team'],
-            ['Projects', '/projects'],
-            ['Reports', '/reports'],
-          ].map(([title, url]) => (
-            <a href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
-          ))}
-        </nav>
-      </div>
-      */ }
 
       <div className="pb-[4.5rem]" id="title">
 
@@ -59,7 +39,7 @@ export default function Home() {
         { /* Testimonials */ }
 
         <Testimonials />
-
+        
         { /* Press */ }
 
         <Press />
