@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import { Urbanist, Inter, Cinzel, Diphylleia } from 'next/font/google'
+import { Urbanist, Inter, Cinzel, Diphylleia, Roboto } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
 
@@ -23,6 +23,11 @@ const diphylleia = Diphylleia({
   variable: '--font-diphylleia',
 });
 
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
 export const metadata = {
   title: 'Karnovah',
   description: 'Personal Business & Blog Site Under Development',
@@ -41,7 +46,7 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
       </Head>
-      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} font-sans`}>{children}
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.className} font-sans`}>{children}
         <script
           type="text/javascript"
           src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
