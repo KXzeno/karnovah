@@ -73,6 +73,17 @@ body {
   .skill-row {
     @apply md:w-3/4 w-5/6 mx-auto my-[6.25rem] md:text-left md:leading-[1.7rem] leading-loose md:relative left-[3rem];
   }
+
+  /******************ID SELECTORS******************/
+
+  #str-head {
+    @apply text-purple-700;
+  }
+
+  #land-title {
+    @apply bg-[#FF4C68];
+  }
+
 }
 
 @layer utilities {
@@ -85,14 +96,3 @@ body {
   }
 
 }
-
-/******************ID SELECTORS******************/
-
-#str-head {
-  @apply text-purple-700;
-}
-
-#title {
-  @apply bg-[#FF4C68];
-}
-
