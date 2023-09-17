@@ -1,8 +1,9 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import Carousel from '@/app/components/Carousel';
+import Carousel from 'components/carousel';
 import '../globals.css';
+import '../btstrp-tw-design/styles.css';
 
 export default function Testimonials () {
   return (
