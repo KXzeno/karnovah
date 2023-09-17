@@ -26,6 +26,7 @@ const diphylleia = Diphylleia({
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400'],
+  variable: '--font-roboto',
 });
 
 export const metadata = {
@@ -46,11 +47,7 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
       </Head>
-      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.className} font-sans`}>{children}
-        <script
-          type="text/javascript"
-          src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
-        </script> 
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.variable} font-sans`}>{children}
       </body>
     </html>
   )
