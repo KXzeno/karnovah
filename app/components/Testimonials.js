@@ -9,8 +9,6 @@ export default function Testimonials () {
   return (
     <div className="container mx-auto max-w-full">
 
-      <Carousel />
-
       <div className="" id="testimonials">
 
         <h2 className="pb-2"><i>Insert a friend's testimonial here after developing his website.</i></h2>
