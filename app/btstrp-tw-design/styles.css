@@ -20,6 +20,18 @@ h3 {
   .press-logo {
     @apply w-[15%];
   }
+  .card {
+    background-color: theme('colors.onyx');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
+  }
+  .card-nested {
+    @apply max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+  }
+  .card-more {
+    @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+  }
   #features {
     @apply px-[15%] py-[7%] text-center;
   }
@@ -99,5 +111,11 @@ h3 {
   }
   #radio4:checked ~ .navigation-auto .auto-btn4 {
     @apply bg-[#40D3DC];
+  }
+  .card-title {
+    @apply mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+  }
+  .card-content {
+    @apply mb-3 font-normal text-gray-700 dark:text-gray-400; 
   }
 }
