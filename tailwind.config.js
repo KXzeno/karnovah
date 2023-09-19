@@ -23,6 +23,9 @@ module.exports = {
       container: {
         padding: "0.3rem 0.15rem",
       },
+      colors: {
+        'onyx': '#352F44',
+      },
     },
   },
   plugins: [
