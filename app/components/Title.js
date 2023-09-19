@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Title () {
   return(
 
-    <div className="h-screen lg:grid lg:grid-cols-2 lg:columns-2">
+    <div className="max-md:h-screen lg:grid lg:grid-cols-2 lg:columns-2">
 
       <div className="relative">
         <h1 className="font-cinzel text-[3rem] leading-normal font-extrabold max-md:text-[2rem] max-md:text-center">Need a professional web developer to rebuild your user experience?</h1>
