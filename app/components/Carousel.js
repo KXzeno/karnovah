@@ -1,7 +1,6 @@
 "use client"; // marks as client component, every react hook that starts with "use" is indicative of a client component
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import '../btstrp-tw-design/styles.css';
 
 export default function Carousel () {
 
@@ -22,7 +21,7 @@ export default function Carousel () {
       { /* Image Slider */ }
       <div className="slider">
         { /* Radio Buttons */ }
-        <div className="slides pt-8">
+        <div className="slides">
           <input type="radio" name="radio-btn" id="radio1" />
           <input type="radio" name="radio-btn" id="radio2" />
           <input type="radio" name="radio-btn" id="radio3" />
