@@ -38,8 +38,6 @@ export default function Home() {
 
         { /* Testimonials */ }
 
-        <Carousel />
-
         <Testimonials />
         
         { /* Press */ }
