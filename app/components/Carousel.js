@@ -22,7 +22,7 @@ export default function Carousel () {
       { /* Image Slider */ }
       <div className="slider">
         { /* Radio Buttons */ }
-        <div className="slides">
+        <div className="slides pt-8">
           <input type="radio" name="radio-btn" id="radio1" />
           <input type="radio" name="radio-btn" id="radio2" />
           <input type="radio" name="radio-btn" id="radio3" />
