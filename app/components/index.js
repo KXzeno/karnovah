@@ -13,3 +13,17 @@ export {
   Testimonials,
   Title,
 }
+
+// Named exports = modules containing a library or pack of functions 
+
+// Default exports = modules containing a single entity (Best practice)
+
+/*
+ * Named Export:
+ * * export class User {...}
+ * * import {User} from ...
+ * Default Export:
+ * * export default class User {...}
+ * * import User from ...
+ * * * https://javascript.info/import-export#export-default
+ */
