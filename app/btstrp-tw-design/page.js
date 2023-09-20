@@ -4,7 +4,7 @@ import Image from 'next/image';
 import './styles.css';
 
 /* Local Imports */
-import { Navbar, Testimonials, Features, Title, Press, Carousel } from 'components/page';
+import { Navbar, Testimonials, Features, Title, Press, Carousel } from 'components';
 
 export default function Home() {
   return (
