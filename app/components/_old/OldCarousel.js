@@ -1,8 +1,9 @@
+/*
 "use client"; // marks as client component, every react hook that starts with "use" is indicative of a client component
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 
-export default function Carousel () {
+export default function oldCarousel () {
   return (
     <div
       id="carouselExampleCrossfade"
@@ -117,3 +118,4 @@ export default function Carousel () {
     </div>
   );
 }
+*/
