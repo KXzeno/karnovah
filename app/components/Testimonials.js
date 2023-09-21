@@ -10,9 +10,9 @@ export default function Testimonials () {
 
       <Carousel />
 
-      <div className="relative bottom-[8rem] -mb-[8rem]" id="testimonials">
+      <div className="md:relative bottom-[8rem] md:-mb-[8rem]" id="testimonials">
 
-        <h2 className="pb-2"><i>Insert a friend's testimonial here after developing his website.</i></h2>
+        <h2 className="pb-2 max-md:text-[1.1rem]"><i>Insert a friend's testimonial here after developing his website.</i></h2>
         <Image 
           className="testimonial-image rounded-full inline-block"
           src="/img/dog-img.jpg" alt="dog-profile"
