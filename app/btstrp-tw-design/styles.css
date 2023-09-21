@@ -92,10 +92,10 @@ h3 {
   }
   /** Auto Navigation **/
   .navigation-auto {
-    @apply absolute flex w-[800px] max-md:w-[400px] max-md:mt-[225px] justify-center mt-[460px];
+    @apply absolute flex w-[800px] max-md:w-[400px] max-md:mt-[225px] justify-center mt-[460px] z-10 md:mt-[27.5rem];
   }
   .navigation-auto div {
-    @apply border-2 border-solid border-[#40D3DC] p-[5px] rounded-[10px] duration-1000;
+    @apply absolute md:bottom-5 relative border-2 border-solid border-[#40D3DC] p-[5px] md:p-[0.37rem] lg:p-[0.41rem] rounded-[10px] duration-1000;
   }
   .navigation-auto div:not(:last-child) {
     @apply mr-[40px];
