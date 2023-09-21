@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import Carousel from 'components/carousel';
+import Carousel from './Carousel';
 import '../globals.css';
 
 export default function Testimonials () {
