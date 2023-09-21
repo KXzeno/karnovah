@@ -67,10 +67,10 @@ h3 {
   }
   /** Manual Navigation **/
   .navigation-manual {
-    @apply flex absolute w-[800px] max-md:w-[400px] max-md:-mt-[275px] -mt-[40px] justify-center;
+    @apply flex absolute w-[800px] max-md:w-[400px] max-md:-mt-[275px] -mt-[40px] justify-center z-10 md:-mt-[5rem];
   }
   .manual-btn {
-    @apply rounded-[10px] border-solid border-[#40D3DC] p-[5px] border-2 cursor-pointer duration-1000;
+    @apply rounded-[10px] border-solid border-[#40D3DC] p-[5px] border-2 cursor-pointer duration-1000 md:p-[0.37rem] lg:p-[0.41rem];
   }
   .manual-btn:not(:last-child) {
     @apply mr-[40px];
