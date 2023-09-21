@@ -6,11 +6,11 @@ import '../globals.css';
 
 export default function Testimonials () {
   return (
-    <div className="container mx-auto max-w-full">
+    <div className="bg-slate-700 container mx-auto max-w-full">
 
       <Carousel />
 
-      <div className="" id="testimonials">
+      <div className="relative bottom-[8rem] -mb-[8rem]" id="testimonials">
 
         <h2 className="pb-2"><i>Insert a friend's testimonial here after developing his website.</i></h2>
         <Image 
