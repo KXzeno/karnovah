@@ -28,7 +28,7 @@ export default function Home() {
 
       <div className="bg-[#2B2730] min-h-screen">
 
-        <div className="container mx-auto max-w-max">
+        <div className="container z-auto mx-auto max-w-max">
 
           { /* Features */ }
 
@@ -100,7 +100,7 @@ export default function Home() {
 
         <div className="container">
 
-          <div className="" id="cta">
+          <div className="relative" id="cta">
 
             <h3>Find the True Love of Your Dog's Life Today.</h3>
             <button type="button">Download</button>
