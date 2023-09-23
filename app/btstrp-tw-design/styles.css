@@ -35,6 +35,9 @@ h3 {
   .cta-heading {
     @apply font-diphylleia text-[3.5rem] leading-normal max-sm:text-[1.7rem] mb-4;
   }
+  .socials {
+    @apply mx-2;
+  }
   #cta {
     @apply bg-[#FF4C68] text-[#FFF] px-[13%] py-[7%] text-center;
   }
@@ -49,6 +52,9 @@ h3 {
   }
   #press {
     @apply bg-slate-700 text-center pb-[3%];
+  }
+  #footer {
+    @apply px-[15%] py-[7%] text-center;
   }
 }
 
