@@ -98,11 +98,11 @@ export default function Home() {
 
         { /* Call to Action */ }
 
-        <div className="container">
+        <div className="container mx-auto max-w-full">
 
           <div className="relative" id="cta">
 
-            <h3>Find the True Love of Your Dog's Life Today.</h3>
+            <h3 className="cta-heading">Find the True Love of Your Dog's Life Today.</h3>
             <button type="button">Download</button>
             <button type="button">Download</button>
 
@@ -112,7 +112,7 @@ export default function Home() {
 
         { /* Footer */ }
 
-        <div className="container">
+        <div className="container mx-auto max-w-full">
 
           <footer id="footer">
 
