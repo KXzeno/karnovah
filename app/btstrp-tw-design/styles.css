@@ -33,10 +33,10 @@ h3 {
     @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
   }
   .cta-heading {
-    @apply font-diphylleia text-[3.5rem] leading-normal;
+    @apply font-diphylleia text-[3.5rem] leading-normal max-sm:text-[1.7rem] mb-4;
   }
   #cta {
-    @apply bg-[#FF4C68] text-[#FFF] px-[15%] py-[7%] text-center;
+    @apply bg-[#FF4C68] text-[#FFF] px-[13%] py-[7%] text-center;
   }
   #features {
     @apply px-[15%] py-[7%] text-center;
