@@ -102,9 +102,9 @@ export default function Home() {
 
           <div className="relative" id="cta">
 
-            <h3 className="cta-heading">Find the True Love of Your Dog's Life Today.</h3>
-            <button type="button">Download</button>
-            <button type="button">Download</button>
+            <h3 className="cta-heading">Don't tarry in mediocrity, revolutionize your platforms today.</h3>
+            <button className="btn-primary mr-2" type="button">Download</button>
+            <button className="btn-primary ml-2"type="button">Download</button>
 
           </div>
 
