@@ -45,20 +45,20 @@ h3 {
     @apply mx-2;
   }
 
-  .p-13-7 {
-    @apply px-[13%] py-[7%];
-  }
-
-  .p-15-7 {
+  .p-default {
     @apply px-[15%] py-[7%];
   }
 
   #cta {
-    @apply bg-[#FF4C68] text-[#FFF] p-13-7 text-center;
+    @apply bg-slate-600 text-[#FFF] text-center;
+  }
+
+  #cta .p-default {
+    @apply px-[13%] py-[7%];
   }
 
   #features {
-    @apply px-[15%] p-15-7 text-center;
+    @apply px-[15%] p-default text-center;
   }
 
   #title {
@@ -66,7 +66,7 @@ h3 {
   }
 
   #testimonials {
-    @apply p-15-7 text-center bg-slate-700;
+    @apply p-default text-center bg-slate-700;
   }
 
   #press {
@@ -74,7 +74,7 @@ h3 {
   }
 
   #footer {
-    @apply p-15-7 text-center;
+    @apply p-default text-center;
   }
 }
 
