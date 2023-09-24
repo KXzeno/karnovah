@@ -99,9 +99,9 @@ export default function Home() {
 
         { /* Call to Action */ }
 
-        <div className="container mx-auto max-w-full">
+        <div className="container mx-auto max-w-full" id="cta">
 
-          <div className="relative" id="cta">
+          <div className="relative p-default">
 
             <h3 className="cta-heading">Don't tarry in mediocrity, revolutionize your platforms today.</h3>
             <button className="btn-primary mr-2" type="button">Download</button>
