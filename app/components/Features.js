@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Features () {
+export default function Features() {
   return (
     <div className="md:grid md:grid-cols-3 md:columns-3 gap-x-[4rem]" id="features">
 
@@ -32,5 +32,5 @@ export default function Features () {
       </div>
 
     </div>
-  )
+  );
 }

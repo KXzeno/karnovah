@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 
-export default function Carousel () {
+export default function Carousel() {
 
   useEffect(() => {
     let counter = 1;

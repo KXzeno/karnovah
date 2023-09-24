@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Title () {
+export default function Title() {
   return(
 
     <div className="max-md:h-screen lg:grid lg:grid-cols-2 lg:columns-2">

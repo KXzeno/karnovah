@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Press () {
+export default function Press() {
   return (
     <div className="container mx-auto max-w-full">
 

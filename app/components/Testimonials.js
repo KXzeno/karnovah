@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Carousel from './Carousel';
 import '../globals.css';
 
-export default function Testimonials () {
+export default function Testimonials() {
   return (
     <div className="bg-slate-700 container mx-auto max-w-full">
 

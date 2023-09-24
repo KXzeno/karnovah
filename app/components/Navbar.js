@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-export default function Navbar () {
+export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isNotificationsDropdownOpen, setIsNotificationsDropdownOpen] = useState(false);
