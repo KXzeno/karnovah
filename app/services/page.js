@@ -47,7 +47,7 @@ export default function Home() {
 
         { /* Pricing */ }
 
-        <div className="container mx-auto mt-4">
+        <div className="container mx-auto my-8">
 
           <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-3 card text-center" id="pricing">
             <div className="card-nested place-self-center h-64">
