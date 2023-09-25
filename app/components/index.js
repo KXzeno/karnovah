@@ -5,6 +5,7 @@ import Press from './Press';
 import Testimonials from './Testimonials';
 import Title from './Title';
 import Footer from './Footer';
+import More from './More-Details';
 
 export {
   Carousel,
@@ -14,6 +15,7 @@ export {
   Testimonials,
   Title,
   Footer,
+  More,
 }
 
 // Named exports = modules containing a library or pack of functions 
