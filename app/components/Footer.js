@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '../btstrp-tw-design/styles.css';
+import '../services/styles.css';
 
 export default function Footer() {
   return (

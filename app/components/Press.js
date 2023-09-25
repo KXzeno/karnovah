@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Press() {
   return (
-    <div className="container mx-auto max-w-full">
+    <div className="relative container mx-auto max-w-full mb-[8rem]">
 
       <div className="space-x-[5%]" id="press">
         <Image 
