@@ -46,7 +46,7 @@ h3 {
   }
 
   .cta-heading {
-    @apply font-diphylleia text-[3.5rem] leading-normal max-sm:text-[1.7rem] mb-4;
+    @apply font-diphylleia leading-normal max-sm:text-[1.7rem] md:text-[2.3rem] lg:text-[2.9rem] mb-4;
   }
 
   .socials {
