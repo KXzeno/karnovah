@@ -1,0 +1,8 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-default {
+    background-image: theme('backgroundImage.bg-default');
+  }
+}
