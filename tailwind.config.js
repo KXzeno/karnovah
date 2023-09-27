@@ -13,7 +13,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
         'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'bg-default': "url('/img/bg-default')",
+        'bg-default': "url('/img/bg-default.jpg')",
       },
       fontFamily: {
         sans: ['var(--font-urbanist)'],
@@ -31,5 +31,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    'postcss-import': {},
   ],
 }
