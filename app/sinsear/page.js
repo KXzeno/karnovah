@@ -36,6 +36,9 @@ export default function Home() {
         </nav>
       </div>
       <div className="bg-gradient-to-t from-[#040D12] from-3% via-[#313866] via-90% to-[#352F44] to-95% h-screen">
+        <div className="flex flex-col justify-center items-center -mt-64">
+          <p className="text-white text-5xl p-4 text-center">String 1</p>
+        </div>
       </div>
     </div>
   );
