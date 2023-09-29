@@ -6,7 +6,7 @@ import Testimonials from './Testimonials';
 import Title from './Title';
 import Footer from './Footer';
 import More from './More-Details';
-import { MenuIcon, DiscordIcon, } from './Icons';
+import { MenuIcon, DiscordIcon, ChevronDownIcon, } from './Icons';
 
 export {
   Carousel,
@@ -17,7 +17,7 @@ export {
   Title,
   Footer,
   More,
-  MenuIcon, DiscordIcon,
+  MenuIcon, DiscordIcon, ChevronDownIcon,
 }
 
 // Named exports = modules containing a library or pack of functions 
