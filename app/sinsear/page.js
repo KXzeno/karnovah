@@ -6,7 +6,7 @@ import Image from 'next/image';
 /** Local imports **/
 
 import './styles.css';
-import { MenuIcon } from 'components';
+import { MenuIcon, ChevronDownIcon, DiscordIcon } from 'components';
 
 export default function Home() {
   return (
@@ -39,11 +39,17 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center pt-64">
           <p className="text-white text-5xl p-4 text-center">String 1</p>
           <div className="flex flex-col sm:flex-row w-1/2 mb-4">
-            <button className="bg-white text-black rounded-full hover:text-white hover:bg-black mx-2 my-2 flex-grow border-4 border-white py-2 w-100 uppercase text-sm">String 2</button>
-            <button className="bg-white text-black rounded-full hover:text-white hover:bg-black mx-2 my-2 flex-grow border-4 border-white py-2 w-100 uppercase text-sm">String 3</button>
+            <button className="bg-white text-black rounded-full hover:text-white hover:bg-black mx-2 my-2 flex-grow border-4 border-white py-2 uppercase text-sm">String 2</button>
+            <button className="bg-white text-black rounded-full hover:text-white hover:bg-black mx-2 my-2 flex-grow border-4 border-white py-2 uppercase text-sm">String 3</button>
           </div>
           <a href="#" className="underline text-white text-lg tracking-wider">String 4</a>
         </div>
+        <footer className="bottom-0 left-0 right-0 absolute">
+          <p className="text-center text-white leading-loose tracking-wider">String 5</p>
+          <div className="flex items-center text-center justify-center cursor-pointer">
+            <ChevronDownIcon className="fill-white" />
+          </div>
+        </footer>
       </div>
     </div>
   );
