@@ -42,7 +42,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <h1 className="text-6xl text-gray-800">Services</h1>
-            <p className="pt-2">What I Offer</p>
+            <p className="pt-2 text-xl">What I Offer</p>
           </div>
           <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
             <div className="relative">
@@ -82,6 +82,64 @@ export default function Home() {
                   <h2 className="pt-3 font-bold text-2xl text-gray-800">Responsive Websites</h2>
                   <p className="pt-3">Description [...]</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" className="py-20 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-6xl font-bold text-gray-700">Work</h1>
+            <p className="pt-2 text-xl">My portfolio</p>
+          </div>
+          <div className="grid mt-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+            <div className="bg-white rounded-md shadow-md lg:col-span-2">
+              { /* <Image 
+                  src=
+                  className="object-cover w-full h-80 rounded-t-md"
+                  />
+                  */ }
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-800">Work Title</h3>
+                <p className="pt-3">[ ... ]</p>
+                <a href="" className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm">View More</a>
+              </div>
+            </div>
+            <div className="bg-white rounded-md shadow-md">
+              { /* <Image 
+                  src=
+                  className="object-cover w-full h-80 rounded-t-md"
+                  />
+                  */ }
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-800">Work Title</h3>
+                <p className="pt-3">[ ... ]</p>
+                <a href="" className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm">View More</a>
+              </div>
+            </div>
+            <div className="bg-white rounded-md shadow-md">
+              { /* <Image 
+                  src=
+                  className="object-cover w-full h-80 rounded-t-md"
+                  />
+                  */ }
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-800">Work Title</h3>
+                <p className="pt-3">[ ... ]</p>
+                <a href="" className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm">View More</a>
+              </div>
+            </div>
+            <div className="bg-white rounded-md shadow-md lg:col-span-2">
+              { /* <Image 
+                  src=
+                  className="object-cover w-full h-80 rounded-t-md"
+                  />
+                  */ }
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-800">Work Title</h3>
+                <p className="pt-3">[ ... ]</p>
+                <a href="" className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-md shadow-md text-white font-bold text-sm">View More</a>
               </div>
             </div>
           </div>
