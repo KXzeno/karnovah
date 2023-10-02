@@ -6,15 +6,24 @@
   a {
     @apply no-underline;
   }
+  h1.text-5xl {
+    @apply text-[#EB455F]
+  }
+  h2.text-lg {
+    @apply text-[#EFB495];
+  }
+  p.text-xl.leading-relaxed {
+    @apply text-[#EFB495]
+  }
 }
 
 @layer components {
   .from-primary {
-    --tw-gradient-from: #1d99ac;
+    --tw-gradient-from: #2B2A4C;
     --tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to, rgba(34, 211, 238, 0));
   }
 
   .to-secondary {
-    --tw-gradient-to: #309e76;
+    --tw-gradient-to: #C4B0FF;
   }
 }
