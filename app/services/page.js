@@ -60,8 +60,8 @@ export default function Home() {
           <div className="relative p-default">
 
             <h3 className="cta-heading">Don't tarry in mediocrity, revolutionize your platforms today.</h3>
-            <button className="btn-primary mr-2" type="button">Download</button>
-            <button className="btn-primary ml-2"type="button">Download</button>
+            <button className="btn-primary mr-2" type="button">Pricing</button>
+            <button className="btn-primary ml-2"type="button">Details</button>
 
           </div>
 
