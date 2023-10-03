@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="contact" className="pt-20 pb-36 px-8 bg-gray-50">
+      <section id="contacts" className="pt-20 pb-36 px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <h1 className="text-6xl font-bold text-gray-700">Contact</h1>
