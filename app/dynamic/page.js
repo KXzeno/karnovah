@@ -11,10 +11,10 @@ import './styles.css';
 export default function Home() {
   return (
     <>
-      {scriptTest()}
       <div>
         <h2>Hello</h2>
       </div>
+      {scriptTest()}
     </>
   );
 }
