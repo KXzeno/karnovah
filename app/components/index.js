@@ -7,6 +7,7 @@ import Title from './Title';
 import Footer from './Footer';
 import More from './More-Details';
 import { MenuIcon, DiscordIcon, ChevronDownIcon, } from './Icons';
+import scriptTest from './ScriptTest';
 
 export {
   Carousel,
@@ -18,6 +19,7 @@ export {
   Footer,
   More,
   MenuIcon, DiscordIcon, ChevronDownIcon,
+  scriptTest,
 }
 
 // Named exports = modules containing a library or pack of functions 
