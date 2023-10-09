@@ -1,7 +1,8 @@
 import React from 'react';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 import './styles.css';
+import drumAudio from './script.js';
 
 export default function Home() {
   return(
@@ -19,7 +20,7 @@ export default function Home() {
 
       </div>
 
-      <Script src="./script.js" />
+      <drumAudio />
 
     </>
   )
