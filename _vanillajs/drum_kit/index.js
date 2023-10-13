@@ -17,6 +17,7 @@ function handleClick() {
 let numDrumBtn = document.querySelectorAll(".drum").length;
 
 for (let i = 0; i < numDrumBtn; i++) {
+
   document.querySelectorAll("button")[i].addEventListener("click", function() {
 
     let buttonInnerHTML = this.innerHTML;
@@ -25,8 +26,6 @@ for (let i = 0; i < numDrumBtn; i++) {
 
   });
 }
-
-// Detects Keyboard Press
 
 document.addEventListener("keydown", function(event) {
 
@@ -73,7 +72,7 @@ function soundEffect(key) {
       kick.play();
       break;
 
-    default: console.log(innerHTML);
+    default: console.log(buttonInnerHTML);
 
   }
 
