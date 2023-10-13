@@ -27,6 +27,8 @@ for (let i = 0; i < numDrumBtn; i++) {
   });
 }
 
+// Detects Keydown event
+
 document.addEventListener("keydown", function(event) {
 
   soundEffect(event.key);
