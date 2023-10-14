@@ -24,6 +24,8 @@ for (let i = 0; i < numDrumBtn; i++) {
 
     soundEffect(buttonInnerHTML);
 
+    btnAnim(buttonInnerHTML);
+
   });
 }
 
@@ -32,6 +34,8 @@ for (let i = 0; i < numDrumBtn; i++) {
 document.addEventListener("keydown", function(event) {
 
   soundEffect(event.key);
+
+  btnAnim(event.key);
 
 });
 
@@ -77,5 +81,17 @@ function soundEffect(key) {
     default: console.log(buttonInnerHTML);
 
   }
+
+}
+
+function btnAnim(currentKey) {
+
+  let activeBtn = document.querySelector("." + currentKey);
+
+  activeBtn.classList.add("pressed");
+
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
 
 }
