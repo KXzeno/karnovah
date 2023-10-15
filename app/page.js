@@ -54,7 +54,7 @@ export default function Home() {
             height="192"
           />
           <h2 className="text-yellow-300">Sup,</h2>
-          <p className="w-5/6 text-center mx-auto">Aspiring Full-Stack Developer and Dark Fantasist with the objective to revolutionize structures through code and to instill necessary values through storytelling.</p>
+          <p className="w-5/6 text-center mx-auto">Aspiring Full-Stack Developer, GraphQL Database Architect, and Dark Fantasist with the objective to revolutionize structures through code and to instill necessary values through storytelling.</p>
         </div>
         <div className="my-hrule my-12"></div>
         <div className="skills">
