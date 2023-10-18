@@ -10,4 +10,10 @@ $("button").click(function() { // Click event listener w/out for loop
   $("h1").css("color", "purple");
 });
 
+$("input").keydown(function(event) { // Keydown event listener
+  $("h1").text(event.key);
+});
 
+$("h1").on("mouseover", function() { // Flexible method for event listener
+  $("h1").css("color", "purple");
+});
