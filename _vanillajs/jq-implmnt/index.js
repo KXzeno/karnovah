@@ -5,3 +5,9 @@ $("button").html("<em>Btn</em>");
 console.log($("img").attr("src"));
 $("a").attr("href", "https://youtube.com");
 console.log($("h1").attr("class"));
+
+$("button").click(function() { // Click event listener w/out for loop
+  $("h1").css("color", "purple");
+});
+
+
