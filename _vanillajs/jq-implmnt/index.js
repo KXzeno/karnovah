@@ -1,3 +1,4 @@
+/*
 $("h1").css("color", "red");
 $("h1").text("Yo");
 $("h1").addClass("test-style").removeClass("test-style-x");
@@ -16,4 +17,12 @@ $("input").keydown(function(event) { // Keydown event listener
 
 $("h1").on("mouseover", function() { // Flexible method for event listener
   $("h1").css("color", "purple");
+  //.hide .show .fadeIn .fadeOut, .fadeToggle, .toggle, .slideUp, .slideDown methods which take them out of the HTML flow
 });
+*/
+
+$("button").on("click", function() {
+  $("h1").slideUp().slideDown().animate({margin: "0.5"});
+});
+
+
