@@ -6,6 +6,7 @@ $(".btn").click(function() {
   let userChosenClr = $(this).attr("id");
   userClickedPattern.push(userChosenClr);
   console.log(userClickedPattern);
+  playSound(userChosenClr);
 });
 
 function nextSequence() {
