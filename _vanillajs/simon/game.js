@@ -2,6 +2,8 @@ let btnClrs = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 
+let started = false; // tracker
+
 $(".btn").click(function() {
   let userChosenClr = $(this).attr("id");
   userClickedPattern.push(userChosenClr);
