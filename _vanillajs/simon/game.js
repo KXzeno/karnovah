@@ -10,6 +10,9 @@ $(".btn").click(function() {
 });
 
 function nextSequence() {
+  level++;
+  $("#level-title").text("level " + level);
+
   let randomNum = Math.floor(Math.random() * 4);
   let randomChosenClr = btnClrs[randomNum];
   gamePattern.push(randomChosenClr);
@@ -26,3 +29,13 @@ function playSound(name) {
   let audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
 }
+
+let level = 0;
+
+$(document).keydown(function() {
+  if (!started) {
+    $("level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
