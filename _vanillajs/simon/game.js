@@ -32,6 +32,14 @@ function playSound(name) {
   audio.play();
 }
 
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+
+  setTimeout(function () {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
+
 let level = 0;
 
 $(document).keydown(function() {
@@ -41,3 +49,7 @@ $(document).keydown(function() {
     started = true;
   }
 });
+
+function checkAns(currentLevel) {
+
+}
