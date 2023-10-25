@@ -25,6 +25,15 @@ function checkAns(currentLevel) {
     console.log("success");
   } else {
     console.log("wrong");
+
+    let wrong = new Audio("sounds/wrong.mp3");
+    wrong.play();
+
+    $(document.body).addClass("game-over");
+
+    setTimeout(function() {
+      $(document.body).removeClass("game-over");
+    }, 200);
   }
 
   if(userClickedPattern.length === gamePattern.length) {
