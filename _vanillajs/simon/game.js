@@ -15,10 +15,8 @@ $(document).keydown(function() {
 $(".btn").click(function() {
   let userChosenClr = $(this).attr("id");
   userClickedPattern.push(userChosenClr);
-
   playSound(userChosenClr);
   animatePress(userChosenClr);
-
   checkAns(userClickedPattern.length - 1);
 });
 
@@ -34,11 +32,9 @@ function checkAns(currentLevel) {
     playSound("wrong");
     $(document.body).addClass("game-over");
     $("#level-title").text("Game Over, Press Any Key to Restart");
-
     setTimeout(function() {
       $(document.body).removeClass("game-over");
     }, 200);
-
     startOver();
   }
 }
@@ -50,7 +46,6 @@ function nextSequence() {
   let randomNum = Math.floor(Math.random() * 4);
   let randomChosenClr = btnClrs[randomNum];
   gamePattern.push(randomChosenClr);
-
   $("#" + randomChosenClr).fadeIn(100).fadeOut(100).fadeIn(100);
   playSound(randomChosenClr);
 }
