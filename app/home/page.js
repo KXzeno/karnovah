@@ -21,15 +21,11 @@ export default function Home() {
             />
           </div>
           <div className="text-md hidden md:block">
-            <a href="One" className="mx-2 text-white hover:text-gray-400">One</a>
-            <a href="Two" className="mx-2 text-white hover:text-gray-400">Two</a>
-            <a href="Three" className="mx-2 text-white hover:text-gray-400">Three</a>
-            <a href="Four" className="mx-2 text-white hover:text-gray-400">Four</a>
-            <a href="Five" className="mx-2 text-white hover:text-gray-400">Five</a>
+            <a href="Five" className="mx-2 text-white hover:text-gray-400">Placeholder text</a>
           </div>
           <div className="flex items-center mx-2 text-md text-white hover:text-gray-400">
-            <a href="Six" className="mx-2 text-white hover:text-gray-400">Six</a>
-            <a href="Seven" className="mx-2 text-white hover:text-gray-400">Seven</a>
+            <a href="Six" className="mx-2 text-white hover:text-gray-400">1</a>
+            <a href="Seven" className="mx-2 text-white hover:text-gray-400">2</a>
             <MenuIcon className="fill-white" />
           </div>
         </nav>
