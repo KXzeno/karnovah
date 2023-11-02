@@ -1,3 +1,4 @@
+"use client";
 /** Global Imports **/
 
 import React from 'react';
