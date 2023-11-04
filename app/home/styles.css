@@ -7,7 +7,14 @@
 }
 
 @layer components {
+  .from-primary {
+    --tw-gradient-from: #2B2A4C;
+    --tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to, rgba(34, 211, 238, 0));
+  }
 
+  .to-secondary {
+    --tw-gradient-to: #C4B0FF;
+  }
 }
 
 @layer utilities {
