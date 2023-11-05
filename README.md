@@ -26,3 +26,8 @@ alt="GitHub issues">
 - Converting page files to TypeScript components
 - Implement GraphQL database
 - Manually call APIs like in the Hugo ver
+
+## Career Aspirations
+- GraphQL Data Architect
+- Fullstack Developer
+- Software Engineer
