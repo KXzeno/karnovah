@@ -28,6 +28,7 @@ alt="GitHub issues">
 - Manually call APIs like in the Hugo ver
 
 ## Career Aspirations
-- GraphQL Data Architect
 - Fullstack Developer
+- NoSQL Data Architect 
+- GraphQL Data Architect
 - Software Engineer
