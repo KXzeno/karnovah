@@ -5,6 +5,7 @@ import Press from './Press';
 import Testimonials from './Testimonials';
 import Title from './Title';
 import Footer from './Footer';
+import FooterOne from './FooterOne';
 import More from './More-Details';
 import { MenuIcon, DiscordIcon, ChevronDownIcon, } from './Icons';
 import scriptTest from './ScriptTest';
@@ -18,6 +19,7 @@ export {
   Testimonials,
   Title,
   Footer,
+  FooterOne,
   More,
   MenuIcon, DiscordIcon, ChevronDownIcon,
   scriptTest,
