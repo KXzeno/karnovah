@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronDownIcon } from 'components';
 
 export default function FooterOne() {
   return(
