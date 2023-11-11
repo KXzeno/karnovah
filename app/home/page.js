@@ -30,7 +30,7 @@ export default function Home() {
                 <h2 className="text-lg">It's</h2>
                 <h1 className="pt-1 text-5xl font-bold text-gray-800">KX</h1>
               </div>
-              <p className="text-xl leading-relaxed">I am a full stack developer [...]</p>
+              <p className="text-xl leading-relaxed">I'm an aspiring Fullstack Developer and GraphQL Data Architect [...]</p>
             </div>
             <Image 
               src="/img/author.png"
