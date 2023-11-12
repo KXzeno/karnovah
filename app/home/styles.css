@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-
+  div.h1, div.h2, div.h3 {
+    @apply font-urbanist;
+  }
 }
 
 @layer components {
