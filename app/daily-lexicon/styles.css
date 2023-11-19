@@ -7,9 +7,12 @@
 }
 
 @layer components {
-
+  #word-pg {
+    @apply 
+  }
 }
 
 @layer utilities {
 
 }
+
