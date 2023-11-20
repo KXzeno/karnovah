@@ -13,6 +13,14 @@
 }
 
 @layer utilities {
-
+  .word-head {
+    @apply
+  }
+  .word-repeated {
+    @apply
+  }
+  .word-quote {
+    @apply
+  }
 }
 
