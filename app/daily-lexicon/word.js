@@ -1,4 +1,3 @@
- 
 function wordRandomizer(selected) {
 
 }
