@@ -1,6 +1,6 @@
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import { Urbanist, Inter, Cinzel, Diphylleia, Roboto } from 'next/font/google'
+import { Urbanist, Inter, Cinzel, Diphylleia, Roboto, Merriweather } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
 
@@ -28,6 +28,12 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-merriweather',
+});
+
 export const metadata = {
   title: 'Karnovah',
   description: 'Personal Business & Blog Site Under Development',
@@ -48,7 +54,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
-      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.variable} font-sans`}>{children}
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.variable} ${merriweather.variable} font-sans`}>{children}
       </body>
     </html>
   )
