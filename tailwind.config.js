@@ -20,6 +20,7 @@ module.exports = {
         inter: ['var(--font-inter)'],
         cinzel: ['var(--font-cinzel)'],
         diphylleia: ['var(--font-diphylleia)'],
+        merriweather: ['var(--font-merriweather)'],
       },
       container: {
         padding: "0.3rem 0.15rem",
