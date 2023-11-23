@@ -14,7 +14,7 @@
 
 @layer utilities {
   .word-head {
-    @apply
+    @apply font-merriweather;
   }
   .word-repeated {
     @apply
