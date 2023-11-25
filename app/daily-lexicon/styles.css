@@ -22,5 +22,8 @@
   .word-quote {
     @apply
   }
+  .word-desc {
+    @apply
+  }
 }
 
