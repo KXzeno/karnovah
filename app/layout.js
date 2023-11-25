@@ -1,6 +1,6 @@
 import './globals.css'
 // import { Inter } from 'next/font/google'
-import { Urbanist, Inter, Cinzel, Diphylleia, Roboto, Merriweather } from 'next/font/google'
+import { Urbanist, Inter, Cinzel, Diphylleia, Roboto, Merriweather, Spectral, DM_Sans, Quicksand, Dosis} from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
 
@@ -34,6 +34,30 @@ const merriweather = Merriweather({
   variable: '--font-merriweather',
 });
 
+const spectral = Spectral({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-spectral',
+});
+
+const dm_sans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-dm-sans',
+});
+
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-quicksand',
+});
+
+const dosis = Dosis({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-dosis',
+});
+
 export const metadata = {
   title: 'Karnovah',
   description: 'Personal Business & Blog Site Under Development',
@@ -54,7 +78,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.openGraph.images} />
-      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.variable} ${merriweather.variable} font-sans`}>{children}
+      <body className={`${diphylleia.variable} ${cinzel.variable} ${inter.variable} ${urbanist.variable} ${roboto.variable} ${merriweather.variable} ${spectral.variable} ${dm_sans.variable} ${quicksand.variable} ${dosis.variable} font-sans`}>{children}
       </body>
     </html>
   )
