@@ -21,6 +21,10 @@ module.exports = {
         cinzel: ['var(--font-cinzel)'],
         diphylleia: ['var(--font-diphylleia)'],
         merriweather: ['var(--font-merriweather)'],
+        spectral: ['var(--font-spectral)'],
+        dm_sans: ['var(--font-dm-sans)'],
+        quicksand: ['var(--font-quicksand)'],
+        dosis: ['var(--font-quicksand)'],
       },
       container: {
         padding: "0.3rem 0.15rem",
