@@ -23,7 +23,7 @@
     @apply
   }
   .word-desc {
-    @apply font-spectral text-sm;
+    @apply font-spectral text-base font-medium;
   }
 }
 
