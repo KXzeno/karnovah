@@ -10,6 +10,9 @@
   #word-pg {
     @apply 
   }
+  .word-block {
+    @apply 
+  }
 }
 
 @layer utilities {
