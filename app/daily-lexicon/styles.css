@@ -10,8 +10,8 @@
   #word-pg {
     @apply 
   }
-  .word-block {
-    @apply 
+  div.word-block {
+    @apply outline-double outline-offset-4; 
   }
 }
 
