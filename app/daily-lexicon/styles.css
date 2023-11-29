@@ -26,7 +26,7 @@
     @apply
   }
   .word-desc {
-    @apply font-spectral text-base font-medium;
+    @apply font-spectral text-base font-medium antialiased;
   }
 }
 
