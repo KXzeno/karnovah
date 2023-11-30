@@ -20,7 +20,7 @@
     @apply font-merriweather text-lg;
   }
   .word-repeated {
-    @apply
+    @apply font-merriweather font-extralight italic;
   }
   .word-quote {
     @apply
