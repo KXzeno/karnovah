@@ -23,7 +23,7 @@
     @apply font-merriweather font-extralight italic hover:bold hover:text-yellow-300;
   }
   .word-quote {
-    @apply
+    @apply normal-case;
   }
   .word-desc {
     @apply font-spectral text-base font-medium antialiased;
