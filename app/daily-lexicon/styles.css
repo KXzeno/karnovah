@@ -8,7 +8,7 @@
 
 @layer components {
   #word-pg {
-    @apply 
+    @apply min-h-screen;
   }
   div.word-block {
     @apply outline-double outline-offset-4; 
