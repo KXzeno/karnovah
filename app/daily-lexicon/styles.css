@@ -13,6 +13,9 @@
   div.word-block {
     @apply outline-double outline-offset-4; 
   }
+  div .word-block {
+    @apply outline-double outline-offset-4; 
+  }
 }
 
 @layer utilities {
