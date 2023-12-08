@@ -26,7 +26,7 @@
     @apply font-merriweather font-extralight italic hover:bold hover:text-yellow-300;
   }
   .word-quote {
-    @apply normal-case font-light;
+    @apply normal-case font-light font-cinzel;
   }
   .word-desc {
     @apply font-spectral text-base font-medium antialiased py-[0.2rem];
