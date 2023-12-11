@@ -20,7 +20,7 @@
 
 @layer utilities {
   .word-head {
-    @apply font-merriweather text-lg font-extrabold;
+    @apply font-merriweather text-lg font-extrabold hover:text-cyan-300;
   }
   .word-repeated {
     @apply font-merriweather font-extralight italic hover:bold hover:text-yellow-300;
