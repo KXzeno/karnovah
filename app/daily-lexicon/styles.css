@@ -11,10 +11,10 @@
     @apply min-h-screen bg-black;
   }
   div.word-block {
-    @apply outline-double outline-offset-4; 
+    @apply outline-double outline-offset-4 border-double; 
   }
   div .word-block {
-    @apply outline-double outline-offset-4; 
+    @apply outline-double outline-offset-4 border-double; 
   }
 }
 
