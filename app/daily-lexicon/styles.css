@@ -31,5 +31,8 @@
   .word-desc {
     @apply font-spectral text-base font-medium antialiased py-[0.2rem];
   }
+  .default {
+    @apply
+  }
 }
 
