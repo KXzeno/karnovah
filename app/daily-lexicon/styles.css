@@ -32,7 +32,7 @@
     @apply font-spectral text-base font-medium antialiased py-[0.2rem];
   }
   .default {
-    @apply normal-case font-cinzel text-md;
+    @apply normal-case font-cinzel text-base;
   }
   #definition {
     @apply
