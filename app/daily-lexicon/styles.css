@@ -38,7 +38,10 @@
     @apply
   }
   #example {
-
+    @apply
+  }
+  #reference {
+    @apply
   }
 }
 
