@@ -16,6 +16,9 @@
   div .word-block {
     @apply outline-double outline-offset-4 border-double; 
   }
+  #footer {
+    @apply
+  }
 }
 
 @layer utilities {
