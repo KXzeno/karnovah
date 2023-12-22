@@ -19,6 +19,9 @@
   #footer {
     @apply
   }
+  #rsec {
+    @apply
+  }
 }
 
 @layer utilities {
@@ -47,6 +50,9 @@
     @apply
   }
   #suggestion {
+    @apply
+  }
+  #similar {
     @apply
   }
 }
