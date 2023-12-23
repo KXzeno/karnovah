@@ -41,7 +41,7 @@
     @apply normal-case font-cinzel text-base;
   }
   #definition {
-    @apply
+    @apply text-base;
   }
   #example {
     @apply
@@ -54,6 +54,8 @@
   }
   #similar {
     @apply
+  }
+  #alternative {
   }
 }
 
