@@ -58,5 +58,11 @@
   #alternative {
     @apply 
   }
+  #chapters {
+    @apply
+  }
+  #summary {
+    @apply
+  }
 }
 
