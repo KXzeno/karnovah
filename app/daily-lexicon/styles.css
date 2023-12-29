@@ -22,6 +22,9 @@
   #rsec {
     @apply
   }
+  #navbar {
+    @apply
+  }
 }
 
 @layer utilities {
