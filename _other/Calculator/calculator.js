@@ -27,11 +27,14 @@ app.post('/', function(req, res){
 
 /*** BMI Calculator ***/
 app.get('/bmicalculator', function(req, res){
-  res.send(dirName + "/bmiCalculator.html");
+  res.sendFile(dirName + "/bmiCalculator.html");
 });
 
 app.post('/bmicalculator', function(req, res) {
-
+  let weight = Number(req.body.weight);
+  let height = Number(req.body.height);
+  //let bmi = ((weight / Math.pow(height, 2)) * 703).toString();
+  res.send("Your BMI Index is " + (Math.round(((weight / Math.pow(height, 2)) * 703) * 10) / 10).toString());
 });
 
 app.listen(3000, function() {
