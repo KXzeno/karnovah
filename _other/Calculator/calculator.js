@@ -1,3 +1,4 @@
+/* Project taught in CJS; refactored to ESM */
 /* Global Imports */
 import express from 'express';
 import { dirname } from 'path';
