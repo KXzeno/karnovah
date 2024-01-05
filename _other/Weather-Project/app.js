@@ -13,7 +13,7 @@ app.get("/", function(req, res){
       console.log(weatherData);
       const obj = {
         name: "KX",
-        purpose "CONQUER",
+        purpose: "CONQUER",
       }
       console.log(JSON.stringify(obj));
     });
