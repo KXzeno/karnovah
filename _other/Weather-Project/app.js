@@ -16,6 +16,8 @@ app.get("/", function(req, res){
         purpose: "CONQUER",
       }
       console.log(JSON.stringify(obj));
+      const temp = weatherData.main.temp;
+      console.log(temp);
     });
   });
   res.send("Works");
