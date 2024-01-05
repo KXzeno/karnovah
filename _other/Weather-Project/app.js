@@ -18,6 +18,8 @@ app.get("/", function(req, res){
       console.log(JSON.stringify(obj));
       const temp = weatherData.main.temp;
       console.log(temp);
+      const weatherDesc = weatherData.weather[0].description;
+      console.log(weatherDesc);
     });
   });
   res.send("Works");
