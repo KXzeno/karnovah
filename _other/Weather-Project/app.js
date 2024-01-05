@@ -11,6 +11,11 @@ app.get("/", function(req, res){
     response.on("data", function(data){
       const weatherData = JSON.parse(data);
       console.log(weatherData);
+      const obj = {
+        name: "KX",
+        purpose "CONQUER",
+      }
+      console.log(JSON.stringify(obj));
     });
   });
   res.send("Works");
