@@ -20,7 +20,14 @@ app.get("/", function(req, res){
       console.log(temp);
       const weatherDesc = weatherData.weather[0].description;
       console.log(weatherDesc);
-      res.send("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
+      /*** Use res.write() instead 
+      let currTemp = "<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>";
+      let currWeather = "<h2>The weather is currently " + weatherDesc + "</h2>";
+      res.send(currTemp + currWeather);
+      */
+      res.write("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
+      res.write("<h2>The weather is currently " + weatherDesc + "</h2>");
+      res.send();
     });
   });
   // res.send("Works");
