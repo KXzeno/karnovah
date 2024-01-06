@@ -29,7 +29,8 @@ app.get("/", function(req, res){
       */
       res.write("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
       res.write("<h2>The weather is currently " + weatherDesc + "</h2>");
-      res.write("<img src=" + imageURL + " width='180' height=\"180\">");
+     // res.write("<img src=" + imageURL + " width='180' height=\"180\">");
+      res.write(`<img src= ${imageURL} width="180" height="180"/>`);
       res.send();
     });
   });
