@@ -19,6 +19,8 @@ app.get("/", function(req, res){
       const temp = weatherData.main.temp;
       console.log(temp);
       const weatherDesc = weatherData.weather[0].description;
+      const icon = weatherData.weather[0].icon;
+      const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
       console.log(weatherDesc);
       /*** Use res.write() instead 
       let currTemp = "<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>";
@@ -27,6 +29,7 @@ app.get("/", function(req, res){
       */
       res.write("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
       res.write("<h2>The weather is currently " + weatherDesc + "</h2>");
+      res.write("<img src=" + imageURL + ">");
       res.send();
     });
   });
