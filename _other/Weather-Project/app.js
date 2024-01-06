@@ -10,9 +10,16 @@ const dirName = dirname(import.meta.filename);
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
+  res.sendFile(`${dirName}/index.html`);
+});
+
+app.post("/", function(req, res){
+  console.log(req.body.cityName);
   const apiKey = process.env.SENSITIVE;
   const unit = "imperial";
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=32.68&lon=-117.08&appid=${apiKey}&units=${unit}`;
+  const query = req.body.cityName;
+  // const url = `https://api.openweathermap.org/data/2.5/weather?lat=32.68&lon=-117.08&appid=${apiKey}&units=${unit}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${unit}`;
   https.get(url, function(response){
     // console.log(response);
     console.log(response.statusCode);
@@ -35,16 +42,15 @@ app.get("/", function(req, res){
       let currWeather = "<h2>The weather is currently " + weatherDesc + "</h2>";
       res.send(currTemp + currWeather);
       */
-      res.write("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
+      res.write(`<h1>Temperature in ${query} is ${temp} degrees Farenheit.</h1>`);
       res.write("<h2>The weather is currently " + weatherDesc + "</h2>");
-     // res.write("<img src=" + imageURL + " width='180' height=\"180\">");
+      // res.write("<img src=" + imageURL + " width='180' height=\"180\">");
       res.write(`<img src= ${imageURL} width="180" height="180"/>`);
       res.send();
     });
   });
-  // res.send("Works");
 });
-
+// res.send("Works");
 
 
 
