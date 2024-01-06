@@ -20,9 +20,10 @@ app.get("/", function(req, res){
       console.log(temp);
       const weatherDesc = weatherData.weather[0].description;
       console.log(weatherDesc);
+      res.send("<h1>Temperature in National City is " + temp + " degrees Farenheit.</h1>");
     });
   });
-  res.send("Works");
+  // res.send("Works");
 });
 
 
