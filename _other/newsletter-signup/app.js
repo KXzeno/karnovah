@@ -28,11 +28,10 @@ app.post("/", function(req, res) {
         merge_fields: {
           FNAME: firstName,
           LNAME: lastName,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
-
   let jsonData = JSON.stringify(data);
   const url = `https://${process.env.server}.api.mailchimp.com/3.0/lists/${process.env.audience_id}`;
   console.log(url);
