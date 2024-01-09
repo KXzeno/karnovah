@@ -18,11 +18,12 @@ app.get("/", function(req, res) {
   }
   */
 
-  let dayType = (today.getDay() % 6 == 0) ? "weekend" : "weekday";
+  let weekEnd = (today.getDay() % 6 === 0) ? true : false;
   const options = { weekday: "long" };
   day = new Intl.DateTimeFormat("en-US", options).format(today);
   res.render("list", {
-    day: day
+    day: day,
+    weekEnd: weekEnd,
   });
 });
 
