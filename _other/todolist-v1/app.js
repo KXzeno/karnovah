@@ -19,8 +19,7 @@ app.get("/", function(req, res) {
     day = "Weekend";
   }
   */
-
-  let weekEnd = (today.getDay() % 6 === 0) ? true : false;
+  let weekEnd = (!(x ^ 6) || !(x ^ 0)) ? true : false;
   const options = { weekday: "long" };
   day = new Intl.DateTimeFormat("en-US", options).format(today);
   res.render("list", {
