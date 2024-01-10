@@ -2,28 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <% if (weekEnd == 1) { %>
-      <h1 style="color: purple"><%= day %> ToDo List</h1>
-    <% } else { %>
-      <h1 style="color: blue"><%= day %> ToDo List</h1>
-    <% } %>
-
-    <ul>
-      <% for(let i = 0; i < newListItem.length; i++) { %>
-        <li><%= newListItem[i] %></li>
+    <div class="box" id="heading">
+      <% if (weekEnd == 1) { %>
+        <h1 style="color: purple"><%= day %> ToDo List</h1>
+      <% } else { %>
+        <h1 style="color: blue"><%= day %> ToDo List</h1>
       <% } %>
-    </ul>
+    </div>
+    <div class="box">
+      <% for(let i = 0; i < newListItem.length; i++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p><%= newListItem[i] %></p>
+        </div>
+      <% } %>
 
-    <form action="/" method="post">
-      <input type="text" name="newItem" id="newItem">
-      <button type="submit" name="btn">Add</button>
-    </form>
-
+      <form action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="btn">+</button>
+      </form>
+    </div>
   </body>
 </html>
 
