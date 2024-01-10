@@ -7,17 +7,17 @@
   </head>
   <body>
     <div class="box" id="heading">
-      <% if (weekEnd == 1) { %>
-        <h1 style="color: #F5D2D2"><%= day %> ToDo List</h1>
+      <% if (typeof weekEnd == 'undefined' || weekEnd == 1) { %>
+        <h1 style="color: #F5D2D2"><%= listTitle %> ToDo List</h1>
       <% } else { %>
-        <h1 style="color: #F6F3E8"><%= day %> ToDo List</h1>
+        <h1 style="color: #F6F3E8"><%= listTitle %> ToDo List</h1>
       <% } %>
     </div>
     <div class="box">
-      <% for(let i = 0; i < newListItem.length; i++) { %>
+      <% for(let i = 0; i < newListItems.length; i++) { %>
         <div class="item">
           <input type="checkbox">
-          <p><%= newListItem[i] %></p>
+          <p><%= newListItems[i] %></p>
         </div>
       <% } %>
 
