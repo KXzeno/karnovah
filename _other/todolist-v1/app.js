@@ -6,6 +6,7 @@ const app = express();
 const dirName = dirname(import.meta.filename);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 let items = [];
 
 app.get("/", function(req, res) {
@@ -19,7 +20,7 @@ app.get("/", function(req, res) {
     day = "Weekend";
   }
   */
-  let weekEnd = (!(x ^ 6) || !(x ^ 0)) ? true : false;
+  let weekEnd = (!(today.getDay() ^ 6) || !(today.getDay() ^ 0)) ? true : false;
   const options = { weekday: "long" };
   day = new Intl.DateTimeFormat("en-US", options).format(today);
   res.render("list", {
