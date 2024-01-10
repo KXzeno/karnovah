@@ -23,14 +23,22 @@ app.get("/", function(req, res) {
   res.render("list", {
     listTitle: day,
     weekEnd: weekEnd,
-    newListItem: items,
+    newListItems: items,
   });
 });
 
 app.post("/", function(req, res) {
   let item = req.body.newItem;
-  items.push(item);
-  res.redirect("/");
+
+  console.log(req.body.list);
+  if (req.body.list === "Work List") {
+    workItems.push(item);
+    res.redirect("/work");
+  } else {
+    items.push(item);
+    res.redirect("/");
+  }
+
 });
 
 app.get("/work", function(req, res) {
