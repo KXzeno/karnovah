@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { dirname } from 'path';
+import './date.js';
 
 const app = express();
 const dirName = dirname(import.meta.filename);
@@ -13,12 +14,6 @@ let items = [];
 let workItems= [];
 
 app.get("/", function(req, res) {
-  let today = new Date();
-  let day = "";
-
-  let weekEnd = (!(today.getDay() ^ 6) || !(today.getDay() ^ 0)) ? true : false;
-  const options = { weekday: "long" };
-  day = new Intl.DateTimeFormat("en-US", options).format(today);
 
   res.render("list", {
     listTitle: day,
