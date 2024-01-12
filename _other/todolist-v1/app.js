@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { dirname } from 'path';
-import './date.js';
+import { getDate } from './date.js';
 
 const app = express();
 const dirName = dirname(import.meta.filename);
@@ -14,6 +14,7 @@ let items = [];
 let workItems= [];
 
 app.get("/", function(req, res) {
+  let { day, weekEnd } = getDate();
 
   res.render("list", {
     listTitle: day,
