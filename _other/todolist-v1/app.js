@@ -10,11 +10,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-let items = [];
-let workItems= [];
+const items = [];
+const workItems= [];
 
 app.get("/", function(req, res) {
-  let { day, weekEnd } = getDate();
+  const { day, weekEnd } = getDate();
 
   res.render("list", {
     listTitle: day,
@@ -24,7 +24,7 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   console.log(req.body.list);
   if (req.body.list === "Work List") {
@@ -45,7 +45,7 @@ app.get("/work", function(req, res) {
 });
 
 app.post("/work", function(req, res) {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   workItems.push(item);
   res.redirect("/work");
 });
