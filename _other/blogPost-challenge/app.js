@@ -18,6 +18,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const posts = [];
+
 app.get("/home", function(req, res) {
   res.redirect("/");
 });
@@ -51,7 +53,9 @@ app.post("/compose", function(req, res) {
     title: req.body.title,
     content: req.body.content,
   };
-  console.log(post);
+  post ? posts.push(post) : !!post;
+  res.redirect("/");
+  console.log(posts);
 });
 
 
