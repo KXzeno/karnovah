@@ -35,12 +35,12 @@
 }
 
 
-form input[type=text][name=msgTitle] {
+form input[type=text][name=title] {
     min-width: 100%;
     height: 3.7rem;
 }
 
-form textarea[name=msg] {
+form textarea[name=body] {
     min-width: 100%;
     min-height: 21.17px;
     height: 13rem;
