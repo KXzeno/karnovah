@@ -40,7 +40,7 @@ form input[type=text][name=title] {
     height: 3.7rem;
 }
 
-form textarea[name=body] {
+form textarea[name=content] {
     min-width: 100%;
     min-height: 21.17px;
     height: 13rem;
