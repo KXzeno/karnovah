@@ -26,7 +26,8 @@ app.get("/home", function(req, res) {
 
 app.get("/", function(req, res) {
   res.render("home", {
-    homeStartingContent: homeStartingContent
+    homeStartingContent: homeStartingContent,
+    posts: posts,
   });
 });
 
@@ -55,7 +56,6 @@ app.post("/compose", function(req, res) {
   };
   post ? posts.push(post) : !!post;
   res.redirect("/");
-  console.log(posts);
 });
 
 
