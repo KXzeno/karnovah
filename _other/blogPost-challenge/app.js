@@ -62,7 +62,6 @@ app.post("/compose", function(req, res) {
     content: truncate(req.body.content, 100),
   };
   post ? posts.push(post) : !!post;
-  console.log(post.content);
   res.redirect("/");
 });
 
