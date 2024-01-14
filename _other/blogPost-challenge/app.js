@@ -22,6 +22,11 @@ app.use(express.static("public"));
 
 const posts = [];
 
+function truncate(str, maxlength) {
+  return (str.length > maxlength) ?
+    str.slice(0, maxlength - 1) + '…' : str;
+}
+
 app.get("/home", function(req, res) {
   res.redirect("/");
 });
@@ -54,9 +59,10 @@ app.get("/compose", function(req, res) {
 app.post("/compose", function(req, res) {
   let post = {
     title: req.body.title,
-    content: req.body.content,
+    content: truncate(req.body.content, 100),
   };
   post ? posts.push(post) : !!post;
+  console.log(post.content);
   res.redirect("/");
 });
 
