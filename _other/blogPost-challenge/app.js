@@ -58,6 +58,16 @@ app.post("/compose", function(req, res) {
   res.redirect("/");
 });
 
+app.get("/posts/:post", function(req, res) {
+  let obj = posts.find(function() {
+    return req.params.post;
+  });
+
+  res.render("post", {
+    title: obj.title,
+    content: obj.content,
+  });
+});
 
 
 
