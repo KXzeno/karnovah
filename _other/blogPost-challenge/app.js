@@ -1,6 +1,8 @@
 /* Global Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
+
+import _ from 'lodash';
 // import ejs from 'ejs';
 
 /* Local Imports */
@@ -67,6 +69,19 @@ app.get("/posts/:post", function(req, res) {
     title: obj.title,
     content: obj.content,
   });
+
+  const requestedTitle = _.kebabCase(req.params.post);
+  posts.forEach(function(post) {
+    const storedTitle = _.kebabCase(post.title);
+    if (storedTitle === requestedTitle) {
+      console.log("Match found!");
+    } else {
+      console.log("Not a Match");
+    }
+    console.log(requestedTitle);
+    console.log(storedTitle);
+  });
+
 });
 
 
