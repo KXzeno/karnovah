@@ -42,3 +42,27 @@ const fortress = new Entity({
 
 Entity.insertMany([cogdiss, fortress]);
 
+/* find() no longer accepts callback
+Entity.find(function(err, fruits){
+  if (err) {
+    console.log(err);
+  } else {
+    entities.forEach(function(entity){ 
+      console.log(entity.name);
+    });
+  }
+});
+*/
+
+async function findEntities() {
+  try {
+    const entities = await Entity.find();
+    entities.forEach(function(entity) {
+      console.log(entity.name);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+findEntities();
