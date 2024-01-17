@@ -42,4 +42,13 @@ const fortress = new Entity({
 
 Entity.insertMany([cogdiss, fortress]);
 
+const findDocuments = function(db, callback) {
+  const collection = db.collection('entities');
 
+  collection.find({}).toArray(function(err, entities) {
+    assert.equal(err, null);
+    console.log("Found the following records");
+    console.log(entities);
+    callback(entities);
+  });
+};
