@@ -65,4 +65,6 @@ async function findEntities() {
   }
 }
 
-findEntities();
+findEntities().then(function(err){ 
+  (!!err == true) ? console.log(err) : mongoose.connection.close();
+});
