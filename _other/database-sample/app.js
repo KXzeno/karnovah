@@ -70,4 +70,5 @@ Entity.find(function(err, fruits){
 
   await findEntities();
 }
-main();
+
+await main();
