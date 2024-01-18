@@ -62,9 +62,9 @@ async function findEntities() {
     });
   } catch (err) {
     console.log(err);
+  } finally {
+  mongoose.connection.close();
   }
 }
 
-findEntities().then(function(err){ 
-  (!!err == true) ? console.log(err) : mongoose.connection.close();
-});
+findEntities();
