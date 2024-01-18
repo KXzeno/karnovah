@@ -1,48 +1,49 @@
 import mongoose from 'mongoose';
 
-mongoose.connect("mongodb://localhost:27017/kaeon");
+async function main() {
+  await mongoose.connect("mongodb://localhost:27017/kaeon");
 
-const schema = new mongoose.Schema({
-  name: String,
-  num: Number,
-});
+  const schema = new mongoose.Schema({
+    name: String,
+    num: Number,
+  });
 
-const Entity = mongoose.model("Entity", schema);
+  const Entity = mongoose.model("Entity", schema);
 
-const entity = new Entity({
-  name: "Kaeon",
-  num: 7,
-});
+  const entity = new Entity({
+    name: "Kaeon",
+    num: 7,
+  });
 
-entity.save();
+  await entity.save();
 
-const anotherSchema = new mongoose.Schema({
-  occupation: String,
-  age: Number,
-})
+  const anotherSchema = new mongoose.Schema({
+    occupation: String,
+    age: Number,
+  })
 
-const Person = mongoose.model("Person", anotherSchema);
+  const Person = mongoose.model("Person", anotherSchema);
 
-const person = new Person({
-  occupation: "Developer",
-  age: 7,
-})
+  const person = new Person({
+    occupation: "Developer",
+    age: 7,
+  })
 
-person.save();
+  await person.save();
 
-const cogdiss = new Entity({
-  name: "Cognitive Dissonance",
-  num: 14,
-});
+  // const cogdiss = new Entity({
+  //   name: "Cognitive Dissonance",
+  //   num: 14,
+  // });
+  // 
+  // const fortress = new Entity({
+  //   name: "vertical",
+  //   num: 25,
+  // });
+  // 
+  // Entity.insertMany([cogdiss, fortress]);
 
-const fortress = new Entity({
-  name: "vertical",
-  num: 25,
-});
-
-Entity.insertMany([cogdiss, fortress]);
-
-/* find() no longer accepts callback
+  /* find() no longer accepts callback
 Entity.find(function(err, fruits){
   if (err) {
     console.log(err);
@@ -54,17 +55,19 @@ Entity.find(function(err, fruits){
 });
 */
 
-async function findEntities() {
-  try {
-    const entities = await Entity.find();
-    entities.forEach(function(entity) {
-      console.log(entity.name);
-    });
-  } catch (err) {
-    console.log(err);
-  } finally {
-  mongoose.connection.close();
+  async function findEntities() {
+    try {
+      const entities = await Entity.find();
+      entities.forEach(function(entity) {
+        console.log(entity.name);
+      });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      mongoose.connection.close();
+    }
   }
-}
 
-findEntities();
+  await findEntities();
+}
+main();
