@@ -25,6 +25,7 @@ module.exports = {
         dm_sans: ['var(--font-dm-sans)'],
         quicksand: ['var(--font-quicksand)'],
         dosis: ['var(--font-quicksand)'],
+        sono: ['var(--font-sono)'],
       },
       container: {
         padding: "0.3rem 0.15rem",
