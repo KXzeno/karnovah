@@ -73,9 +73,9 @@ Entity.find(function(err, fruits){
     }
   }
 
+  const res = await Entity.updateOne({_id: '65a8bbe41865ccf79cc97492'}, {name: 'Kx'});
   await findEntities();
 
-  Entity.updateOne({_id: "65a8bbe41865ccf79cc97492"}, {name: "Kx"});
 }
 
 await main();
