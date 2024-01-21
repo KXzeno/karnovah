@@ -73,7 +73,14 @@ Entity.find(function(err, fruits){
     }
   }
 
-  const res = await Entity.updateOne({_id: '65a8bbe41865ccf79cc97492'}, {name: 'Kx'});
+  const res = await Entity.updateOne({_id: '65a8bbe41865ccf79cc97492'}, {name: 'Kx'})
+    .exec().then(function(res) {
+      console.log("Sucessful data change");
+    })
+    .catch(function(err) {
+      ("Data change failed");
+    });
+  ;
   await findEntities();
 
 }
