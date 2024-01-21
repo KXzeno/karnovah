@@ -25,14 +25,21 @@ async function main() {
   const anotherSchema = new mongoose.Schema({
     occupation: String,
     age: Number,
+    relation: schema,
   })
 
   const Person = mongoose.model("Person", anotherSchema);
 
+  const test = new Entity({
+    name: "Test",
+    num: 5,
+  });
+
   const person = new Person({
     occupation: "Developer",
     age: 7,
-  })
+    relation: test,
+  });
 
   await person.save();
 
@@ -81,8 +88,10 @@ Entity.find(function(err, fruits){
       ("Data change failed");
     });
   ;
-  await findEntities();
 
+// Understanding the statement above proves clarity to rest of the CRUD operations; continue.
+
+  await findEntities();
 }
 
 await main();
