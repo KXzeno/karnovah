@@ -5,12 +5,12 @@ async function main() {
   const schema = new mongoose.Schema({
     name: {
       type: String,
-      required: true,
+      required: [true, "No name specified"]
     }
     num: Number,
     rating: {
       type: Number,
-      min: 1,
+      min: [1, Cannot go lower than '1'],
       max: 10
     },
   });
