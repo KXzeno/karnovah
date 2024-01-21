@@ -6,12 +6,11 @@ async function main() {
     name: {
       type: String,
       required: [true, "No name specified"]
-    }
-    num: Number,
-    rating: {
+    },
+    num: {
       type: Number,
-      min: [1, Cannot go lower than '1'],
-      max: 10
+      min: [1, "Cannot go lower than '1'"],
+      max: 30
     },
   });
 
@@ -21,7 +20,6 @@ async function main() {
     name: "Kaeon",
     num: 7,
   });
-
   await entity.save();
 
   const anotherSchema = new mongoose.Schema({
@@ -76,6 +74,8 @@ Entity.find(function(err, fruits){
   }
 
   await findEntities();
+
+  Entity.updateOne({_id: "65a8bbe41865ccf79cc97492"}, {name: "Kx"});
 }
 
 await main();
