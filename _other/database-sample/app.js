@@ -6,6 +6,11 @@ async function main() {
   const schema = new mongoose.Schema({
     name: String,
     num: Number,
+    rating: {
+      type: Number,
+      min: 1,
+      max: 10
+    },
   });
 
   const Entity = mongoose.model("Entity", schema);
@@ -31,17 +36,17 @@ async function main() {
 
   await person.save();
 
-  // const cogdiss = new Entity({
-  //   name: "Cognitive Dissonance",
-  //   num: 14,
-  // });
-  // 
-  // const fortress = new Entity({
-  //   name: "vertical",
-  //   num: 25,
-  // });
-  // 
-  // Entity.insertMany([cogdiss, fortress]);
+  const cogdiss = new Entity({
+    name: "Cognitive Dissonance",
+    num: 14,
+  });
+
+  const fortress = new Entity({
+    name: "vertical",
+    num: 25,
+  });
+
+  Entity.insertMany([cogdiss, fortress]);
 
   /* find() no longer accepts callback
 Entity.find(function(err, fruits){
