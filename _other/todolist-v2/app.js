@@ -12,13 +12,47 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 async function main() {
-  mongose.connect("mongodb://localhost:27017/todolistDB")
+  mongoose.connect("mongodb://localhost:27017/todolistDB")
+
+  const itemsSchema = new mongoose.Schema({
+    name : String,
+  });
+
+  const Item = mongoose.model("Item", itemsSchema);
+
+  const item1 = new Item({
+    name: "One",
+  });
+
+  const item2 = new Item({
+    name: "Two",
+  });
+
+  const item3 = new Item({
+    name: "Three",
+  });
+
+  const defaultItems = [item1, item2, item3];
+  /*
+  await Item.insertMany(defaultItems)
+    .then(function() {
+      console.log("Successful data change");
+    }).catch(function(err) {
+      console.log("Data change failed");
+    });
+    */
+  try {
+    await Item.insertMany(defaultItems);
+    console.log("Successful data change");
+  } catch (err) {
+    console.log("Data change failed");
+  }
 
   app.get("/", function(req, res) {
-    const { day, weekEnd } = getDate();
+    // const { day, weekEnd } = getDate();
 
     res.render("list", {
-      listTitle: day,
+      listTitle: "Today",
       weekEnd: weekEnd,
       newListItems: items,
     });
@@ -59,3 +93,4 @@ async function main() {
     console.log("Port 3000 initialized...");
   });
 }
+main();
