@@ -50,9 +50,18 @@ async function main() {
 
   app.get("/", async function(req, res) {
     // const { day, weekEnd } = getDate();
-
     try {
       const foundItems = await Item.find({});
+      foundItems === 0 
+        ? (function() {
+          try {
+            Item.insertMany(defaultItems);
+            console.log("Data change successful");
+          } catch (err) {
+            console.log ("Data change failed");
+          }
+        })
+        : console.log("Data did not update");
       console.log(foundItems);
       res.render("list", {
         listTitle: "Today",
