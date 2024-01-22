@@ -48,14 +48,22 @@ async function main() {
     console.log("Data change failed");
   }
 
-  app.get("/", function(req, res) {
+  app.get("/", async function(req, res) {
     // const { day, weekEnd } = getDate();
 
-    res.render("list", {
-      listTitle: "Today",
-      weekEnd: weekEnd,
-      newListItems: items,
-    });
+    try {
+      const foundItems = await Item.find({});
+      console.log(foundItems);
+      res.render("list", {
+        listTitle: "Today",
+        // weekEnd: weekEnd,
+        newListItems: foundItems,
+      });
+      console.log(newListItems);
+    }
+    catch (err) {
+      console.log("Failed to render items");
+    }
   });
 
   app.post("/", function(req, res) {
