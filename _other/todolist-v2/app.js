@@ -33,26 +33,12 @@ async function main() {
   });
 
   const defaultItems = [item1, item2, item3];
-  /*
-  await Item.insertMany(defaultItems)
-    .then(function() {
-      console.log("Successful data change");
-    }).catch(function(err) {
-      console.log("Data change failed");
-    });
-    */
-  try {
-    await Item.insertMany(defaultItems);
-    console.log("Successful data change");
-  } catch (err) {
-    console.log("Data change failed");
-  }
 
   app.get("/", async function(req, res) {
     // const { day, weekEnd } = getDate();
     try {
       const foundItems = await Item.find({});
-      foundItems === 0 
+      foundItems.length === 0 
         ? (function() {
           try {
             Item.insertMany(defaultItems);
@@ -60,8 +46,10 @@ async function main() {
           } catch (err) {
             console.log ("Data change failed");
           }
-        })
+          res.redirect("/");
+        })() // "()" executes anon func
         : console.log("Data did not update");
+
       console.log(foundItems);
       res.render("list", {
         listTitle: "Today",
