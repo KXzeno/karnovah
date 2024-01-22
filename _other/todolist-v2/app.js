@@ -11,49 +11,51 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+async function main() {
+  mongose.connect("mongodb://localhost:27017/todolistDB")
 
+  app.get("/", function(req, res) {
+    const { day, weekEnd } = getDate();
 
-app.get("/", function(req, res) {
-  const { day, weekEnd } = getDate();
-
-  res.render("list", {
-    listTitle: day,
-    weekEnd: weekEnd,
-    newListItems: items,
+    res.render("list", {
+      listTitle: day,
+      weekEnd: weekEnd,
+      newListItems: items,
+    });
   });
-});
 
-app.post("/", function(req, res) {
-  const item = req.body.newItem;
+  app.post("/", function(req, res) {
+    const item = req.body.newItem;
 
-  console.log(req.body.list);
-  if (req.body.list === "Work List") {
+    console.log(req.body.list);
+    if (req.body.list === "Work List") {
+      workItems.push(item);
+      res.redirect("/work");
+    } else {
+      items.push(item);
+      res.redirect("/");
+    }
+
+  });
+
+  app.get("/work", function(req, res) {
+    res.render("list", {
+      listTitle: "Work List",
+      newListItems: workItems,
+    });
+  });
+
+  app.post("/work", function(req, res) {
+    const item = req.body.newItem;
     workItems.push(item);
     res.redirect("/work");
-  } else {
-    items.push(item);
-    res.redirect("/");
-  }
-
-});
-
-app.get("/work", function(req, res) {
-  res.render("list", {
-    listTitle: "Work List",
-    newListItems: workItems,
   });
-});
 
-app.post("/work", function(req, res) {
-  const item = req.body.newItem;
-  workItems.push(item);
-  res.redirect("/work");
-});
+  app.get("/about", function(req, res) {
+    res.render("about");
+  });
 
-app.get("/about", function(req, res) {
-  res.render("about");
-});
-
-app.listen(3000, function() { 
-  console.log("Port 3000 initialized...");
-});
+  app.listen(3000, function() { 
+    console.log("Port 3000 initialized...");
+  });
+}
