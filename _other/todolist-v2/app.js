@@ -71,6 +71,15 @@ app.post("/", function(req, res) {
   res.redirect("/");
 });
 
+app.post("/delete", async (req, res) => {
+  await Item.findByIdAndDelete(checkedItemId).exec()
+    .then(result => {
+      console.log("Data deletion successful");
+    }).catch(err => {
+      console.log("Data deletion failed.");
+    });
+});
+
 app.get("/work", function(req, res) {
   res.render("list", {
     listTitle: "Work List",
