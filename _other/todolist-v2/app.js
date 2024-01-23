@@ -63,17 +63,11 @@ app.get("/", async function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  const item = req.body.newItem;
-
-  console.log(req.body.list);
-  if (req.body.list === "Work List") {
-    workItems.push(item);
-    res.redirect("/work");
-  } else {
-    items.push(item);
-    res.redirect("/");
-  }
-
+  const itemName = req.body.newItem;
+  const item = new Item({
+    name: itemName,
+  });
+  item.save();
 });
 
 app.get("/work", function(req, res) {
