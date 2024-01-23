@@ -68,6 +68,7 @@ app.post("/", function(req, res) {
     name: itemName,
   });
   item.save();
+  res.redirect("/");
 });
 
 app.get("/work", function(req, res) {
