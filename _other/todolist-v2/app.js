@@ -39,7 +39,7 @@ async function main() {
     try {
       const foundItems = await Item.find({});
       foundItems.length === 0 
-        ? (function() {
+        ? (() => {
           try {
             Item.insertMany(defaultItems);
             console.log("Data change successful");
@@ -47,7 +47,7 @@ async function main() {
             console.log ("Data change failed");
           }
           res.redirect("/");
-        })() // "()" executes anon func
+        })()
         : console.log("Data did not update");
 
       console.log(foundItems);
