@@ -69,12 +69,12 @@ app.get("/", async function(req, res) {
   }
 });
 
-app.post("/", function(req, res) {
+app.post("/", async (req, res) => {
   const itemName = req.body.newItem;
   const item = new Item({
     name: itemName,
   });
-  item.save();
+  await item.save();
   res.redirect("/");
 });
 
@@ -89,8 +89,13 @@ app.post("/delete", async (req, res) => {
     });
 });
 
-app.get("/:listName", function(req, res) {
+app.get("/:listName", async (req, res) => {
   const listName = req.params.listName;
+  const list = new List({
+    name: listName,
+    items: defaultItems,
+  });
+  await list.save();
 });
 
 app.post("/work", function(req, res) {
