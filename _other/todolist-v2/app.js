@@ -91,11 +91,22 @@ app.post("/delete", async (req, res) => {
 
 app.get("/:listName", async (req, res) => {
   const listName = req.params.listName;
-  const list = new List({
-    name: listName,
-    items: defaultItems,
-  });
-  await list.save();
+
+  List.findOne({name: listName}).exec()
+    .then(result => {
+      res.render("list", {
+        listTitle: result.name,
+        newListItems: result.items,
+      });
+    }).catch(async err => {
+      const list = new List({
+        name: listName,
+        items: defaultItems,
+      });
+      await list.save();
+      res.redirect(`/${listName}`);
+    });
+
 });
 
 app.post("/work", function(req, res) {
