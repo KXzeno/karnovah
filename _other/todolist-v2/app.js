@@ -33,6 +33,13 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
+const listSchema = { // no Schema functions used; object declaration not required
+  name: String,
+  items: [itemsSchema],
+};
+
+const List = mongoose.model("List", listSchema);
+
 app.get("/", async function(req, res) {
   // const { day, weekEnd } = getDate();
   try {
@@ -82,11 +89,8 @@ app.post("/delete", async (req, res) => {
     });
 });
 
-app.get("/work", function(req, res) {
-  res.render("list", {
-    listTitle: "Work List",
-    newListItems: workItems,
-  });
+app.get("/:listName", function(req, res) {
+  const listName = req.params.listName;
 });
 
 app.post("/work", function(req, res) {
