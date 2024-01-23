@@ -69,13 +69,30 @@ app.get("/", async function(req, res) {
   }
 });
 
-app.post("/", async (req, res) => {
+app.post("/", async(req, res) => {
   const itemName = req.body.newItem;
+  const listName = req.body.list;
   const item = new Item({
     name: itemName,
   });
-  await item.save();
-  res.redirect("/");
+
+  listName === "Today" ?
+    +(async() => {
+      await item.save();
+      console.log(`Data sent to list: ${listName}`);
+      res.redirect("/");
+    })()
+    :
+    +(async() => {
+      await List.findOne({name: listName}).exec()
+        .then(async result => {
+          result.items.push(item);
+          await result.save();
+          res.redirect(`/${listName}`);
+        }).catch(err => {
+          console.log("List creation failed.");
+        });
+    })();
 });
 
 app.post("/delete", async (req, res) => {
