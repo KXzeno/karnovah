@@ -72,9 +72,11 @@ app.post("/", function(req, res) {
 });
 
 app.post("/delete", async (req, res) => {
-  await Item.findByIdAndDelete(checkedItemId).exec()
+  const id = req.body.checkbox;
+  await Item.findByIdAndDelete(id).exec()
     .then(result => {
       console.log("Data deletion successful");
+      res.redirect("/");
     }).catch(err => {
       console.log("Data deletion failed.");
     });
