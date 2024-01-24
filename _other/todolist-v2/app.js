@@ -97,13 +97,24 @@ app.post("/", async(req, res) => {
 
 app.post("/delete", async (req, res) => {
   const id = req.body.checkbox;
-  await Item.findByIdAndDelete(id).exec()
-    .then(result => {
-      console.log("Data deletion successful");
-      res.redirect("/");
-    }).catch(err => {
-      console.log("Data deletion failed.");
-    });
+  const listName = req.body.listName;
+
+  if (listName === "Today") {
+    await Item.findByIdAndDelete(id).exec()
+      .then(result => {
+        console.log("Data deletion successful");
+        res.redirect("/");
+      }).catch(err => {
+        console.log("Data deletion failed.");
+      });
+  } else {
+    List.findOneAndUpdate({name: listName}, {$pull: {items: {_id: id}}}).exec()
+      .then(return => {
+        res.redirect("/" + listName);
+      }).catch(err => {
+        console.log("Data deletion of custom list failed.");
+      });
+  }
 });
 
 app.get("/:listName", async (req, res) => {
