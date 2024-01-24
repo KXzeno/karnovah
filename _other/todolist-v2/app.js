@@ -109,7 +109,7 @@ app.post("/delete", async (req, res) => {
       });
   } else {
     List.findOneAndUpdate({name: listName}, {$pull: {items: {_id: id}}}).exec()
-      .then(return => {
+      .then(result => {
         res.redirect("/" + listName);
       }).catch(err => {
         console.log("Data deletion of custom list failed.");
