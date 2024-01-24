@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import { dirname } from 'path';
 import { getDate } from './date.js';
 import mongoose from 'mongoose';
+import _ from 'lodash';
 
 const app = express();
 const dirName = dirname(import.meta.filename);
@@ -118,7 +119,7 @@ app.post("/delete", async (req, res) => {
 });
 
 app.get("/:listName", async (req, res) => {
-  const listName = req.params.listName;
+  const listName = _.capitalize(req.params.listName);
 
   List.findOne({name: listName}).exec()
     .then(result => {
