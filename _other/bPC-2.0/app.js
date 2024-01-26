@@ -85,7 +85,6 @@ app.post("/compose", async (req, res) => {
   });
   await post.save();
 
-  post ? posts.push(post) : !!post;
   res.redirect("/");
 });
 
