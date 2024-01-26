@@ -1,8 +1,9 @@
 /* Global Imports */
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import mongoose from 'mongoose';
 import _ from 'lodash';
+import 'dotenv/config';
 // import ejs from 'ejs';
 
 /* Local Imports */
@@ -12,6 +13,13 @@ const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pelle
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
+
+const DB_ID = process.env.DB_AD_U;
+const DB_PA = process.env.DB_AD_P;
+const uri = `mongodb+srv://${DB_ID}:${DB_PA}@kharner.frb2ipg.mongodb.net`
+mongoose.connect(uri, {
+  dbName: 'blogDB',
+});
 
 app.set('view engine', 'ejs');
 
@@ -25,11 +33,11 @@ function truncate(str, maxlength) {
     str.slice(0, maxlength - 1) + '…' : str;
 }
 
-app.get("/home", function(req, res) {
+app.get("/home", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/", function(req, res) {
+app.get("/", (req, res) => {
   res.render("home", {
     homeStartingContent: homeStartingContent,
     posts: posts,
@@ -37,35 +45,34 @@ app.get("/", function(req, res) {
 });
 
 
-app.get("/about", function(req, res) {
+app.get("/about", (req, res) => {
   res.render("about", {
     aboutContent: aboutContent
   });
 });
 
 
-app.get("/contact", function(req, res) {
+app.get("/contact", (req, res) => {
   res.render("contact", {
     contactContent: contactContent
   });
 });
 
-app.get("/compose", function(req, res) {
+app.get("/compose", (req, res) => {
   res.render("compose");
 });
 
-app.post("/compose", function(req, res) {
+app.post("/compose", (req, res) => {
   let post = {
     title: req.body.title,
-    content: req.body.content,
+    content: truncate(req.body.content, 100),
   };
-  console.log(post);
   post ? posts.push(post) : !!post;
   res.redirect("/");
 });
 
-app.get("/posts/:post", function(req, res) {
-  let obj = posts.find(function() {
+app.get("/posts/:post", (req, res) => {
+  let obj = posts.find(() => {
     return req.params.post;
   });
 
