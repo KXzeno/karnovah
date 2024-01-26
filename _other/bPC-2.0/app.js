@@ -72,13 +72,12 @@ app.post("/compose", (req, res) => {
 });
 
 app.get("/posts/:post", (req, res) => {
-  let obj = posts.find(() => {
-    return req.params.post;
-  });
+  //let {...decon} = posts;
+  const slug = posts.find(({ title }) => _.kebabCase(title) === _.kebabCase(req.params.post));
 
   res.render("post", {
-    title: obj.title,
-    content: obj.content,
+    title: slug.title,
+    content: slug.content,
   });
 
 });
