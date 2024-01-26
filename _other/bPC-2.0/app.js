@@ -21,6 +21,14 @@ mongoose.connect(uri, {
   dbName: 'blogDB',
 });
 
+const blogSchema = new Schema({
+  title: String,
+  content: String.
+});
+
+const Blog = mongoose.model('Blog', blogSchema);
+
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -73,7 +81,7 @@ app.post("/compose", (req, res) => {
 
 app.get("/posts/:post", (req, res) => {
   //let {...decon} = posts;
-  const slug = posts.find(({ title }) => _.kebabCase(title) === _.kebabCase(req.params.post));
+  const slug = posts.find(({ title }) => title === req.params.post);
 
   res.render("post", {
     title: slug.title,
