@@ -35,6 +35,13 @@ async function main() {
       });
   });
 
+  app.post("/articles", async (req, res) => {
+    const newArticle = new Article({
+      title: req.body.title,
+      content: req.body.content,
+    });
+    await newArticle.save();
+  });
 
   app.listen(3000, () => {
     console.log("Server started...");
