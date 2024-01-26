@@ -19,6 +19,12 @@ async function main() {
   }));
   app.use(express.static("public"));
 
+  const articleSchema = mongoose.Schema({
+    title: String,
+    content: String,
+  });
+
+  const Article = mongoose.model('article', articleSchema)
 
   app.listen(3000, () => {
     console.log("Server started...");
