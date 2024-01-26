@@ -26,6 +26,16 @@ async function main() {
 
   const Article = mongoose.model('Article', articleSchema);
 
+  app.get("/articles", (req, res) => {
+    Article.find({}).exec()
+      .then(result => {
+        console.log(result);
+      }).catch(err => {
+        console.error(err);
+      });
+  });
+
+
   app.listen(3000, () => {
     console.log("Server started...");
   });
