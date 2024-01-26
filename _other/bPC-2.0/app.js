@@ -21,13 +21,13 @@ mongoose.connect(uri, {
   dbName: 'blogDB',
 });
 
+const { Schema } = mongoose;
 const blogSchema = new Schema({
   title: String,
-  content: String.
+  content: String,
 });
 
 const Blog = mongoose.model('Blog', blogSchema);
-
 
 app.set('view engine', 'ejs');
 
