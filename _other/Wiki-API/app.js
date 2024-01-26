@@ -40,12 +40,16 @@ async function main() {
       title: req.body.title,
       content: req.body.content,
     });
-    await newArticle.save();
+    await newArticle.save(err => {
+      !err ? res.send("Article posted successfully.")
+      :
+        res.send(err);
+    });
   });
 
   app.listen(3000, () => {
     console.log("Server started...");
   });
-  
+
 }
 main();
