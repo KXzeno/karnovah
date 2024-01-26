@@ -24,7 +24,7 @@ async function main() {
     content: String,
   });
 
-  const Article = mongoose.model('article', articleSchema)
+  const Article = mongoose.model('Article', articleSchema);
 
   app.listen(3000, () => {
     console.log("Server started...");
