@@ -63,13 +63,21 @@ async function main() {
         .then(result => {
           res.send(result);
         }).catch(err => res.send(err));
+    })
+    .put((req, res) => {
+      Article.replaceOne(
+        { title: req.params.slug },
+        { title: req.body.title, content: req.body.content }
+      ).exec()
+        .then(res.send("Article update successful."))
+        .catch(err => res.send(err));
     });
 
 
 
 
   app.listen(3000, () => {
-    console.log("Server started...");
+    console.log("Server running...");
   });
 
 }
