@@ -79,6 +79,14 @@ async function main() {
       ).exec()
         .then(res.send("Article update successful."))
         .catch(err => res.send(err));
+    })
+    .delete(async (req, res) => {
+      try {
+        Article.deleteOne({ title: req.params.slug });
+      }
+      catch (err) {
+        res.send(err);
+      }
     });
 
 
