@@ -28,32 +28,31 @@ async function main() {
 
   const Article = mongoose.model('Article', articleSchema);
 
-  app.get("/articles", (req, res) => {
-    Article.find({}).exec()
-      .then(result => {
-        console.log(result);
-      }).catch(err => {
-        console.error(err);
+  app.route("/articles")
+    .get((req, res) => {
+      Article.find({}).exec()
+        .then(result => {
+          console.log(result);
+        }).catch(err => {
+          console.error(err);
+        });
+    })
+    .post(async (req, res) => {
+      const newArticle = new Article({
+        title: req.body.title,
+        content: req.body.content,
       });
-  });
-
-  app.post("/articles", async (req, res) => {
-    const newArticle = new Article({
-      title: req.body.title,
-      content: req.body.content,
+      await newArticle.save(err => {
+        !err ? res.send("Article posted successfully.")
+          :
+          res.send(err);
+      });
+    })
+    .delete((req, res) => {
+      Article.deleteMany({}).exec()
+        .then(res.send("Deleted all articles."))
+        .catch(err => res.send(err));
     });
-    await newArticle.save(err => {
-      !err ? res.send("Article posted successfully.")
-      :
-        res.send(err);
-    });
-  });
-
-  app.delete("/articles", (req, res) => {
-    Article.deleteMany({}).exec()
-      .then(res.send("Deleted all articles."))
-      .catch(err => ress.send(err));
-  });
 
 
 
