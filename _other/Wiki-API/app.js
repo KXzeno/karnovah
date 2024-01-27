@@ -69,6 +69,14 @@ async function main() {
         { title: req.params.slug },
         { title: req.body.title, content: req.body.content }
       ).exec()
+        .then(res.send("Article overwrite successful."))
+        .catch(err => res.send(err));
+    })
+    .patch((req, res) => {
+      Article.updateOne(
+        { title: req.params.slug },
+        { $set: req.body },
+      ).exec()
         .then(res.send("Article update successful."))
         .catch(err => res.send(err));
     });
