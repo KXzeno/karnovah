@@ -21,6 +21,7 @@ async function main() {
   }));
   app.use(express.static("public"));
 
+  // Create schemas and ODMs
   const articleSchema = mongoose.Schema({
     title: String,
     content: String,
@@ -28,6 +29,7 @@ async function main() {
 
   const Article = mongoose.model('Article', articleSchema);
 
+  // Start route chaining for articles
   app.route("/articles")
     .get((req, res) => {
       Article.find({}).exec()
@@ -52,6 +54,15 @@ async function main() {
       Article.deleteMany({}).exec()
         .then(res.send("Deleted all articles."))
         .catch(err => res.send(err));
+    });
+
+  // Start route chaining for article slugs (params)
+  app.route("/articles/:slug")
+    .get((req, res) => {
+      Article.findOne({ title: req.params.slug }).exec()
+        .then(result => {
+          res.send(result);
+        }).catch(err => res.send(err));
     });
 
 
