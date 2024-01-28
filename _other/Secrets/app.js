@@ -15,7 +15,7 @@ const DB_ID = process.env.DB_AD_U;
 const DB_PA = process.env.DB_AD_P;
 const uri = `mongodb+srv://${DB_ID}:${DB_PA}@kharner.frb2ipg.mongodb.net`
 mongoose.connect(uri, {
-  dbName: 'blogDB',
+  dbName: 'userDB',
 });
 
 const userSchema = new mongoose.Schema({
@@ -42,11 +42,28 @@ app.post("/register", async (req, res) => {
     email: req.body.username,
     password: req.body.password,
   });
+
   try {
     await newUser.save();
+    res.render("secrets");
   } catch (err) {
     console.error(err);
   }
+});
+
+app.post("/login", async (req, res) => {
+  let [username, password, temp] = [req.body.username, req.body.password];
+
+  await User.findOne({ email: username }).exec()
+    .then(result => {
+      try {
+        // Syntactic redundancy, used as operator usage reference
+        temp ??= !!(result.password === password);
+        if(temp === true) { res.render("secrets"); }
+      } catch (err) {
+        console.error(err);
+      }
+    });
 });
 
 
