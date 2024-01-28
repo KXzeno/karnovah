@@ -39,13 +39,16 @@ app.get("/register", (req, res) => {
 
 app.post("/register", async (req, res) => {
   const newUser = new User({
-    email: req.body.username;
-    password: req.body.password;
+    email: req.body.username,
+    password: req.body.password,
   });
-  newUser.save(err => {
-    err ? console.error(err) : res.render("secrets");
+  await newUser.save().then(() => {
+    try {
+      res.render("secrets");
+    } catch(err) {
+      console.error(err);
+    };
   });
-
 });
 
 
