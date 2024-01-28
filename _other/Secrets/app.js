@@ -42,13 +42,11 @@ app.post("/register", async (req, res) => {
     email: req.body.username,
     password: req.body.password,
   });
-  await newUser.save().then(() => {
-    try {
-      res.render("secrets");
-    } catch(err) {
-      console.error(err);
-    };
-  });
+  try {
+    await newUser.save();
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 
