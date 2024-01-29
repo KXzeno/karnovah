@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import encrypt from 'mongoose-encryption';
 
 const app = express();
 
