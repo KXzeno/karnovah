@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import md5 from 'md5';
 // import encrypt from 'mongoose-encryption';
 
 const app = express();
@@ -43,7 +44,7 @@ app.get("/register", (req, res) => {
 app.post("/register", async (req, res) => {
   const newUser = new User({
     email: req.body.username,
-    password: req.body.password,
+    password: mdr(req.body.password),
   });
 
   try {
