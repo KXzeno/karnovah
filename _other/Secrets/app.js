@@ -69,22 +69,30 @@ app.get("/secrets", (req, res) => {
     //  }
 });
 
+app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+});
+
 app.post("/register", (req, res) => {
-    User.register({ username: req.body.username }, req.body.password),
-        passport.authenticate("local", { failureRedirect: "/register", failureMessage: true }),
-        (req, res) => {
-            res.redirect("/secrets");
-        };
-    //  User.register({ username: req.body.username }, req.body.password, function(err, user){
-    //    if (err) {
-    //      console.log(err);
-    //      rs.redirect("/register");
-    //    } else {
-    //      passport.authenticate("local")(req, res, function(){
-    //        res.redirect("/secrets");
-    //      });
-    //    }
-    //  });
+    // User.register({ username: req.body.username }, req.body.password),
+    //     passport.authenticate("local", { failureRedirect: "/register", failureMessage: true }),
+    //     (req, res) => {
+    //         res.redirect("/secrets");
+    //     };
+    User.register({ username: req.body.username }, req.body.password, (err, user) => {
+        err ? 
+            +((err) => {
+                console.error(err);
+                res.redirect("/register");
+            })()
+            :
+            +(() => {
+                passport.authenticate("local")(req, res, () => {
+                    res.redirect("/secrets");
+                });
+            })();
+    });
 });
 
 app.post("/login", async (req, res) => {
