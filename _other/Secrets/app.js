@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import 'dotenv/config';
-import md5 from 'md5';
+// import md5 from 'md5';
 // import encrypt from 'mongoose-encryption';
 
 const app = express();
@@ -41,18 +41,20 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.post("/register", async (req, res) => {
-  const newUser = new User({
-    email: req.body.username,
-    password: mdr(req.body.password),
-  });
+app.post("/register", (req, res) => {
+  bcrypt.hash(req.body.password, 10, async (err, hash) => {
+    const newUser = new User({
+      email: req.body.username,
+      password: hash,
+    });
 
-  try {
-    await newUser.save();
-    res.render("secrets");
-  } catch (err) {
-    console.error(err);
-  }
+    try {
+      await newUser.save();
+      res.render("secrets");
+    } catch (err) {
+      console.error(err);
+    }
+  });
 });
 
 app.post("/login", async (req, res) => {
