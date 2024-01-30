@@ -14,13 +14,13 @@ const app = express();
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
-  extended: true,
+    extended: true,
 }));
 
 app.use(session({
-  secret: "When gods have fallen.",
-  resave: false,
-  saveUninitialized: false
+    secret: "When gods have fallen.",
+    resave: false,
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -30,12 +30,12 @@ const DB_ID = process.env.DB_AD_U;
 const DB_PA = process.env.DB_AD_P;
 const uri = `mongodb+srv://${DB_ID}:${DB_PA}@kharner.frb2ipg.mongodb.net`
 mongoose.connect(uri, {
-  dbName: 'userDB',
+    dbName: 'userDB',
 });
 
 const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
+    email: String,
+    password: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -46,29 +46,63 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser(User.deserializeUser()); 
 
 app.get("/", (req, res) => {
-  res.render("home");
+    res.render("home");
 });
 
 app.get("/login", (req, res) => {
-  res.render("login");
+    res.render("login");
 });
 
 app.get("/register", (req, res) => {
-  res.render("register");
+    res.render("register");
+});
+
+app.get("/secrets", (req, res) => {
+    req.isAuthenticated() ? res.render("secrets") : res.redirect("/login");
+    //  if (req.isAuthenticated()) {
+    //    res.render("secrets");
+    //  } else {
+    //    res.redirect("/login");
+    //  }
 });
 
 app.post("/register", (req, res) => {
-
+    User.register({ username: req.body.username }, req.body.password),
+        passport.authenticate("local", { failureRedirect: "/register", failureMessage: true }),
+        (req, res) => {
+            res.redirect("/secrets");
+        };
+    //  User.register({ username: req.body.username }, req.body.password, function(err, user){
+    //    if (err) {
+    //      console.log(err);
+    //      rs.redirect("/register");
+    //    } else {
+    //      passport.authenticate("local")(req, res, function(){
+    //        res.redirect("/secrets");
+    //      });
+    //    }
+    //  });
 });
 
 app.post("/login", async (req, res) => {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password,
+    });
 
+    req.login(user, (e) => {
+        err ? 
+            console.error(err) :
+            +(() => { 
+                passport.authenticate("local"); res.redirect("/secrets"); 
+            });
+    });
 });
 
 
 app.listen(3000, () => {
-  console.log("Server running...");
+    console.log("Server running...");
 });
