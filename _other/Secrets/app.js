@@ -4,6 +4,10 @@ import mongoose from 'mongoose';
 import 'dotenv/config';
 // import md5 from 'md5';
 // import encrypt from 'mongoose-encryption';
+// import bcrypt from 'bcrypt';
+import session from 'express-session';
+import passport from 'passport';
+import passportLocalMongoose from 'passport-local-mongoose';
 
 const app = express();
 
@@ -12,6 +16,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
+
+app.use(session({
+  secret: "When gods have fallen.",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 const DB_ID = process.env.DB_AD_U;
 const DB_PA = process.env.DB_AD_P;
@@ -25,9 +38,15 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
+userSchema.plugin(passportLocalMongoose);
+
 // userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"] });
 
 const User = new mongoose.model("User", userSchema);
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -42,39 +61,11 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  bcrypt.hash(req.body.password, 10, async (err, hash) => {
-    const newUser = new User({
-      email: req.body.username,
-      password: hash,
-    });
 
-    try {
-      await newUser.save();
-      res.render("secrets");
-    } catch (err) {
-      console.error(err);
-    }
-  });
 });
 
 app.post("/login", async (req, res) => {
-  let [username, password, temp] = [req.body.username, req.body.password];
 
-  await User.findOne({ email: username }).exec()
-    .then(result => {
-      try {
-        // Syntactic redundancy, used as operator usage reference
-        // temp ??= !!(result.password === password);
-        // if(temp === true) { res.render("secrets"); }
-        bcrypt.compare(password, result.password, (err, r) => {
-          if (r === true) {
-            res.render("secrets");
-          }
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    });
 });
 
 
