@@ -64,8 +64,13 @@ app.post("/login", async (req, res) => {
     .then(result => {
       try {
         // Syntactic redundancy, used as operator usage reference
-        temp ??= !!(result.password === password);
-        if(temp === true) { res.render("secrets"); }
+        // temp ??= !!(result.password === password);
+        // if(temp === true) { res.render("secrets"); }
+        bcrypt.compare(password, result.password, (err, r) => {
+          if (r === true) {
+            res.render("secrets");
+          }
+        });
       } catch (err) {
         console.error(err);
       }
