@@ -38,6 +38,7 @@ mongoose.connect(uri, {
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
+    googleId: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
