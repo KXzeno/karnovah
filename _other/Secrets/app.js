@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
+userSchema.plugin(findOrCreate); // Cannot chain
 
 // userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["password"] });
 
@@ -53,8 +53,10 @@ passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-        done(err, user);
+    User.findById(id).then(user => {
+        done(null, user);
+    }).catch(e => {
+        done(e, null);
     });
 }); 
 
