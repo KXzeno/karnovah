@@ -69,9 +69,13 @@ app.get("/secrets", (req, res) => {
     //  }
 });
 
-app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
+app.get("/logout", (req, res, next) => {
+    req.logout(err => {
+        if (err) {
+            return next(err);
+        }
+        res.redirect("/");
+    });
 });
 
 app.post("/register", (req, res) => {
@@ -102,11 +106,13 @@ app.post("/login", async (req, res) => {
     });
 
     req.login(user, (e) => {
-        err ? 
-            console.error(err) :
+        e ? 
+            console.error(err) 
+            :
             +(() => { 
-                passport.authenticate("local"); res.redirect("/secrets"); 
-            });
+                passport.authenticate("local"); 
+                res.redirect("/secrets"); 
+            })();
     });
 });
 
