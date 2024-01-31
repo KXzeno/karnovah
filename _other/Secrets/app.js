@@ -85,17 +85,14 @@ app.post("/register", (req, res) => {
     //         res.redirect("/secrets");
     //     };
     User.register({ username: req.body.username }, req.body.password, (err, user) => {
-        err ? 
-            +((err) => {
-                console.error(err);
-                res.redirect("/register");
-            })()
-            :
-            +(() => {
-                passport.authenticate("local")(req, res, () => {
-                    res.redirect("/secrets");
-                });
-            })();
+        err ? +((err) => {
+            console.error(err);
+            res.redirect("/register");
+        })() : +(() => {
+            passport.authenticate("local")(req, res, () => {
+                res.redirect("/secrets");
+            });
+        })();
     });
 });
 
@@ -106,13 +103,10 @@ app.post("/login", async (req, res) => {
     });
 
     req.login(user, (e) => {
-        e ? 
-            console.error(err) 
-            :
-            +(() => { 
-                passport.authenticate("local"); 
-                res.redirect("/secrets"); 
-            })();
+        e ?  console.error(err) : +(() => { 
+            passport.authenticate("local"); 
+            res.redirect("/secrets"); 
+        })();
     });
 });
 
