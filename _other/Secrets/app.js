@@ -102,6 +102,11 @@ app.get("/secrets", (req, res) => {
     //  }
 });
 
+app.get("/submit", (req, res) => {
+    req.isAuthenticated() ? res.render("secrets") : res.redirect("/login");
+});
+
+
 app.get("/logout", (req, res, next) => {
     req.logout(err => {
         if (err) {
@@ -110,6 +115,7 @@ app.get("/logout", (req, res, next) => {
         res.redirect("/");
     });
 });
+
 
 app.post("/register", (req, res) => {
     // User.register({ username: req.body.username }, req.body.password),
