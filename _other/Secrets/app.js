@@ -142,18 +142,25 @@ app.post("/register", (req, res) => {
     });
 });
 
-app.post("/login", async (req, res) => {
+app.post("/login", (req, res) => {
     const user = new User({
         username: req.body.username,
         password: req.body.password,
     });
 
     req.login(user, (e) => {
-        e ? console.error(e) : +(() => { 
-            passport.authenticate("local")(req, res, () => {
+        // if (e) {
+        //     console.log(e)
+        // } else {
+        //     passport.authenticate("local")(req, res, () => {
+        //         res.redirect("/secrets");
+        //     });
+        // }
+        e ? console.error(e) : +(async () => { 
+            await passport.authenticate("local")(req, res, () => {
                 res.redirect("/secrets"); 
-            })();
-        });
+            });
+        })();
     });
 });
 
