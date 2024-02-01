@@ -94,12 +94,13 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/secrets", (req, res) => {
-    req.isAuthenticated() ? res.render("secrets") : res.redirect("/login");
-    //  if (req.isAuthenticated()) {
-    //    res.render("secrets");
-    //  } else {
-    //    res.redirect("/login");
-    //  }
+    User.find({ 
+        "secret": { $ne: null } 
+    }).exec().then(result => {
+        res.render("secrets", { usersWithSecrets: result });
+    }).catch(e => {
+        console.error(e);
+    });
 });
 
 app.get("/submit", (req, res) => {
