@@ -103,9 +103,22 @@ app.get("/secrets", (req, res) => {
 });
 
 app.get("/submit", (req, res) => {
-    req.isAuthenticated() ? res.render("secrets") : res.redirect("/login");
+    req.isAuthenticated() ? res.render("submit") : res.redirect("/login");
 });
 
+app.post("/submit", (req, res) => {
+    let sentSecret = req.body.secret;
+    User.findById(req.user.id)
+        .then(async result => {
+            result.secret = sentSecret;
+            try {
+                await result.save();
+                res.redirect("/secrets");
+            } catch(e) {
+                console.error(e);
+            }
+        });
+});
 
 app.get("/logout", (req, res, next) => {
     req.logout(err => {
@@ -116,13 +129,7 @@ app.get("/logout", (req, res, next) => {
     });
 });
 
-
 app.post("/register", (req, res) => {
-    // User.register({ username: req.body.username }, req.body.password),
-    //     passport.authenticate("local", { failureRedirect: "/register", failureMessage: true }),
-    //     (req, res) => {
-    //         res.redirect("/secrets");
-    //     };
     User.register({ username: req.body.username }, req.body.password, (err, user) => {
         err ? +((err) => {
             console.error(err);
@@ -142,10 +149,11 @@ app.post("/login", async (req, res) => {
     });
 
     req.login(user, (e) => {
-        e ?  console.error(err) : +(() => { 
-            passport.authenticate("local"); 
-            res.redirect("/secrets"); 
-        })();
+        e ? console.error(e) : +(() => { 
+            passport.authenticate("local")(req, res, () => {
+                res.redirect("/secrets"); 
+            })();
+        });
     });
 });
 
