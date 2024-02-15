@@ -16,7 +16,7 @@ module.exports = {
         'bg-default': "url('/img/bg-default.jpg')",
       },
       fontFamily: {
-        sans: ['var(--font-urbanist)'],
+        urbanist: ['var(--font-urbanist)'],
         inter: ['var(--font-inter)'],
         cinzel: ['var(--font-cinzel)'],
         diphylleia: ['var(--font-diphylleia)'],
