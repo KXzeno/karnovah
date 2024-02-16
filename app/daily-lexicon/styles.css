@@ -16,6 +16,7 @@
   div .word-block {
     @apply outline-double outline-offset-4 border-double; 
   }
+  /*
   #footer {
     @apply
   }
@@ -25,6 +26,7 @@
   #navbar {
     @apply
   }
+  */
 }
 
 @layer utilities {
@@ -46,6 +48,7 @@
   #definition {
     @apply text-base;
   }
+  /*
   #example {
     @apply
   }
@@ -67,5 +70,6 @@
   #summary {
     @apply
   }
+  */
 }
 
