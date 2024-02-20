@@ -22,6 +22,6 @@
   }
 
   #letter-block {
-    @apply text-lg;
+    @apply text-lg max-sm:text-base;
   }
 }

@@ -115,7 +115,7 @@ Going back on the idea of questioning your own identity, the only time it's acce
           <div id="letter-block" className="relative flex text-center min-h-screen">
             <p className="relative place-self-center snap-always snap-center">
               {part[letterPart].html}
-              <div className={`flex flex-row gap-96 mt-8 place-content-center`}>
+              <div className={`flex flex-row gap-96 max-sm:gap-[13rem] mt-8 place-content-center`}>
                 <LeftArrow />
                 <RightArrow />
               </div>
