@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div className="relative h-32 w-32 bg-black mt-8 mx-auto">
           <div className="absolute text-center inset-0"> 
-            <p>Yes</p>
+            <p>Yes</p> // Will align with Head (<><p className="absolute inset-0 text-center"></>)
             <p>Yes</p>
           </div>
         </div>
