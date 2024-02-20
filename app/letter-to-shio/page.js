@@ -31,33 +31,39 @@ export default function Letter() {
     {
       id: 1,
       html: <>
-        Your health had left my sphere of concerns out of the belief that you surround yourself of influences that would produce less indignation than if it were to include me. I may naturally prod you into thinking otherwise, but the intent is near zero. The angle’s to update my version of you as its been so long, but in demanding queries instead of <span><i>how are you</i></span>’s that gives access to goal-staggering responses.
+        Your health had left my sphere of concern out of the belief that you surround yourself of influences that would produce less indignation than if it were to include me. I may naturally prod you into thinking otherwise, but the intent is near zero. The angle's to update my version of you as its been so long, but in demanding inquiries instead of <span><i>how are you</i></span>'s that gives access to goal-staggering responses.
       </>
     },
     {
       id: 2,
       html: <>
-        We’re both facing large competition—that is if we still share the same race. The pool’s become oversaturated yet there’s still a high demand, a truth that weighs heavy especially in <span className="text-cyan-300 hover:text-cyan-700"><a href="https://www.bing.com/search?q=what+is+fud" target="_blank" rel="noopener noreferrer">FUDs</a></span>. But if already realized that this is a separate truth and that you have already given much thought plus considerations to where your outcomes lie, then call it to my attention, else, doubts will be harbored. The global need only continues to grow and so its prospective fortune gave hopes for people only for them to be reduced to incompetence and self-loathing. You should be aware at this point that our career choice eventually multiplies into narrower ones, and the value of pedigree had only been depreciating since degree inflation and especially since 2020’s Executive Order of skill-based hiring.
+        We're both facing large competition—that is if we still share the same race. The pool's become oversaturated yet there's still a high demand, a truth that weighs heavy especially in <span className="text-cyan-300 hover:text-cyan-700"><a href="https://www.bing.com/search?q=what+is+fud" target="_blank" rel="noopener noreferrer">FUDS</a></span>. But if already realized that this is a separate truth and that you have already given much thought plus considerations to where your outcomes lie, then call it to my attention, else, doubts will be harbored. The global need only continues to grow and its fortune gave hopes for people only for them to be reduced to incompetence and self-loathing. You should be aware at this point that our career choice eventually multiplies into ones narrower, and the value of pedigree had only been depreciating since degree inflation and especially since <span><i>2020's Executive Order</i></span> of skill-based hiring. How affected were you upon reading this? If unfazed, I'd like to learn from you; if concerned, then worry less, because pedigree value should be seen incommensurate with the privilege of higher education on the condition that it is digested in full.
       </>
     },
     {
       id: 3,
       html: <>
-        Be reminded that you are not bludgeoned to modify your lifestyle or absorb my credos, though I would believe tweaks here and there are necessary. Rather, you are invited to think that you are not you; that you have no sieves allowing the permeation of other characters into your own. That said, are you truly not alone? Or, are you truly underprivileged or disadvantaged when comparing yourself to others, be it in skill or even in absence of partnership?
+        Feigned passion is a hazardous byproduct of our search for meaning, and it only grows more toxic every second we cannot convince ourselves that it isn't. It wasn't until recently that my ambitions were handed to me broken, though instead of resorting to the defeatist principles of dismissing losses as <span><i>it is what it is;</i></span> the defeatist principles of inhibiting every gladiatorial opportunity through lulls of complacency; the defeatist principles of resorting to drone for hives believing it is worth the steady flow of sweetness until it riles upon my differences—well, I journeyed. Unique experiences help materialize ambition, the same one in my case, and they form a healthy mental framework to automate quality behaviors and habits. Do you consider yourself a drone? How easy was it to pick your own road? To separate happiness from sweetness?
       </>
     },
     {
       id: 4,
       html: <>
-        Popular theory is the Freudian iceberg but its implications are overlooked.  Paul has caught my attention because he’s determined to point out his flaws, problems, and impasses in progress. Does he have someone who can deal with it rather than comment on it? If people argue time’s a constant that conflicts with opportunity then they’d sweat their reasons when evaluating their use of it. If the ”didn’t know” and ”you should’ve” statements are accepted as rectification then wouldn’t you consider that unfriendly? To not acknowledge whats below your iceberg, or Paul’s? Well maybe the both of you give it no mind, or maybe my understanding of your social life had become extremely distorted through no contact. Make me aware, if not yourself then who makes known the value of the decisions you make? From occasional snoops I intuited that you both are capable people. Unsure of how Paul’s doing within fitness, but from the story of his first experience it just shows misguidance though a tailored program might’ve been difficult to systemize by the trainer.
+        If you find yourself lost but hold the same anti-fatalistic tenacity that I do, there are <span><a href="https://roadmap.sh/" target="_blank" rel="noopener noreferrer">resources</a></span> in the personal channel for you to look at, it should add some direction. Be reminded that you are not bludgeoned to modify your lifestyle or absorb my credos, though I would believe based off presumptions that tweaks here and there are necessary. Rather, you are invited to think that you are not you; that you have no sieves, allowing the permeation of other characters into your own. That said, are you truly not alone? Or, are you truly underprivileged or disadvantaged when comparing yourself to others, be it in skill or even in absence of partnership? Or  have you not made these prudent thoughts of well-being, which in that case resurfaces the question: are you yourself? 
       </>
     },
     {
       id: 5,
       html: <>
-        Going back on the idea of questioning your own identity, the only time it’s acceptable to collectively be shallow copies of your coteries is if you are more certain than them in its fulfillment.
+Popular theory is the Freudian iceberg but its implications are overlooked. Paul has caught my attention because he's determined to point out his flaws, problems, and impasses in progress. Does he have someone who can deal with it rather than comment on it? If people argue time's a constant that conflicts with opportunity then they'd sweat their reasons when evaluating their use of it. If the "didn't know" and "you should've" statements are accepted as rectification then wouldn't you consider that unfriendly? To not acknowledge whats below your iceberg, or Paul's? Well maybe the both of you give it no mind, or maybe my understanding of your social life had become extremely distorted through no contact. From occasional snoops I intuited that you both are capable people. Unsure of how Paul's doing within fitness, but from the story of his first experience it just shows misguidance though a tailored program might've been difficult to systemize.
       </>
-    }
+    },
+    {
+      id: 6,
+      html: <>
+Going back on the idea of questioning your own identity, the only time it's acceptable to collectively be shallow copies of your coteries is if you are more certain than them in its fulfillment. Make me aware, if not yourself then who makes known the value of the decisions you make?
+        </>
+    },
   ];
 
   function RightArrow() {
