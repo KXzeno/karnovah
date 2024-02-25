@@ -5,7 +5,6 @@ import Image from 'next/image';
 export default function Home() {
   let [notice, setNotice] = React.useState("Ongoing Site Reconstruction");
 
-  // Automate elipse animation
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setNotice(prevNotice => prevNotice === "Ongoing Site Reconstruction..."
@@ -14,6 +13,10 @@ export default function Home() {
     }, 500);
     return () => clearTimeout(timer);
   }, [notice]);
+
+  const id = React.useId();
+  const userId = `${id}-username`;
+  const passId = `${id}-password`;
 
   return(
     <>
@@ -27,19 +30,3 @@ export default function Home() {
     </>
   );
 }
-
-{ /*
-      <div className="container min-w-full min-h-screen bg-slate-900">
-        <div className="flex flex-auto bg-black">
-          <div className="mx-auto">
-            <p>Yes</p>
-          </div>
-        </div>
-        <div className="relative h-32 w-32 bg-black mt-8 mx-auto">
-          <div className="absolute text-center inset-0"> 
-            <p>Yes</p> // Will align with Head (<><p className="absolute inset-0 text-center"></>)
-            <p>Yes</p>
-          </div>
-        </div>
-      </div>
-      */ }{/* inset-0 -> |t|b|l|r = 0 */}
