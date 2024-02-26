@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{preamble}
+\usepackage{adkore}
+
+\version[1]{0.1}
+
+\begin{document}
+
+\frontmatter
+% Type
+{Project} 
+% Title
+{Karnovah}
+% Status
+{ON}
+% Context
+{Karnovah was originally a static website hosted by the service Hugo. To achieve more ambitious features, I require server-side rendering, databases utilities, and a hosting platform to allow for both to communicate. In this site, I plan to write blogs and post articles, display my skills and projects, show my resume, and ultimately transition seamlessly to a landing site for a multiservice company ranging from novel-writing, game development, music production, and{\textemdash}if gladitorial{\textemdash}play a role in the web3 domain.}
+
+\strategy
+% Core Decision
+{Establish a personal landing page with seamless integration of future services}
+% Prospects
+{
+  \begin{center}
+    \begin{enumerate}
+      \item Blog post\footnotemark[1]
+      \item Resume display\footnotemark[1]
+      \item Project display\footnotemark[1]
+        \begin{itemize}
+          \item Novel writing
+          \item \textcolor{gray}{Game Development}
+          \item \textcolor{gray}{Music Production}
+          \item \textcolor{gray}{web3}
+        \end{itemize}
+      \item Updates\footnotemark[1]
+    \end{enumerate}
+  \end{center}
+}
+% Decision Parameters
+{
+  \raggedright
+  \begin{itemize}
+    \item Make updates, note every change
+    \item Navbar focus after updates page, then handle routing
+      \begin{itemize}
+        \item Route updates, blog, portfolio
+        \item Stylize blog then portfolio
+      \end{itemize}
+    \item Create distinctive coming soon pages for the greater ambitions
+  \end{itemize}
+}
+% Zero Technical Debt Concerns
+{
+  \raggedright
+  Seamless integration would require an amibiguous landing page, suggesting that it cannot be solely responsible for blogs and articles only.
+  \begin{itemize}
+    \item First page can be purely stylistic and only service redirects\footnotemark[2]
+  \end{itemize}
+}
+
+\deploy
+% Decision Process
+{}
+% Results and Conflicts
+{Templates are still in the making}
+
+\report
+% Experience Report
+{}
+
+% Footnotes
+\footnotetext[1]{Navbar component}
+\footnotetext[2]{\href{https://kamitsubaki-verse.net/en}{A reference}}
+
+\end{document}
+
+
