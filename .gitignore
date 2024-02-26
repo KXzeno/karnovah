@@ -37,10 +37,12 @@ yarn-error.log*
 next-env.d.ts
 
 # records
-/adk/pdf
+/adk/pdfs
 /adk/logs
-/adk/*/pdf
+/adk/*/pdfs
 /adk/*/logs
+/adk/*/*/pdfs
+/adk/*/*/logs
 
 # others
 /*/*/letter/
