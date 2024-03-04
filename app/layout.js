@@ -1,8 +1,8 @@
-import './globals.css'
+import './globals.css';
 // import { Inter } from 'next/font/google'
-import { Urbanist, Inter, Cinzel, Diphylleia, Roboto, Merriweather, Spectral, DM_Sans, Quicksand, Dosis, Sono} from 'next/font/google'
+import { Urbanist, Inter, Cinzel, Diphylleia, Roboto, Merriweather, Spectral, DM_Sans, Quicksand, Dosis, Sono} from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'})
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap'});
 
 const urbanist = Urbanist({ 
   subsets: ['latin'],
