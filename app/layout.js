@@ -68,7 +68,7 @@ export const metadata = {
   title: 'Karnovah',
   description: 'Personal Business & Blog Site Under Development',
   openGraph: {
-    url: 'https://karnovah.netlify.app',
+    url: 'https://karnovah.com',
     type: 'website',
     title: 'Karnovah',
     description: 'Personal Business & Blog Site Under Development', 
