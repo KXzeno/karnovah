@@ -1,3 +1,8 @@
+import LinkButton from './LinkButton';
+
+export {
+  LinkButton,
+}
 // import Carousel from './Carousel';
 // import Features from './Features';
 // import Navbar from './Navbar';
