@@ -3,7 +3,10 @@ import Link from 'next/link';
 import Parser from 'rss-parser';
 import RSSParser from 'rss-parser';
 
-let FEED_URL: string = 'https://www.nasa.gov/feed/' as const;
+// TODO: Reduce provider workload on updating RSS lists
+
+let FEED_URLS: Array<string> = ['https://www.nasa.gov/feed/',
+  'https://www.reddit.com/r/logHorizon.rss'] as const;
 
 let parser: Parser = new RSSParser();
 
@@ -15,13 +18,13 @@ let parse: (url: string) => Promise<object>  = async url => {
 }
 
 export default async function Curiograph() {
-  let feed = await parse(FEED_URL);
+  let feeds: Array<object> = [await parse(FEED_URLS[0]), await parse(FEED_URLS[1])];
 
   return (
     <div className='relative min-h-screen w-screen'>
       <div className='flex-row text-center space-y-4'>
         <p>Begins here</p>
-        {Object.values(feed).map(({ title, link, description, pubDate, guid }) => {
+        {Object.values(feeds[0]).map(({ title, link, description, pubDate, guid }) => {
             return (
               <div key={guid}>
                 <Link href={link} >{title}</Link>
