@@ -22,7 +22,7 @@ export default async function Curiograph() {
         <p>Begins here</p>
         {Object.values(feed).map(({ title, link, description, pubDate, guid }) => {
             return (
-              <div>
+              <div key={guid}>
                 <Link href={link} >{title}</Link>
               </div>);
           })}
