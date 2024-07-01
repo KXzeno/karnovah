@@ -8,8 +8,9 @@ let FEED_URL: string = 'https://www.nasa.gov/feed/' as const;
 let parser: Parser = new RSSParser();
 
 let parse: (url: string) => Promise<object>  = async url => {
-  let feed: object = await parser.parseURL(url);
+  let feed: { items: object } = await parser.parseURL(url);
   if (!(feed && feed.items)) throw new Error('Invalid RSS URL');
+  // console.log(Object.getOwnPropertyNames(feed));
   return feed.items as Array<object>;
 }
 
