@@ -26,7 +26,7 @@ export default async function Curiograph() {
         <p>Begins here</p>
         {Object.values(feeds[0]).map(({ title, link, description, pubDate, guid }) => {
             return (
-              <div key={guid}>
+              <div key={pubDate}>
                 <Link href={link} >{title}</Link>
               </div>);
           })}
