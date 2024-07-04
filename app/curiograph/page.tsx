@@ -4,6 +4,8 @@ import Parser from 'rss-parser';
 import RSSParser from 'rss-parser';
 
 // TODO: Reduce provider workload on updating RSS lists
+// TODO: Demarcate RFCS, use this as client RFC and merge
+// with server RFC
 
 let FEED_URLS: Array<string> = [
   'https://www.nasa.gov/feed/',
@@ -30,7 +32,7 @@ export default async function Curiograph() {
 
   function compilePosts(arr: Array<object>): Array<object> {
     let postStack: Array<object> = [];
-    let SOURCE_COUNT = Object.keys(arr).length as const;
+    let SOURCE_COUNT = Object.keys(arr).length;
     for (let i = 0; i < SOURCE_COUNT; i++) {
       let source = arr[i];
       let posts = Object.values(source);
@@ -46,17 +48,19 @@ export default async function Curiograph() {
     let compiledFeed: Array<object>;
     let fragment: number = 1;
     compiledFeed = (refragment) ? arr : compilePosts(arr);
-    return Object.values(compiledFeed).map(({ title, link, description, pubDate, guid, terminal }, index) => {
+    return Object.values(compiledFeed).map(async ({ title, link, description, pubDate, guid, terminal }, index) => {
       compiledFeed.shift();
       if (terminal && terminal === true) {
         fragment++;
-        displayPosts(compiledFeed, true);
+        await displayPosts(compiledFeed, true);
         return;
       }
 
+      let position: number = fragment % 2 === 1 ? 1 : 2;
+      let adjust: boolean = (fragment > 2 && index === 0) ? true : false;
       return (
-        <div className={`grid grid-cols-subgrid col-start-${fragment % 2 + 1}`} key={title}>
-          {<Link href={link}>{title}</Link>}
+        <div className={`grid grid-cols-subgrid col-start-${position} place-self-center text-center`} key={title}>
+          {<Link href={link}>{title}</Link>}{`${position === 1 ? 'left' : 'right'}`}
         </div>
       )
     }) as ReactNode
@@ -64,8 +68,13 @@ export default async function Curiograph() {
 
   return (
     <div className='relative min-h-screen w-screen'>
-      <div className='grid grid-cols-2 text-center'>
+      <div className='grid grid-cols-2'>
         {displayPosts(feeds)}
+        {/* TODO: Investigate cause,
+        Added to hydrate DOM, 
+        Would autoflow grid items otherwise
+        Hydration contributor: 'col-start-1'*/}
+        <div className='place-self-center col-start-2 col-span-2'></div>
       </div>
     </div>
   );
