@@ -30,50 +30,54 @@ export default async function Curiograph() {
     feeds.push(post);
   }
 
-  function compilePosts(arr: Array<object>): Array<object> {
-    let postStack: Array<object> = [];
-    let SOURCE_COUNT = Object.keys(arr).length;
-    for (let i = 0; i < SOURCE_COUNT; i++) {
-      let source = arr[i];
-      let posts = Object.values(source);
-      for (let j = 0; j < posts.length; j++) {
-        postStack.push(source[j]);
-      }
-      postStack.push({ terminal: true });
-    }
-    return postStack;
-  }
+  /* 
+   * TODO: Use data structures to separate the feeds
+   * as separate react nodes, and auto fill the grid as
+   * a 2 column
+   */
 
-  function displayPosts(arr: Array<object>, refragment: boolean = false): ReactNode {
-    let compiledFeed: Array<object>;
-    let fragment: number = 1;
-    compiledFeed = (refragment) ? arr : compilePosts(arr);
-    return Object.values(compiledFeed).map(async ({ title, link, description, pubDate, guid, terminal }, index) => {
-      compiledFeed.shift();
-      if (terminal && terminal === true) {
-        fragment++;
-        await displayPosts(compiledFeed, true);
-        return;
-      }
+  /*
+     function compilePosts(arr: Array<object>): Array<object> {
+     let postStack: Array<object> = [];
+     let SOURCE_COUNT = Object.keys(arr).length;
+     for (let i = 0; i < SOURCE_COUNT; i++) {
+     let source = arr[i];
+     let posts = Object.values(source);
+     for (let j = 0; j < posts.length; j++) {
+     postStack.push(source[j]);
+     }
+     postStack.push({ terminal: true });
+     }
+     return postStack;
+     }
 
-      let position: number = fragment % 2 === 1 ? 1 : 2;
-      let adjust: boolean = (fragment > 2 && index === 0) ? true : false;
-      return (
-        <div className={`grid grid-cols-subgrid col-start-${position} place-self-center text-center`} key={title}>
-          {<Link href={link}>{title}</Link>}{`${position === 1 ? 'left' : 'right'}`}
-        </div>
-      )
-    }) as ReactNode
-  }
+     function displayPosts(arr: Array<object>, refragment: boolean = false): ReactNode {
+     let compiledFeed: Array<object>;
+     let fragment: number = 1;
+     compiledFeed = (refragment) ? arr : compilePosts(arr);
+     return Object.values(compiledFeed).map(async ({ title, link, description, pubDate, guid, terminal }, index) => {
+     compiledFeed.shift();
+     if (terminal && terminal === true) {
+     fragment++;
+     await displayPosts(compiledFeed, true);
+     return;
+     }
+
+     let position: number = fragment % 2 === 1 ? 1 : 2;
+     let adjust: boolean = (fragment > 2 && index === 0) ? true : false;
+     return (
+     <div className={`grid grid-cols-subgrid col-start-${position} place-self-center text-center`} key={title}>
+     {<Link href={link}>{title}</Link>}{`${position === 1 ? 'left' : 'right'}`}
+     </div>
+     )
+     }) as ReactNode
+     }
+   */
 
   return (
     <div className='relative min-h-screen w-screen'>
       <div className='grid grid-cols-2'>
-        {displayPosts(feeds)}
-        {/* TODO: Investigate cause,
-        Added to hydrate DOM, 
-        Would autoflow grid items otherwise
-        Hydration contributor: 'col-start-1'*/}
+        {}
         <div className='place-self-center col-start-2 col-span-2'></div>
       </div>
     </div>
