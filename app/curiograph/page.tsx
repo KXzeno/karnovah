@@ -25,9 +25,43 @@ let parse: (url: string) => Promise<object>  = async url => {
 export default async function Curiograph() {
   let feeds: Array<object> = [];
 
-  for (let i = 0; i < FEED_URLS.length; i++) {
-    let post = await parse(FEED_URLS[i]);
-    feeds.push(post);
+  async function compilePosts(arr: Array<string>): Promise<Array<object>> {
+    for (let i = 0; i < arr.length; i++) {
+      let post = await parse(arr[i]);
+      feeds.push(post);
+    }
+    return [feeds[0]];
+  }
+
+  await compilePosts(FEED_URLS);
+
+  let FEED_COUNT: number = feeds.length;
+
+  function displayPosts(): ReactNode {
+    if (feeds[0] === undefined) return;
+    let posts: Array<object> = [];
+
+    for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
+      posts.push(feeds[0][i]);
+    }
+
+    feeds.shift();
+
+    interface PostData {
+      title: String,
+      link: String,
+      description: String,
+      pubDate: String,
+      guid: String,
+    }
+
+    return [posts.map((data: PostData, index: number) => {
+      return (
+        <div className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} col-span-1 text-center ${index === 0 ? 'text-red-700' : 'text-inherit'}`}>
+          {data.title}
+        </div>
+      )
+    }), displayPosts()];
   }
 
   /* 
@@ -36,49 +70,10 @@ export default async function Curiograph() {
    * a 2 column
    */
 
-  /*
-     function compilePosts(arr: Array<object>): Array<object> {
-     let postStack: Array<object> = [];
-     let SOURCE_COUNT = Object.keys(arr).length;
-     for (let i = 0; i < SOURCE_COUNT; i++) {
-     let source = arr[i];
-     let posts = Object.values(source);
-     for (let j = 0; j < posts.length; j++) {
-     postStack.push(source[j]);
-     }
-     postStack.push({ terminal: true });
-     }
-     return postStack;
-     }
-
-     function displayPosts(arr: Array<object>, refragment: boolean = false): ReactNode {
-     let compiledFeed: Array<object>;
-     let fragment: number = 1;
-     compiledFeed = (refragment) ? arr : compilePosts(arr);
-     return Object.values(compiledFeed).map(async ({ title, link, description, pubDate, guid, terminal }, index) => {
-     compiledFeed.shift();
-     if (terminal && terminal === true) {
-     fragment++;
-     await displayPosts(compiledFeed, true);
-     return;
-     }
-
-     let position: number = fragment % 2 === 1 ? 1 : 2;
-     let adjust: boolean = (fragment > 2 && index === 0) ? true : false;
-     return (
-     <div className={`grid grid-cols-subgrid col-start-${position} place-self-center text-center`} key={title}>
-     {<Link href={link}>{title}</Link>}{`${position === 1 ? 'left' : 'right'}`}
-     </div>
-     )
-     }) as ReactNode
-     }
-   */
-
   return (
     <div className='relative min-h-screen w-screen'>
-      <div className='grid grid-cols-2'>
-        {}
-        <div className='place-self-center col-start-2 col-span-2'></div>
+      <div className='grid grid-cols-2 grid-flow-col'>
+        {displayPosts()}
       </div>
     </div>
   );
