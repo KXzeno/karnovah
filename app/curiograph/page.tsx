@@ -57,7 +57,7 @@ export default async function Curiograph() {
 
     return [posts.map((data: PostData, index: number) => {
       return (
-        <div className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} col-span-1 text-center ${index === 0 ? 'text-red-700' : 'text-inherit'}`}>
+        <div key={`index + ${data.title}`} className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} col-span-1 text-center ${index === 0 ? 'text-red-700' : 'text-inherit'}`}>
           {data.title}
         </div>
       )
