@@ -72,7 +72,7 @@ export default async function Curiograph() {
 
   return (
     <div className='relative min-h-screen w-screen'>
-      <div className='grid grid-cols-2 grid-flow-col'>
+      <div className='grid grid-cols-2 grid-flow-row-dense'>
         {displayPosts()}
       </div>
     </div>
