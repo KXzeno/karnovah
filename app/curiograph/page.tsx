@@ -10,7 +10,8 @@ import RSSParser from 'rss-parser';
 let FEED_URLS: Array<string> = [
   'https://www.nasa.gov/feed/',
   'https://www.reddit.com/r/logHorizon.rss',
-  'https://www.artofmanliness.com/feed/'
+  'https://www.artofmanliness.com/feed/',
+  'https://www.youtube.com/feeds/videos.xml?channel_id=UC7Gow-kNHq21oejSIDg9PAg',
 ] as const;
 
 let parser: Parser = new RSSParser();
@@ -25,6 +26,15 @@ let parse: (url: string) => Promise<object>  = async url => {
 export default async function Curiograph() {
   let feeds: Array<object> = [];
 
+    interface PostData {
+      title: String,
+      link: String,
+      description: String,
+      pubDate: String,
+      guid: String,
+    }
+
+
   async function compilePosts(arr: Array<string>): Promise<Array<object>> {
     for (let i = 0; i < arr.length; i++) {
       let post = await parse(arr[i]);
@@ -37,6 +47,22 @@ export default async function Curiograph() {
 
   let FEED_COUNT: number = feeds.length;
 
+  function renderPosts(data: PostData, index: number) {
+
+    return (
+      <>
+         <div key={`index + ${data.title}`} className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} col-span-1 text-center ${index === 0 ? 'text-red-700' : 'text-inherit'}`}>
+           <Link 
+             href={`${data.link}`}
+             className='text-inherit no-underline hover:underline'
+           >
+             {data.title}
+           </Link>
+         </div>
+      </>
+    )
+  }
+
   function displayPosts(): ReactNode {
     if (feeds[0] === undefined) return;
     let posts: Array<object> = [];
@@ -47,21 +73,22 @@ export default async function Curiograph() {
 
     feeds.shift();
 
-    interface PostData {
-      title: String,
-      link: String,
-      description: String,
-      pubDate: String,
-      guid: String,
-    }
+    //TODO: Recursion inside method for nested items + subgrid
 
-    return [posts.map((data: PostData, index: number) => {
-      return (
-        <div key={`index + ${data.title}`} className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} col-span-1 text-center ${index === 0 ? 'text-red-700' : 'text-inherit'}`}>
-          {data.title}
+    return (
+      <>
+        <div className='grid grid-cols-subgrid'>
+          {posts.map((data: PostData, index: number) => {
+            return (
+              <>
+              {renderPosts(data, index)}
+              </>
+            )
+          })}
         </div>
-      )
-    }), displayPosts()];
+        {displayPosts()}
+      </>
+    )
   }
 
   /* 
@@ -72,7 +99,7 @@ export default async function Curiograph() {
 
   return (
     <div className='relative min-h-screen w-screen'>
-      <div className='grid grid-cols-2 grid-flow-row-dense'>
+      <div className='grid grid-cols-2'>
         {displayPosts()}
       </div>
     </div>
