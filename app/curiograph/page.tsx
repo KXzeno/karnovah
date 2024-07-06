@@ -68,6 +68,8 @@ export default async function Curiograph() {
     let posts: Array<object> = [];
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
+      // Capacity limiter
+      // if (i >= 10) break;
       posts.push(feeds[0][i]);
     }
 
@@ -77,7 +79,7 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='grid grid-cols-subgrid'>
+        <div className=/*'grid grid-cols-subgrid h-max'*/'inline-flex flex-col'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
