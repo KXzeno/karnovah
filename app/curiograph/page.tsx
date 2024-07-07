@@ -106,7 +106,7 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center max-sm:max-w-[79%] mx-auto'>
+        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] mx-auto'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
