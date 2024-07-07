@@ -70,12 +70,12 @@ export default async function Curiograph() {
         >
           <Link 
             href={`${data.link}`}
-            className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate`}
+            className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance`}
           >
             {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate text-ellipsis'>{data.title}</p>}
           </Link>
           {isVideo === false ? 
-            <p className='text-xs text-slate-300'>
+            <p className='text-xs text-slate-300 sm:text-pretty'>
               {data.description || data.contentSnippet}
             </p> :
               <div>
@@ -105,7 +105,7 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='grid grid-cols-3 place-items-start max-sm:place-items-center'>
+        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center max-sm:max-w-[79%] mx-auto'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
@@ -132,7 +132,7 @@ export default async function Curiograph() {
   }
 
   return (
-    <div className='relative min-h-screen min-w-[300px] max-w-[59%] mx-auto'>
+    <div className='relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] mx-auto'>
       <div className='grid grid-cols-1 gap-1 divide-y divide-neutral-500'>
         {displayPosts()}
       </div>
