@@ -114,7 +114,7 @@ export default async function Curiograph() {
                 {renderPosts(data, index)}
                 {index + 1 === posts.length ? 
                   <div className='inline-flex relative w-full min-h-4 col-span-2 text-right'>
-                      <Link className='absolute text-xs no-underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
+                      <Link className='absolute text-xs no-underline hover:underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
                   </div>
                   :
                   <></>}
