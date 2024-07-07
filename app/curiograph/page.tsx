@@ -3,12 +3,16 @@ import Link from 'next/link';
 import Parser from 'rss-parser';
 import RSSParser from 'rss-parser';
 
-let FEED_URLS: Array<string> = [
-  'https://www.nasa.gov/feed/',
-  'https://www.reddit.com/r/logHorizon.rss',
-  'https://www.artofmanliness.com/feed/',
-  'https://www.youtube.com/feeds/videos.xml?channel_id=UC7Gow-kNHq21oejSIDg9PAg',
-  'https://www.youtube.com/feeds/videos.xml?channel_id=UC4YaOt1yT-ZeyB0OmxHgolA',
+/* For manual ID fetch:
+ ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
+ */
+
+export const FEED_URLS: Array<string[]> = [
+  ['https://www.nasa.gov/feed/', 'NASA'],
+  ['https://www.reddit.com/r/logHorizon.rss', 'logH'],
+  ['https://www.artofmanliness.com/feed/', 'art-of-manliness'],
+  ['https://www.youtube.com/feeds/videos.xml?channel_id=UC7Gow-kNHq21oejSIDg9PAg', 'Koko'],
+  ['https://www.youtube.com/feeds/videos.xml?channel_id=UC4YaOt1yT-ZeyB0OmxHgolA', 'Kizuna'],
 ] as const;
 
 let parser: Parser = new RSSParser();
@@ -34,10 +38,9 @@ export default async function Curiograph() {
       id: String,
     }
 
-
-  async function compilePosts(arr: Array<string>): Promise<Array<object>> {
+  async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
     for (let i = 0; i < arr.length; i++) {
-      let post = await parse(arr[i]);
+      let post = await parse(arr[i][0]);
       feeds.push(post);
     }
     return [feeds[0]];
@@ -102,6 +105,12 @@ export default async function Curiograph() {
                   text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
               >
                 {renderPosts(data, index)}
+                {index + 1 === posts.length ? 
+                  <div className='inline-flex relative w-full min-h-4 col-span-2 text-right'>
+                      <Link className='absolute text-xs no-underline italic mx-auto inset-x-0' href='/yes'>Amble {FEED_COUNT - feeds.length - 1}</Link>
+                  </div>
+                  :
+                  <></>}
               </div>
             )
           })}
