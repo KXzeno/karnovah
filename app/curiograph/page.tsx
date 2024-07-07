@@ -51,7 +51,8 @@ export default async function Curiograph() {
     return newArray;
   }
 
-  await compilePosts(spreadObjToArr(FEED_SRCS));
+  let srcs = spreadObjToArr(FEED_SRCS);
+  await compilePosts(srcs);
 
   let FEED_COUNT: number = feeds.length;
 
@@ -88,6 +89,7 @@ export default async function Curiograph() {
 
   function displayPosts(): ReactNode {
     if (feeds[0] === undefined) return;
+    console.log();
     let posts: Array<object> = [];
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
@@ -112,7 +114,7 @@ export default async function Curiograph() {
                 {renderPosts(data, index)}
                 {index + 1 === posts.length ? 
                   <div className='inline-flex relative w-full min-h-4 col-span-2 text-right'>
-                      <Link className='absolute text-xs no-underline italic mx-auto inset-x-0' href='/yes'>Amble {FEED_COUNT - feeds.length - 1}</Link>
+                      <Link className='absolute text-xs no-underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
                   </div>
                   :
                   <></>}
