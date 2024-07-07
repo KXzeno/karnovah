@@ -7,7 +7,7 @@ import RSSParser from 'rss-parser';
  ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-export const FEED_URLS: Array<string[]> = [
+let FEED_URLS: Array<string[]> = [
   ['https://www.nasa.gov/feed/', 'NASA'],
   ['https://www.reddit.com/r/logHorizon.rss', 'logH'],
   ['https://www.artofmanliness.com/feed/', 'art-of-manliness'],
@@ -134,3 +134,5 @@ export default async function Curiograph() {
     </div>
   );
 };
+
+export let FEEDS = FEED_URLS;
