@@ -63,25 +63,27 @@ export default async function Curiograph() {
       <>
         <div 
           className={`my-2 
-          ${isVideo && index % 2 === 0 ? 'text-left text-ellipsis' : ''}
-          ${isVideo && index % 2 === 1 ? 'text-right text-ellipsis' : ''}
+          ${isVideo && index % 2 === 0 ? 'text-center text-ellipsis' : ''}
+          ${isVideo && index % 2 === 1 ? 'text-center text-ellipsis' : ''}
           `}
         >
           <Link 
             href={`${data.link}`}
             className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate`}
           >
-            {data.title}
+            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate'>{data.title}</p>}
           </Link>
           {isVideo === false ? 
             <p className='text-xs text-slate-300'>
               {data.description || data.contentSnippet}
             </p> :
-              <iframe className={`video w-[270px] h-[175px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'}`}
-                allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
-                title='Youtube video player'
-                src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
-              </iframe>}
+              <div>
+                <iframe className={`video w-[270px] h-[200px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'}`}
+                  allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
+                  title='Youtube video player'
+                  src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
+                </iframe>
+              </div>}
         </div>
       </>
     )
@@ -94,7 +96,7 @@ export default async function Curiograph() {
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
       // Capacity limiter
-      if (i >= 2) break;
+      if (i >= 3) break;
       posts.push(feeds[0][i]);
     }
 
@@ -102,23 +104,24 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='grid grid-cols-2 place-self-center'>
+        <div className='grid grid-cols-3 place-content-start'>
           {posts.map((data: PostData, index: number) => {
             return (
-              <div 
-                key={`${index}-${data.title}`}
-                className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} 
-                  col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 gap-4' : '2'}
-                  text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
-              >
-                {renderPosts(data, index)}
+              <>
+                <div 
+                  key={`${index}-${data.title}`}
+                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 justify-between' : '3'}
+                    text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                >
+                  {renderPosts(data, index)}
+                </div>
                 {index + 1 === posts.length ? 
-                  <div className='inline-flex relative w-full min-h-4 col-span-2 text-right'>
-                      <Link className='absolute text-xs no-underline hover:underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
+                  <div className='inline-flex relative min-w-full min-h-4 col-span-3 text-right'>
+                    <Link className='absolute text-xs no-underline hover:underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
                   </div>
                   :
                   <></>}
-              </div>
+              </>
             )
           })}
         </div>
@@ -126,12 +129,6 @@ export default async function Curiograph() {
       </>
     )
   }
-
-  /* 
-   * TODO: Use data structures to separate the feeds
-   * as separate react nodes, and auto fill the grid as
-   * a 2 column
-   */
 
   return (
     <div className='relative min-h-screen min-w-[300px] max-w-[59%] mx-auto'>
