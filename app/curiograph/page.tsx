@@ -72,7 +72,7 @@ export default async function Curiograph() {
             href={`${data.link}`}
             className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance`}
           >
-            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate text-ellipsis'>{data.title}</p>}
+            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate text-ellipsis max-sm:text-balance'>{data.title}</p>}
           </Link>
           {isVideo === false ? 
             <p className='text-xs text-slate-300 sm:text-pretty'>
