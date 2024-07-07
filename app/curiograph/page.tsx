@@ -68,23 +68,20 @@ export default async function Curiograph() {
     return (
       <>
         <div 
-          className={`my-2 
-          ${isVideo && index % 2 === 0 ? 'text-center text-ellipsis' : ''}
-          ${isVideo && index % 2 === 1 ? 'text-center text-ellipsis' : ''}
-          `}
+          className={`my-2`}
         >
           <Link 
             href={`${data.link}`}
             className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance`}
           >
-            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate text-ellipsis max-sm:text-balance'>{data.title}</p>}
+            {!isVideo ? <p>{data.title}</p> : <p className='truncate text-ellipsis max-sm:text-balance text-balance text-center'>{data.title}</p>}
           </Link>
           {isVideo === false ? 
             <p className='text-xs text-slate-300 sm:text-pretty'>
               {data.description || data.contentSnippet}
             </p> :
               <div>
-                <iframe className={`video w-[270px] h-[200px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'} max-sm:mx-auto`}
+                <iframe className={`video w-[270px] h-[200px] mx-auto`}
                   allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
                   title='Youtube video player'
                   src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
@@ -115,7 +112,7 @@ export default async function Curiograph() {
               <>
                 <div 
                   key={`${index}-${data.title}`}
-                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 justify-between' : '3'}
+                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 place-self-center' : '3'}
                     max-sm:col-span-3 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
                 >
                   {renderPosts(data, index)}
