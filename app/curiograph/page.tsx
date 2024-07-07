@@ -29,6 +29,9 @@ export default async function Curiograph() {
       description: String,
       pubDate: String,
       guid: String,
+      contentSnippet: String,
+      author: String,
+      id: String,
     }
 
 
@@ -46,19 +49,26 @@ export default async function Curiograph() {
 
   function renderPosts(data: PostData, index: number) {
     // console.log(data);
+    let isVideo: boolean = (data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false;
     return (
       <>
         <div className='mb-2'>
           <Link 
             href={`${data.link}`}
-            className='text-inherit no-underline hover:underline text-sm'
+            className='text-cyan-400 no-underline hover:underline text-sm'
           >
             {data.title}
           </Link>
         </div>
-        <p className='text-xs'>
-          {data.description || data.contentSnippet}
-        </p>
+        {isVideo === false ? 
+          <p className='text-xs text-slate-300'>
+            {data.description || data.contentSnippet}
+          </p> :
+            <iframe className='video w-[600px] h-[350px]'
+              allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
+              title='Youtube video player'
+              src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
+            </iframe>}
       </>
     )
   }
@@ -102,7 +112,7 @@ export default async function Curiograph() {
    */
 
   return (
-    <div className='relative min-h-screen w-screen mx-auto'>
+    <div className='relative min-h-screen w-[59%] mx-auto'>
       <div className='grid grid-cols-1 gap-1 divide-y divide-neutral-500'>
         {displayPosts()}
       </div>
