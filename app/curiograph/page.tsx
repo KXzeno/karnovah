@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Parser from 'rss-parser';
 import RSSParser from 'rss-parser';
 import FEED_SRCS from './feeds.json';
+import 'dotenv/config';
 
 /* For manual ID fetch:
  ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
@@ -60,6 +61,10 @@ export default async function Curiograph() {
   function renderPosts(data: PostData, index: number) {
     // console.log(data);
     let isVideo: boolean = (data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false;
+    if (data.contentSnippet && data.contentSnippet.includes(`${process.env.needless}`)) {
+      data.contentSnippet = data.contentSnippet.substring(0, data.contentSnippet.length - 101);
+    }
+
     return (
       <>
         <div 
@@ -92,7 +97,6 @@ export default async function Curiograph() {
 
   function displayPosts(): ReactNode {
     if (feeds[0] === undefined) return;
-    console.log();
     let posts: Array<object> = [];
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
