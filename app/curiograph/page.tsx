@@ -56,6 +56,7 @@ export default async function Curiograph() {
 
   let FEED_COUNT: number = feeds.length;
 
+  //TODO: Fix truncation on long names
   function renderPosts(data: PostData, index: number) {
     // console.log(data);
     let isVideo: boolean = (data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false;
@@ -71,14 +72,14 @@ export default async function Curiograph() {
             href={`${data.link}`}
             className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate`}
           >
-            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate'>{data.title}</p>}
+            {!isVideo ? <p>{data.title}</p> : <p className='text-center truncate text-ellipsis'>{data.title}</p>}
           </Link>
           {isVideo === false ? 
             <p className='text-xs text-slate-300'>
               {data.description || data.contentSnippet}
             </p> :
               <div>
-                <iframe className={`video w-[270px] h-[200px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'}`}
+                <iframe className={`video w-[270px] h-[200px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'} max-sm:mx-auto`}
                   allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
                   title='Youtube video player'
                   src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
@@ -104,14 +105,14 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='grid grid-cols-3 place-content-start'>
+        <div className='grid grid-cols-3 place-items-start max-sm:place-items-center'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
                 <div 
                   key={`${index}-${data.title}`}
                   className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 justify-between' : '3'}
-                    text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                    max-sm:col-span-3 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
                 >
                   {renderPosts(data, index)}
                 </div>
