@@ -52,23 +52,28 @@ export default async function Curiograph() {
     let isVideo: boolean = (data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false;
     return (
       <>
-        <div className='mb-2'>
+        <div 
+          className={`my-2 
+          ${isVideo && index % 2 === 0 ? 'text-left text-ellipsis' : ''}
+          ${isVideo && index % 2 === 1 ? 'text-right text-ellipsis' : ''}
+          `}
+        >
           <Link 
             href={`${data.link}`}
-            className='text-cyan-400 no-underline hover:underline text-sm'
+            className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate`}
           >
             {data.title}
           </Link>
+          {isVideo === false ? 
+            <p className='text-xs text-slate-300'>
+              {data.description || data.contentSnippet}
+            </p> :
+              <iframe className={`video w-[270px] h-[175px] ${index % 2 === 1 ? 'ml-auto' : 'mr-auto'}`}
+                allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
+                title='Youtube video player'
+                src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
+              </iframe>}
         </div>
-        {isVideo === false ? 
-          <p className='text-xs text-slate-300'>
-            {data.description || data.contentSnippet}
-          </p> :
-            <iframe className='video w-[600px] h-[350px]'
-              allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
-              title='Youtube video player'
-              src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
-            </iframe>}
       </>
     )
   }
@@ -87,13 +92,14 @@ export default async function Curiograph() {
 
     return (
       <>
-        <div className='grid grid-cols-subgrid place-self-center'>
+        <div className='grid grid-cols-2 place-self-center'>
           {posts.map((data: PostData, index: number) => {
             return (
               <div 
                 key={`${index}-${data.title}`}
                 className={`col-start-${(FEED_COUNT + 1 - feeds.length) % 2 === 0 ? 1 : 2} 
-                  col-span-1 text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                  col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 gap-4' : '2'}
+                  text-left ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
               >
                 {renderPosts(data, index)}
               </div>
@@ -112,7 +118,7 @@ export default async function Curiograph() {
    */
 
   return (
-    <div className='relative min-h-screen w-[59%] mx-auto'>
+    <div className='relative min-h-screen min-w-[300px] max-w-[59%] mx-auto'>
       <div className='grid grid-cols-1 gap-1 divide-y divide-neutral-500'>
         {displayPosts()}
       </div>
