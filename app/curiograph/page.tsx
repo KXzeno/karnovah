@@ -7,13 +7,13 @@ import RSSParser from 'rss-parser';
  ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-let FEED_URLS: Array<string[]> = [
+export let FEED_URLS: Array<string[]> = [
   ['https://www.nasa.gov/feed/', 'NASA'],
   ['https://www.reddit.com/r/logHorizon.rss', 'logH'],
   ['https://www.artofmanliness.com/feed/', 'art-of-manliness'],
   ['https://www.youtube.com/feeds/videos.xml?channel_id=UC7Gow-kNHq21oejSIDg9PAg', 'Koko'],
   ['https://www.youtube.com/feeds/videos.xml?channel_id=UC4YaOt1yT-ZeyB0OmxHgolA', 'Kizuna'],
-] as const;
+];
 
 let parser: Parser = new RSSParser();
 
@@ -134,5 +134,3 @@ export default async function Curiograph() {
     </div>
   );
 };
-
-export let FEEDS = FEED_URLS;

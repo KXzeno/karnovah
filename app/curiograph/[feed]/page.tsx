@@ -1,12 +1,12 @@
 import React from 'react';
-import { FEEDS } from '../page';
+import { FEED_URLS } from '../page';
 
 export default function Feed({ params }: { params: { feed: string }}): React.ReactNode {
 
   function verifyQuery(feed: string): Array<string | boolean> | false {
-    for (let i = 0; i < FEEDS.length; i++) {
-      if (feed === FEEDS[i][1]) return [feed, true];
-      if (i === FEEDS.length - 1) return false;
+    for (let i = 0; i < FEED_URLS.length; i++) {
+      if (feed === FEED_URLS[i][1]) return [feed, true];
+      if (i === FEED_URLS.length - 1) return false;
     }
   }
 
@@ -20,7 +20,7 @@ export default function Feed({ params }: { params: { feed: string }}): React.Rea
         </>
         :
         <>
-          404
+          y
         </>
       }
     </>
