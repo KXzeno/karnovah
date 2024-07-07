@@ -1,12 +1,12 @@
 import React from 'react';
-import { FEED_URLS } from '../page';
+import FEED_SRCS from '../feeds.json';
 
 export default function Feed({ params }: { params: { feed: string }}): React.ReactNode {
 
   function verifyQuery(feed: string): Array<string | boolean> | false {
-    for (let i = 0; i < FEED_URLS.length; i++) {
-      if (feed === FEED_URLS[i][1]) return [feed, true];
-      if (i === FEED_URLS.length - 1) return false;
+    for (let i = 0; i < Object.keys(FEED_SRCS).length; i++) {
+      if (FEED_SRCS[i] && feed === FEED_SRCS[i].substring(FEED_SRCS[i].indexOf(',') + 1)) return [feed, true];
+      if (i === Object.keys(FEED_SRCS).length - 1) return false;
     }
   }
 
