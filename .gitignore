@@ -48,3 +48,4 @@ next-env.d.ts
 /*/*/letter/
 /*/*/_old/
 /*/_old/
+/*/*/_old.tsx
