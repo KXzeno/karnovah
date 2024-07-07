@@ -113,7 +113,7 @@ export default async function Curiograph() {
                 <div 
                   key={`${index}-${data.title}`}
                   className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 place-self-center' : '3'}
-                    max-sm:col-span-3 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                    max-sm:col-span-3 sm:max-[1420px]:col-span-2 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
                 >
                   {renderPosts(data, index)}
                 </div>
