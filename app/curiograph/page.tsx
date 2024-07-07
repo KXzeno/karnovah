@@ -2,18 +2,11 @@ import React, {ReactNode} from 'react';
 import Link from 'next/link';
 import Parser from 'rss-parser';
 import RSSParser from 'rss-parser';
+import FEED_SRCS from './feeds.json';
 
 /* For manual ID fetch:
  ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
-
-export let FEED_URLS: Array<string[]> = [
-  ['https://www.nasa.gov/feed/', 'NASA'],
-  ['https://www.reddit.com/r/logHorizon.rss', 'logH'],
-  ['https://www.artofmanliness.com/feed/', 'art-of-manliness'],
-  ['https://www.youtube.com/feeds/videos.xml?channel_id=UC7Gow-kNHq21oejSIDg9PAg', 'Koko'],
-  ['https://www.youtube.com/feeds/videos.xml?channel_id=UC4YaOt1yT-ZeyB0OmxHgolA', 'Kizuna'],
-];
 
 let parser: Parser = new RSSParser();
 
@@ -46,7 +39,19 @@ export default async function Curiograph() {
     return [feeds[0]];
   }
 
-  await compilePosts(FEED_URLS);
+  function spreadObjToArr(o: object): Array<string[]> {
+    let newArray: Array<string[]> = [];
+    for (let i = 0; i < Object.keys(o).length; i++) {
+      let dmarc: number = o[i].indexOf(',');
+      let arrContent1: string = o[i].substring(0, dmarc);
+      let arrContent2: string = o[i].substring(dmarc + 1);
+      newArray.push([arrContent1, arrContent2]);
+    }
+
+    return newArray;
+  }
+
+  await compilePosts(spreadObjToArr(FEED_SRCS));
 
   let FEED_COUNT: number = feeds.length;
 
