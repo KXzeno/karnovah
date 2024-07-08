@@ -1,15 +1,14 @@
 import React, {ReactNode} from 'react';
 import Link from 'next/link';
 import Parser from 'rss-parser';
-import RSSParser from 'rss-parser';
-import FEED_SRCS from './feeds.json';
+import FEED_SRCS from '@F/Feed/feeds.json';
 import 'dotenv/config';
 
 /* For manual ID fetch:
- ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
+   ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-let parser: Parser = new RSSParser();
+let parser: Parser = new Parser();
 
 let parse: (url: string) => Promise<object>  = async url => {
   let feed: { items: object } = await parser.parseURL(url);
@@ -19,18 +18,27 @@ let parse: (url: string) => Promise<object>  = async url => {
 }
 
 export default async function Curiograph() {
+
   let feeds: Array<object> = [];
 
-    interface PostData {
-      title: String,
-      link: String,
-      description: String,
-      pubDate: String,
-      guid: String,
-      contentSnippet: String,
-      author: String,
-      id: String,
+    interface Feed {
+      [key: number]: {
+        [key: number]: {
+          [key: number]: string
+        }
+      }
     }
+
+  interface PostData {
+    title?: String,
+    link?: String,
+    description?: String,
+    pubDate?: String,
+    guid?: String,
+    contentSnippet?: String,
+    author?: String,
+    id?: String,
+  }
 
   async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
     for (let i = 0; i < arr.length; i++) {
@@ -40,15 +48,14 @@ export default async function Curiograph() {
     return [feeds[0]];
   }
 
-  function spreadObjToArr(o: object): Array<string[]> {
+  function spreadObjToArr(o: { [key: string]: string }): Array<string[]> {
     let newArray: Array<string[]> = [];
-    for (let i = 0; i < Object.keys(o).length; i++) {
-      let dmarc: number = o[i].indexOf(',');
-      let arrContent1: string = o[i].substring(0, dmarc);
-      let arrContent2: string = o[i].substring(dmarc + 1);
+    Object.keys(o).forEach(key => {
+      let dmarc: number = o[key].indexOf(',');
+      let arrContent1: string = o[key].substring(0, dmarc);
+      let arrContent2: string = o[key].substring(dmarc + 1);
       newArray.push([arrContent1, arrContent2]);
-    }
-
+    });
     return newArray;
   }
 
@@ -58,7 +65,7 @@ export default async function Curiograph() {
   let FEED_COUNT: number = feeds.length;
 
   //TODO: Fix truncation on long names
-  function renderPosts(data: PostData, index: number) {
+  function renderPosts(data: PostData) {
     // console.log(data);
     let isVideo: boolean = (data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false;
     if (data.contentSnippet && data.contentSnippet.includes(`${process.env.needless}`)) {
@@ -73,6 +80,8 @@ export default async function Curiograph() {
           <Link 
             href={`${data.link}`}
             className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance`}
+            rel='noreferrer'
+            target='_blank'
           >
             {!isVideo ? <p>{data.title}</p> : <p className='truncate text-ellipsis max-sm:text-balance text-balance text-center'>{data.title}</p>}
           </Link>
@@ -99,7 +108,7 @@ export default async function Curiograph() {
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
       // Capacity limiter
       if (i >= 3) break;
-      posts.push(feeds[0][i]);
+      posts.push((feeds as Feed)[0][i]);
     }
 
     feeds.shift();
@@ -115,7 +124,7 @@ export default async function Curiograph() {
                   className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 place-self-center' : '3'}
                     max-sm:col-span-3 sm:max-[1420px]:col-span-2 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
                 >
-                  {renderPosts(data, index)}
+                  {renderPosts(data)}
                 </div>
                 {index + 1 === posts.length ? 
                   <div className='inline-flex relative min-w-full min-h-4 col-span-3 text-right'>
