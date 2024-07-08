@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Parser from 'rss-parser';
-import FEED_SRCS from '@/curiograph/feeds.json';
+import FEED_SRCS from '@F/Feed/feeds.json';
 
 export const FeedContext = React.createContext({});
 
