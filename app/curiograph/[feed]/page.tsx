@@ -1,5 +1,5 @@
 import React from 'react';
-import FEED_SRCS from '../feeds.json';
+import FEED_SRCS from '@P/feeds.json';
 
 export default function Feed({ params }: { params: { feed: string }}): React.ReactNode {
 
