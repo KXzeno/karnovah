@@ -8,7 +8,11 @@ import 'dotenv/config';
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-export default async function Feed() {
+interface FeedParams {
+  filter?: string,
+}
+
+export default async function Feed({ filter = undefined }: FeedParams) {
   let parser: Parser = new Parser();
 
   let parse: (url: string) => Promise<object>  = async url => {
@@ -40,6 +44,11 @@ export default async function Feed() {
   }
 
   async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
+    if (filter !== undefined) {
+      arr = arr.filter(item => item[1] === filter);
+    }
+
+    arr.filter(e => e[1] === 'Kizuna');
     for (let i = 0; i < arr.length; i++) {
       let post = await parse(arr[i][0]);
       feeds.push(post);
@@ -114,7 +123,7 @@ export default async function Feed() {
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
       // Capacity limiter
-      if (i >= 3) break;
+      if (filter === undefined && i >= 3) break;
       posts.push((feeds as Feed)[0][i]);
     }
 
