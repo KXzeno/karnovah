@@ -2,7 +2,7 @@
 import React from 'react';
 // import Image from 'next/image';
 
-function reducer(notices) {
+function reducer(notices: string) {
   let msg: string;
   return notices === 'Ongoing Site Reconstruction...'
     ? 'Ongoing Site Reconstruction'
@@ -13,8 +13,8 @@ export default function Home() {
   let [notices, dispatch] = React.useReducer(reducer, 'Ongoing Site Reconstruction');
 
   const id = React.useId();
-  const userId = `${id}-username`;
-  const passId = `${id}-password`;
+  const userId: string = `${id}-username`;
+  const passId: string = `${id}-password`;
 
   return(
     <>
