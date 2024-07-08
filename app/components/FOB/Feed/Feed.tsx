@@ -2,6 +2,7 @@ import React from 'react';
 import Parser from 'rss-parser';
 import Link from 'next/link';
 import FEED_SRCS from '@F/Feed/feeds.json';
+import { notFound } from 'next/navigation';
 import 'dotenv/config';
 
 /* For manual ID fetch:
@@ -12,7 +13,14 @@ interface FeedParams {
   filter?: string,
 }
 
-export default async function Feed({ filter = undefined }: FeedParams) {
+export default async function Feed({ filter = undefined }: FeedParams): Promise<React.ReactElement> {
+  if (filter !== undefined) {
+    let validateFilter: boolean = !!(Object.values(FEED_SRCS).find(e => e.includes(filter)));
+    if (!validateFilter || filter.length === 0) {
+      return notFound();
+    }
+  }
+
   let parser: Parser = new Parser();
 
   let parse: (url: string) => Promise<object>  = async url => {
