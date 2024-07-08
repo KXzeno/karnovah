@@ -149,7 +149,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
                 >
                   {renderPosts(data)}
                 </div>
-                {index + 1 === posts.length ? 
+                {(index + 1 === posts.length) && filter === undefined ? 
                   <div className='inline-flex relative min-w-full min-h-4 col-span-3 text-right'>
                     <Link className='absolute text-xs no-underline hover:underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
                   </div>
