@@ -30,14 +30,10 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     return feed.items as Array<object>;
   }
 
-  let feeds: Array<object> = [];
+  let feeds: Array<Feed> = [];
 
   interface Feed {
-    [key: number]: {
-      [key: number]: {
-        [key: number]: string
-      }
-    }
+    [key: number]: PostData
   }
 
   interface PostData {
@@ -60,8 +56,8 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
     arr.filter(e => e[1] === 'Kizuna');
     for (let i = 0; i < arr.length; i++) {
-      let post = await parse(arr[i][0]);
-      feeds.push(post);
+      let post: object = await parse(arr[i][0]);
+      feeds.push(post as Feed);
     }
     return [feeds[0]];
   }
@@ -103,7 +99,6 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
         <article dangerouslySetInnerHTML={markup} />
       )
     }
-
     return (
       <>
         <hgroup 
@@ -134,13 +129,15 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
   function displayPosts(): React.ReactNode {
     if (feeds[0] === undefined) return;
-    let posts: Array<object> = [];
+    let posts: Array<PostData> = [];
 
     for (let i = 0; i < Object.keys(feeds[0]).length; i++) {
       // Capacity limiter
       if (filter === undefined && i >= 3) break;
-      posts.push((feeds as Feed)[0][i]);
+      posts.push(feeds[0][i]);
     }
+
+    if (posts.length < 1) throw new Error('Zero posts are stored.');
 
     feeds.shift();
     return (
