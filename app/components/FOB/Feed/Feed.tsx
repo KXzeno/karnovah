@@ -98,7 +98,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
     return (
       <>
-        <div 
+        <hgroup 
           className='feed-card'
         >
           <Link 
@@ -107,20 +107,19 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
             rel='noreferrer'
             target='_blank'
           >
-            {!isVideo ? <p>{data.title}</p> : <p className='truncate text-ellipsis max-sm:text-balance text-balance text-center'>{data.title}</p>}
+            {!isVideo ? <nav>{data.title}</nav> : <nav className='feed-title'>{data.title}</nav>}
           </Link>
           {data.id === undefined || isVideo === false ? 
-            <p className='feed-desc'>
+            <header className='feed-desc'>
               {data.description || data.contentSnippet}
-            </p> :
-              <div>
-                <iframe className='feed-embed'
-                  allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
-                  title='Youtube video player'
-                  src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
-                </iframe>
-              </div>}
-        </div>
+            </header> :
+              <iframe className='feed-embed'
+                allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
+                title='Youtube video player'
+                src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
+              </iframe>
+          }
+        </hgroup>
       </>
     )
   }
@@ -142,19 +141,19 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
           {posts.map((data: PostData, index: number) => {
             return (
               <>
-                <div 
+                <article 
                   key={`${index}-${data.title}`}
                   className={`${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? 
-`feed-child ${index + 1 === posts.length ? `sm:max-[1420px]:hidden` : null} ${index === posts.length - 2 ? 'sm:max-[1420px]:col-start-3' : null}` 
-: 
-'feed-child-5'} feed-child-2`}
+                    `feed-child ${index + 1 === posts.length ? `sm:max-[1420px]:hidden` : null} ${index === posts.length - 2 ? 'sm:max-[1420px]:col-start-3' : null}` 
+                    : 
+                      'feed-child-5'} feed-child-2`}
                 >
                   {renderPosts(data)}
-                </div>
+                </article>
                 {(index + 1 === posts.length) && filter === undefined ? 
-                  <div className='inline-flex relative min-w-full min-h-4 col-span-3 text-right'>
-                    <Link className='absolute text-xs no-underline hover:underline italic mx-auto inset-x-0' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
-                  </div>
+                  <nav className='view-more'>
+                    <Link className='amble' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
+                  </nav>
                   :
                   <></>}
               </>
@@ -167,10 +166,10 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
   }
 
   return (
-    <div className='relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] sm:max-md:max-w-[700px] mx-auto'>
-      <div className='grid grid-cols-1 gap-1 divide-y divide-neutral-500'>
+    <main className='primary'>
+      <article className='primary-grid'>
         {displayPosts()}
-      </div>
-    </div>
+      </article>
+    </main>
   )
 }
