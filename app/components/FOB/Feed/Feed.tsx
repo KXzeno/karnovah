@@ -41,14 +41,16 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
   }
 
   interface PostData {
-    title?: string,
-    link?: string,
-    description?: string,
-    pubDate?: string,
-    guid?: string,
+    title: string,
+    link: string,
+    description: string,
+    pubDate: string,
+    guid: string,
     contentSnippet?: string,
-    author?: string,
-    id?: string,
+    content: string,
+    author: string,
+    id: string,
+    ['content:encoded']: string;
   }
 
   async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
@@ -77,7 +79,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
   let srcs = spreadObjToArr(FEED_SRCS);
   await compilePosts(srcs);
-
+  console.log(feeds);
   let FEED_COUNT: number = feeds.length;
 
   //TODO: Fix truncation on long names
@@ -94,6 +96,13 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
     if (isVideo && data.id === undefined) {
       throw new Error('Video ID not found.');
+    }
+
+    if (filter && data.content !== undefined) {
+      let markup = { __html: data['content:encoded'] || data.content };
+      return (
+        <article dangerouslySetInnerHTML={markup} />
+      )
     }
 
     return (
