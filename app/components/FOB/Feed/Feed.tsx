@@ -137,7 +137,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     feeds.shift();
     return (
       <>
-        <div className='feed-ctr'>
+        <section className='feed-ctr'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
@@ -159,7 +159,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
               </>
             )
           })}
-        </div>
+        </section>
         {displayPosts()}
       </>
     )
