@@ -138,14 +138,14 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     feeds.shift();
     return (
       <>
-        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] mx-auto'>
+        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] sm:max-md:max-w-[89%] mx-auto'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
                 <div 
                   key={`${index}-${data.title}`}
-                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? '1 place-self-center' : '3'}
-                    max-sm:col-span-3 sm:max-[1420px]:col-span-2 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? `1 place-self-center ${index + 1 === posts.length ? `sm:max-[1420px]:hidden` : ''} ${index === posts.length - 2 ? 'sm:max-[1420px]:col-start-3' : ''}` : '3 sm:max-[1420px]:col-span-3'}
+                    max-sm:col-span-3 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
                 >
                   {renderPosts(data)}
                 </div>
@@ -165,7 +165,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
   }
 
   return (
-    <div className='relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] mx-auto'>
+    <div className='relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] sm:max-md:max-w-[700px] mx-auto'>
       <div className='grid grid-cols-1 gap-1 divide-y divide-neutral-500'>
         {displayPosts()}
       </div>
