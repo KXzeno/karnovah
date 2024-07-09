@@ -43,14 +43,14 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
   interface PostData {
     title: string,
     link: string,
-    description: string,
-    pubDate: string,
-    guid: string,
+    description?: string,
+    pubDate?: string,
+    guid?: string,
     contentSnippet?: string,
     content: string,
-    author: string,
-    id: string,
-    ['content:encoded']: string;
+    author?: string,
+    id?: string,
+    ['content:encoded']?: string;
   }
 
   async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
@@ -79,7 +79,6 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
   let srcs = spreadObjToArr(FEED_SRCS);
   await compilePosts(srcs);
-  console.log(feeds);
   let FEED_COUNT: number = feeds.length;
 
   //TODO: Fix truncation on long names
