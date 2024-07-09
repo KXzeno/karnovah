@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-[#1F2022] from-20% via-[#2E3033] via-[83.7%] to-[#1F2022] to-100% max-md:w-screen max-[368px]:w-max;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .feed-card {
+    @apply my-2;
+  }
+
+  .feed-link {
+    @apply text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance;
+  }
+
+  .feed-desc {
+    @apply text-xs text-slate-300 sm:text-pretty;
+  }
+
+  .feed-embed {
+    @apply w-[270px] h-[200px] mx-auto;
+  }
+
+  .feed-ctr {
+    @apply relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] sm:max-md:max-w-[89%] mx-auto;
+  }
+
+  .feed-child {
+    @apply col-span-1 place-self-center;
+  }
+
+  .feed-child-2 {
+    @apply max-sm:col-span-3 text-left text-inherit max-sm:text-center my-auto;
+  }
+
+  .feed-child-3 {
+    @apply sm:max-[1420px]:hidden;
+  }
+
+  .feed-child-4 {
+    @apply sm:max-[1420px]:col-start-3;
+  }
+
+  .feed-child-5 {
+    @apply col-span-3 sm:max-[1420px]:col-span-3;
+  }
+}
+
+

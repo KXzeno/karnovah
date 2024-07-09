@@ -99,22 +99,22 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     return (
       <>
         <div 
-          className={`my-2`}
+          className='feed-card'
         >
           <Link 
             href={`${data.link}`}
-            className={`text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance`}
+            className='feed-link'
             rel='noreferrer'
             target='_blank'
           >
             {!isVideo ? <p>{data.title}</p> : <p className='truncate text-ellipsis max-sm:text-balance text-balance text-center'>{data.title}</p>}
           </Link>
           {data.id === undefined || isVideo === false ? 
-            <p className='text-xs text-slate-300 sm:text-pretty'>
+            <p className='feed-desc'>
               {data.description || data.contentSnippet}
             </p> :
               <div>
-                <iframe className={`video w-[270px] h-[200px] mx-auto`}
+                <iframe className='feed-embed'
                   allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture fullscreen"
                   title='Youtube video player'
                   src={`https://youtube.com/embed/${data.id.substring(9)}?autoplay=0`}>
@@ -138,14 +138,16 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     feeds.shift();
     return (
       <>
-        <div className='relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] sm:max-md:max-w-[89%] mx-auto'>
+        <div className='feed-ctr'>
           {posts.map((data: PostData, index: number) => {
             return (
               <>
                 <div 
                   key={`${index}-${data.title}`}
-                  className={`col-span-${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? `1 place-self-center ${index + 1 === posts.length ? `sm:max-[1420px]:hidden` : ''} ${index === posts.length - 2 ? 'sm:max-[1420px]:col-start-3' : ''}` : '3 sm:max-[1420px]:col-span-3'}
-                    max-sm:col-span-3 text-left max-sm:text-center ${index === 0 ? 'text-inherit' : 'text-inherit'} my-auto`}
+                  className={`${(data.id && data.id !== undefined && data.id.substring(0,2) === 'yt') || false ? 
+`feed-child ${index + 1 === posts.length ? `sm:max-[1420px]:hidden` : null} ${index === posts.length - 2 ? 'sm:max-[1420px]:col-start-3' : null}` 
+: 
+'feed-child-5'} feed-child-2`}
                 >
                   {renderPosts(data)}
                 </div>
