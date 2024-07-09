@@ -17,7 +17,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
   if (filter !== undefined) {
     let validateFilter: boolean = !!(Object.values(FEED_SRCS).find(e => e.includes(filter)));
     if (!validateFilter || filter.length === 0) {
-      return notFound();
+      notFound();
     }
   }
 
