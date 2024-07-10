@@ -4,10 +4,34 @@ import Link from 'next/link';
 import FEED_SRCS from '@F/Feed/feeds.json';
 import { notFound } from 'next/navigation';
 import 'dotenv/config';
+import pg from 'pg';
 
 /* For manual ID fetch:
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
+
+let db = new pg.Client({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'kx',
+  password: process.env.DATABASE_PASS,
+});
+
+db.connect();
+
+let bruh: any;
+
+db.query('SELECT * FROM rss', async (err, res) => {
+  try {
+    bruh = res.rows;
+    console.log(bruh, FEED_SRCS);
+  } catch (e) {
+    console.error('Query exection failed', e, err.stack);
+  } finally {
+    await db.end()
+  }
+});
+
 
 interface FeedParams {
   filter?: string,
