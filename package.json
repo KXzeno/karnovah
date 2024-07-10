@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/pg": "^8.11.6",
     "autoprefixer": "^10.4.16",
     "dotenv": "^16.4.5",
     "eslint-config-next": "^14.0.4",
