@@ -24,6 +24,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "20.12.2",
     "@types/react": "18.2.73",
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "prisma": "^5.16.2"
   }
 }
