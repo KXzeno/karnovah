@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import 'dotenv/config';
 import pg from 'pg';
 import { PrismaClient } from '@prisma/client';
+import {log} from 'console';
 
 /* For manual ID fetch:
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
@@ -14,29 +15,30 @@ import { PrismaClient } from '@prisma/client';
 let prisma = new PrismaClient();
 
 async function main() {
-  let fsrcs = await prisma.source.findMany();
-  console.log(fsrcs);
+  return await prisma.source.findMany();
 }
 
-main().then(async () => {
-  await prisma.$disconnect()
-}).catch(async (e) => {
-  console.error(e);
-  await prisma.$disconnect();
-  process.exit(1);
-});
+async function getData() {
+  return main().then(async (res) => {
+    return res;
+  }).catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
+}
 
 /*
-  let db = new pg.Client({
-  user: 'avnadmin',
-  password: process.env.DB_PASS_AIVEN,
-  host: 'rss-feeds-kasz.e.aivencloud.com',
-  port: 22108,
-  database: 'defaultdb',
-  ssl: {
-    rejectUnauthorized: true,
-    ca: process.env.DB_CA_CERT,
-  },
+   let db = new pg.Client({
+user: 'avnadmin',
+password: process.env.DB_PASS_AIVEN,
+host: 'rss-feeds-kasz.e.aivencloud.com',
+port: 22108,
+database: 'defaultdb',
+ssl: {
+rejectUnauthorized: true,
+ca: process.env.DB_CA_CERT,
+},
 });
 
 db.connect();
@@ -45,14 +47,14 @@ let fsrcs: any;
 
 db.query('SELECT * FROM Source', async (err, res) => {
 
-  try {
-    fsrcs = res.rows;
-    // console.log(fsrcs, FEED_SRCS);
-  } catch (e) {
-    console.error('Query execution failed', e, err.stack);
-  } finally {
-    await db.end()
-  }
+try {
+fsrcs = res.rows;
+// console.log(fsrcs, FEED_SRCS);
+} catch (e) {
+console.error('Query execution failed', e, err.stack);
+} finally {
+await db.end()
+}
 }); */
 
 interface FeedParams {
@@ -60,8 +62,9 @@ interface FeedParams {
 }
 
 export default async function Feed({ filter = undefined }: FeedParams): Promise<React.ReactElement> {
+  let fsrcs = await getData();
   if (filter !== undefined) {
-    let validateFilter: boolean = !!(Object.values(FEED_SRCS).find(e => e.includes(filter)));
+    let validateFilter: boolean = !!(fsrcs.find(({ name }) => name.includes(filter)));
     if (!validateFilter || filter.length === 0) {
       notFound();
     }
