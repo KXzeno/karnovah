@@ -5,33 +5,55 @@ import FEED_SRCS from '@F/Feed/feeds.json';
 import { notFound } from 'next/navigation';
 import 'dotenv/config';
 import pg from 'pg';
+import { PrismaClient } from '@prisma/client';
 
 /* For manual ID fetch:
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-let db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'kx',
-  password: process.env.DATABASE_PASS,
+let prisma = new PrismaClient();
+
+async function main() {
+  let fsrcs = await prisma.source.findMany();
+  console.log(fsrcs);
+}
+
+main().then(async () => {
+  await prisma.$disconnect()
+}).catch(async (e) => {
+  console.error(e);
+  await prisma.$disconnect();
+  process.exit(1);
+});
+
+/*
+  let db = new pg.Client({
+  user: 'avnadmin',
+  password: process.env.DB_PASS_AIVEN,
+  host: 'rss-feeds-kasz.e.aivencloud.com',
+  port: 22108,
+  database: 'defaultdb',
+  ssl: {
+    rejectUnauthorized: true,
+    ca: process.env.DB_CA_CERT,
+  },
 });
 
 db.connect();
 
-let bruh: any;
+let fsrcs: any;
 
-db.query('SELECT * FROM rss', async (err, res) => {
+db.query('SELECT * FROM Source', async (err, res) => {
+
   try {
-    bruh = res.rows;
-    console.log(bruh, FEED_SRCS);
+    fsrcs = res.rows;
+    // console.log(fsrcs, FEED_SRCS);
   } catch (e) {
-    console.error('Query exection failed', e, err.stack);
+    console.error('Query execution failed', e, err.stack);
   } finally {
     await db.end()
   }
-});
-
+}); */
 
 interface FeedParams {
   filter?: string,
@@ -47,7 +69,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
 
   let parser: Parser = new Parser();
 
-  let parse: (url: string) => Promise<object>  = async url => {
+  let parse: (url: string) => Promise<object> = async url => {
     let feed: { items: object } = await parser.parseURL(url);
     if (!(feed && feed.items)) throw new Error('Invalid RSS URL');
     // console.log(Object.getOwnPropertyNames(feed));
