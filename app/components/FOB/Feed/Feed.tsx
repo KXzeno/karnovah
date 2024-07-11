@@ -98,32 +98,38 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
     ['content:encoded']?: string;
   }
 
-  async function compilePosts(arr: Array<string[]>): Promise<Array<object>> {
+  interface SourceModel {
+    id: number,
+    link: string,
+    name: string,
+  }
+
+  async function compilePosts(arr: Array<SourceModel>): Promise<Array<object>> {
     if (filter !== undefined) {
-      arr = arr.filter(item => item[1] === filter);
+      arr = arr.filter(item => item.name === filter);
     }
 
-    arr.filter(e => e[1] === 'Kizuna');
+    arr.filter(e => e.name === filter);
     for (let i = 0; i < arr.length; i++) {
-      let post: object = await parse(arr[i][0]);
+      let post: object = await parse(arr[i].link);
       feeds.push(post as Feed);
     }
     return [feeds[0]];
   }
 
-  function spreadObjToArr(o: { [key: string]: string }): Array<string[]> {
-    let newArray: Array<string[]> = [];
-    Object.keys(o).forEach(key => {
-      let dmarc: number = o[key].indexOf(',');
-      let arrContent1: string = o[key].substring(0, dmarc);
-      let arrContent2: string = o[key].substring(dmarc + 1);
-      newArray.push([arrContent1, arrContent2]);
-    });
-    return newArray;
-  }
+ // function spreadObjToArr(o: { [key: string]: string }): Array<string[]> {
+ //   let newArray: Array<string[]> = [];
+ //   Object.keys(o).forEach(key => {
+ //     let dmarc: number = o[key].indexOf(',');
+ //     let arrContent1: string = o[key].substring(0, dmarc);
+ //     let arrContent2: string = o[key].substring(dmarc + 1);
+ //     newArray.push([arrContent1, arrContent2]);
+ //   });
+ //   return newArray;
+ // }
 
-  let srcs = spreadObjToArr(FEED_SRCS);
-  await compilePosts(srcs);
+ // let srcs = spreadObjToArr(FEED_SRCS);
+  await compilePosts(fsrcs);
   let FEED_COUNT: number = feeds.length;
 
   //TODO: Fix truncation on long names
@@ -206,7 +212,7 @@ export default async function Feed({ filter = undefined }: FeedParams): Promise<
                 </article>
                 {(index + 1 === posts.length) && filter === undefined ? 
                   <nav className='view-more'>
-                    <Link className='amble' href={`./curiograph/${srcs[FEED_COUNT - feeds.length - 1][1]}`}>Amble</Link>
+                    <Link className='amble' href={`./curiograph/${fsrcs[FEED_COUNT - feeds.length - 1].name}`}>Amble</Link>
                   </nav>
                   :
                   <></>}
