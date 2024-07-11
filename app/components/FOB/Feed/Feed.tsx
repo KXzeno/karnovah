@@ -1,12 +1,10 @@
 import React from 'react';
 import Parser from 'rss-parser';
 import Link from 'next/link';
-import FEED_SRCS from '@F/Feed/feeds.json';
 import { notFound } from 'next/navigation';
 import 'dotenv/config';
 import pg from 'pg';
 import { PrismaClient } from '@prisma/client';
-import {log} from 'console';
 
 /* For manual ID fetch:
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
