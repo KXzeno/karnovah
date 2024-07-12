@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export function middleware(request) {
+export function middleware(request: NextRequest ) {
   // Gets baseURL leaf and excludes '/'
   let pathname = request.nextUrl.pathname.substring(1, request.nextUrl.pathname.length);
 
