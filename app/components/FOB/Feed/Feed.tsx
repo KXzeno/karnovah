@@ -3,14 +3,19 @@ import Parser from 'rss-parser';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import 'dotenv/config';
-import pg from 'pg';
+// import pg from 'pg';
 import { PrismaClient } from '@prisma/client';
+import { readReplicas } from '@prisma/extension-read-replicas';
 
 /* For manual ID fetch:
    ytInitialData.contents.singleColumnBrowseResultsRenderer.tabs[0].tabRenderer.endpoint.browseEndpoint.browseId
  */
 
-let prisma = new PrismaClient();
+let prisma = new PrismaClient().$extends(
+  readReplicas({
+    url: `${process.env.DATABASE_URL}`,
+  })
+);
 
 async function main() {
   return await prisma.source.findMany();
