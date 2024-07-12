@@ -18,7 +18,7 @@ let prisma = new PrismaClient().$extends(
 );
 
 async function main() {
-  return await prisma.source.findMany();
+  return await prisma.$replica().source.findMany();
 }
 
 async function getData() {
