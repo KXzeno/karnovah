@@ -62,7 +62,7 @@ interface FeedParams {
 export default async function Feed({ filter = undefined }: FeedParams): Promise<React.ReactElement> {
   let fsrcs = await getData();
   if (filter !== undefined) {
-    let validateFilter: boolean = !!(fsrcs.find(({ name }) => name.includes(filter)));
+    let validateFilter: boolean = !!(fsrcs.find(({ name }: { name: string }) => name.includes(filter)));
     if (!validateFilter || filter.length === 0) {
       notFound();
     }
