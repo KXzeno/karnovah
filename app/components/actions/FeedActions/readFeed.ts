@@ -60,6 +60,7 @@ export async function readFeed(filter?: string) {
       return feed.items as Array<object>;
     } catch (e) {
       console.error('Compilation failed.', e);
+      throw e;
     }
   }
 
@@ -73,10 +74,15 @@ export async function readFeed(filter?: string) {
       return [feeds[0]];
     } catch (e) {
       console.error('Compilation failed.', e);
+      throw e;
     }
   }
 
-  await compilePosts(fsrcs);
-
-  return feeds;
+  try {
+    await compilePosts(fsrcs);
+    return feeds;
+  } catch (e) {
+    console.error('Failed to read feeds', e);
+    throw e;
+  }
 }
