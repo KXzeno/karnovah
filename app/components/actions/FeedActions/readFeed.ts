@@ -2,11 +2,9 @@
 
 import Parser from 'rss-parser';
 import 'dotenv/config';
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../../../prisma/db';
 import { revalidatePath } from 'next/cache';
 // import { readReplicas } from '@prisma/extension-read-replicas';
-
-let prisma = new PrismaClient();
 
 interface SourceModel {
   id: number,
