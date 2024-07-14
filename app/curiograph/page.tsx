@@ -10,7 +10,7 @@ export default async function Curiograph() {
       <span className='w-screen h-8 text-center text-xl'>
         <p>{feeds.length}</p>
       </span>
-      <Feed />
+      <Feed src={feeds}/>
     </>
   );
 };
