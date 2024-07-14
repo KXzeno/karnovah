@@ -32,7 +32,7 @@ async function main() {
 
 export async function getData(): Promise<SourceModel[]> {
   return main().then(async (res) => {
-    console.log(res);
+    // console.log(res);
     return res;
   }).catch(async (e) => {
     console.error(e);
@@ -52,20 +52,28 @@ export async function readFeed(filter?: string) {
 
   let feeds: Array<Feed> = [];
 
-  let parse: (url: string) => Promise<object> = async url => {
-    let feed: { items: object } = await parser.parseURL(url);
-    if (!(feed && feed.items)) throw new Error('Invalid RSS URL');
-    // console.log(Object.getOwnPropertyNames(feed));
-    return feed.items as Array<object>;
+  let parse: (url: string) => Promise<object[] | undefined> = async url => {
+    try {
+      let feed: { items: object } = await parser.parseURL(url);
+      if (!(feed && feed.items)) throw new Error('Invalid RSS URL');
+      // console.log(Object.getOwnPropertyNames(feed));
+      return feed.items as Array<object>;
+    } catch (e) {
+      console.error('Compilation failed.', e);
+    }
   }
 
-  async function compilePosts(arr: Array<SourceModel>): Promise<Array<object>> {
-    arr.filter(e => e.name === filter);
-    for (let i = 0; i < arr.length; i++) {
-      let post: object = await parse(arr[i].link);
-      feeds.push(post as Feed);
+  async function compilePosts(arr: Array<SourceModel>): Promise<Array<object> | undefined> {
+    try {
+      arr.filter(e => e.name === filter);
+      for (let i = 0; i < arr.length; i++) {
+        let post: object | undefined = await parse(arr[i].link);
+        feeds.push(post as Feed);
+      }
+      return [feeds[0]];
+    } catch (e) {
+      console.error('Compilation failed.', e);
     }
-    return [feeds[0]];
   }
 
   await compilePosts(fsrcs);
