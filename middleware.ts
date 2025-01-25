@@ -14,23 +14,22 @@ export function middleware(request: NextRequest ) {
 		case 0: {
 			splitPaths.shift();
 			pathname = splitPaths.join('/');
-			break;
+			return NextResponse.redirect(new URL(`https://blog.karnovah.com/${pathname}`, request.url));
 		} 
 		case 1: {
 			splitPaths.shift();
 			pathname = splitPaths.join('/');
-			break;
+			return NextResponse.redirect(new URL(`https://blog.karnovah.com/${pathname}`, request.url));
 		}
 		case 2: {
 			return NextResponse.redirect(new URL(`https://github.com/KXzeno`, request.url));
 		}
-			default: {
-				splitPaths.shift();
-				pathname = splitPaths.join('/');
-			}
+		default: {
+			splitPaths.shift();
+			pathname = splitPaths.join('/');
+		}
 	}
 
-	return NextResponse.redirect(new URL(`https://blog.karnovah.com/${pathname}`, request.url));
 }
 
 	export const config = {
