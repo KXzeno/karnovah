@@ -1,76 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-gradient-to-br from-[#1F2022] from-20% via-[#2E3033] via-[83.7%] to-[#1F2022] to-100% max-md:w-screen max-[368px]:w-max;
-  }
+body {
+  @apply bg-gradient-to-br from-[#1F2022] from-20% via-[#2E3033] via-[83.7%] to-[#1F2022] to-100% max-md:w-screen max-[368px]:w-max;
 }
 
-@layer components {
+
+.primary {
+  @apply relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] sm:max-md:max-w-[700px] mx-auto
 }
 
-@layer utilities {
-  .primary {
-    @apply relative min-h-screen min-w-[300px] max-w-[59%] max-sm:max-w-[500px] sm:max-md:max-w-[700px] mx-auto
-  }
+.primary-grid {
+  @apply grid grid-cols-1 gap-1 divide-y divide-neutral-500;
+}
 
-  .primary-grid {
-    @apply grid grid-cols-1 gap-1 divide-y divide-neutral-500;
-  }
+.feed-card {
+  @apply my-2;
+}
 
-  .feed-card {
-    @apply my-2;
-  }
+.feed-title {
+  @apply truncate text-ellipsis max-sm:text-balance text-balance text-center text-cyan-400;
+}
 
-  .feed-title {
-    @apply truncate text-ellipsis max-sm:text-balance text-balance text-center text-cyan-400;
-  }
+.feed-link {
+  @apply text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance;
+}
 
-  .feed-link {
-    @apply text-cyan-400 no-underline hover:underline text-sm text-ellipsis truncate text-wrap max-sm:text-balance;
-  }
+.feed-desc {
+  @apply text-xs text-slate-300 sm:text-pretty;
+}
 
-  .feed-desc {
-    @apply text-xs text-slate-300 sm:text-pretty;
-  }
+.feed-embed {
+  @apply w-[270px] h-[200px] mx-auto;
+}
 
-  .feed-embed {
-    @apply w-[270px] h-[200px] mx-auto;
-  }
+.feed-ctr {
+  @apply relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] sm:max-md:max-w-[89%] mx-auto;
+}
 
-  .feed-ctr {
-    @apply relative grid grid-cols-3 place-items-start max-sm:place-items-center w-full max-sm:max-w-[79%] sm:max-md:max-w-[89%] mx-auto;
-  }
+.feed-child {
+  @apply col-span-1 place-self-center;
+}
 
-  .feed-child {
-    @apply col-span-1 place-self-center;
-  }
+.feed-child-2 {
+  @apply max-sm:col-span-3 text-left text-inherit max-sm:text-center my-auto;
+}
 
-  .feed-child-2 {
-    @apply max-sm:col-span-3 text-left text-inherit max-sm:text-center my-auto;
-  }
+.feed-child-3 {
+  @apply sm:max-[1420px]:hidden;
+}
 
-  .feed-child-3 {
-    @apply sm:max-[1420px]:hidden;
-  }
+.feed-child-4 {
+  @apply sm:max-[1420px]:col-start-3;
+}
 
-  .feed-child-4 {
-    @apply sm:max-[1420px]:col-start-3;
-  }
+.feed-child-5 {
+  @apply col-span-3 sm:max-[1420px]:col-span-3;
+}
 
-  .feed-child-5 {
-    @apply col-span-3 sm:max-[1420px]:col-span-3;
-  }
+.view-more {
+  @apply inline-flex relative min-w-full min-h-4 col-span-3 text-right;
+}
 
-  .view-more {
-    @apply inline-flex relative min-w-full min-h-4 col-span-3 text-right;
-  }
-
-  .amble {
-    @apply absolute text-xs no-underline hover:underline italic mx-auto inset-x-0 text-cyan-400;
-  }
+.amble {
+  @apply absolute text-xs no-underline hover:underline italic mx-auto inset-x-0 text-cyan-400;
 }
 
 

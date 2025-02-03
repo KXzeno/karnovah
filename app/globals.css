@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,71 +29,65 @@ body {
 
 /*******************TAG SELECTORS******************/
 
-@layer base {
-  h1 {
-    @apply text-green-300 text-3xl font-mono mx-auto text-[3.125rem];
-  }
-  h2 {
-    @apply text-red-500 text-[2.5rem] font-normal;
-  }
-  h3 {
-    @apply text-lime-200 font-sans;
-  }
-  a {
-    @apply text-cyan-300 underline;
-  }
-  h4, h5, h6 {
-    @apply font-diphylleia;
-  }
+h1 {
+  @apply text-green-300 text-3xl font-mono mx-auto text-[3.125rem];
+}
+h2 {
+  @apply text-red-500 text-[2.5rem] font-normal;
+}
+h3 {
+  @apply text-lime-200 font-sans;
+}
+a {
+  @apply text-cyan-300 underline;
+}
+h4, h5, h6 {
+  @apply font-diphylleia;
 }
 
 /*******************CLASS SELECTORS******************/
 
-@layer components {
-  .btn-primary {
-    @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
-  }
-  .div-main {
-    @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen;
-  }
-  .my-hrule {
-    @apply border-dotted border-b-8 w-20 mx-auto py-4 border-cyan-100;
-  }
-  .hover-x {
-    @apply hover:bg-violet-600 mx-auto;
-  }
-  .footer-link {
-    @apply px-[0.71rem] text-[#41ffd7];
-  }
-  .skills {
-    @apply pt-6
-  }
-  .bot-ctr {
-    @apply text-center bg-[#7a89ff];
-  }
-  .skill-row {
-    @apply md:w-3/4 w-5/6 mx-auto my-[6.25rem] md:text-left md:leading-[1.7rem] leading-loose md:relative left-[3rem];
-  }
-
-  /******************ID SELECTORS******************/
-
-  #str-head {
-    @apply text-purple-700;
-  }
-
-  #land-title {
-    @apply bg-[#FF4C68];
-  }
-
+.btn-primary {
+  @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+}
+.div-main {
+  @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen;
+}
+.my-hrule {
+  @apply border-dotted border-b-8 w-20 mx-auto py-4 border-cyan-100;
+}
+.hover-x {
+  @apply hover:bg-violet-600 mx-auto;
+}
+.footer-link {
+  @apply px-[0.71rem] text-[#41ffd7];
+}
+.skills {
+  @apply pt-6
+}
+.bot-ctr {
+  @apply text-center bg-[#7a89ff];
+}
+.skill-row {
+  @apply md:w-3/4 w-5/6 mx-auto my-[6.25rem] md:text-left md:leading-[1.7rem] leading-loose md:relative left-[3rem];
 }
 
-@layer utilities {
-  .imageWrapper {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    aspect-ratio: 70/45;
-    margin: 2rem auto;
-  }
+/******************ID SELECTORS******************/
 
+#str-head {
+  @apply text-purple-700;
 }
+
+#land-title {
+  @apply bg-[#FF4C68];
+}
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 70/45;
+  margin: 2rem auto;
+}
+
