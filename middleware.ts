@@ -7,9 +7,9 @@ export function middleware(request: NextRequest ) {
 	// Splits nested routes into names
 	let splitPaths = pathname.split('/');
 
-	let validRoutes: Array<string> = ["blog," "blogs," "about"];
+	let validRoutes: Array<string> = ["blog", "blogs", "about"];
 
-	switch (validRoutes.findIndex(splitPaths[0])) {
+	switch (validRoutes.findIndex(route => route === splitPaths[0])) {
 		// Outputs nested routes to the new URL excluding '/blog' and '/blogs'
 		case 0: {
 			splitPaths.shift();
