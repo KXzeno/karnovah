@@ -23,14 +23,29 @@
     ],
     "baseUrl": "app/",
     "paths": {
-      "@/components": ["./components/index.ts"],
-      "@/actions": ["./components/actions/index.ts"],
-      "@M/*": ["./components/MOB/*"],
-      "@F/*": ["./components/FOB/*"],
-      "@H/*": ["./components/hooks/*"],
-      "@P/*": ["./components/FOB/Providers/*"],
-      "@A/*": ["./components/actions/*"],
-    }
+      "@/components": [
+        "./components/index.ts"
+      ],
+      "@/actions": [
+        "./components/actions/index.ts"
+      ],
+      "@M/*": [
+        "./components/MOB/*"
+      ],
+      "@F/*": [
+        "./components/FOB/*"
+      ],
+      "@H/*": [
+        "./components/hooks/*"
+      ],
+      "@P/*": [
+        "./components/FOB/Providers/*"
+      ],
+      "@A/*": [
+        "./components/actions/*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
