@@ -24,6 +24,19 @@ body {
   rgb(var(--background-start-rgb));
 }
 
+@theme {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-urbanist: 'Urbanist', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-diphylleia: 'Diphylleia', sans-serif;
+  --font-merriweather: 'Merriweather', serif;
+  --font-spectral: 'Spectral', serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-quicksand: 'Quicksand', sans-serif;
+  --font-dosis: 'Dosis', sans-serif;
+  --font-sono: 'Sono', sans-serif;
+}
 
 /****************************FUNCTIONS AND DIRECTIVES***************************/
 
@@ -48,7 +61,7 @@ h4, h5, h6 {
 /*******************CLASS SELECTORS******************/
 
 .btn-primary {
-  @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  @apply py-[0.25px] px-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-blue-400/75;
 }
 .div-main {
   @apply bg-slate-700 divide-slate-500 text-center mx-auto min-h-screen;
