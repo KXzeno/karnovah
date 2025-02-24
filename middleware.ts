@@ -9,6 +9,7 @@ export function middleware(request: NextRequest ) {
 
 	let validRoutes: Array<string> = ["blog", "blogs", "about"];
 
+	console.log(splitPaths);
 	switch (validRoutes.findIndex(route => route === splitPaths[0])) {
 		// Outputs nested routes to the new URL excluding '/blog' and '/blogs'
 		case 0: {
@@ -33,5 +34,5 @@ export function middleware(request: NextRequest ) {
 }
 
 	export const config = {
-		matcher: ['/blog/:path*', '/blogs/:path*',],
+		matcher: ['/blog/:path*', '/blogs/:path*', '/about/:path*'],
 	}
