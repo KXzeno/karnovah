@@ -3,7 +3,6 @@
 import Parser from 'rss-parser';
 import 'dotenv/config';
 import prisma from '../../../../prisma/db';
-import { revalidatePath } from 'next/cache';
 // import { readReplicas } from '@prisma/extension-read-replicas';
 
 interface SourceModel {
@@ -79,7 +78,6 @@ export async function readFeed(filter?: string) {
 
   try {
     await compilePosts(fsrcs);
-    revalidatePath('/curiograph');
     return feeds;
   } catch (e) {
     console.error('Failed to read feeds', e);
